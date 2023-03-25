@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: OVERWATCH;
+  src: url('../src/assets/fonts/Overwatch-Font/OVERWATCH/OVERWATCH.ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: snes;
+  src: url('../src/assets/fonts//snes-font/SnesItalic-1G9Be.ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: bruce-forever;
+  src: url('../src/assets/fonts/bruce-forever-font/BruceForeverRegular-X3jd2.ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+
+@font-face {
+  font-family: glue-gun;
+  src: url('../src/assets/fonts/glue-gun-font/GlueGun-GW8Z.ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}

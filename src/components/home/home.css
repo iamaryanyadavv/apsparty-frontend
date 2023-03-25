@@ -1,0 +1,117 @@
+.landing-main{
+    width: 100%;
+    height: 90vh
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text{
+    position: absolute;
+    top: 76px;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.landing-overlay{
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.nextui-collapse-title-content h3{
+    font-size:medium !important;
+}
+
+
+.regcards-main {
+    position: relative;
+}
+
+.regcards-main:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-image: url('../../assets/images/ClubLights1.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+.regcards-bg{
+    position: relative;
+    border-color: white !important;
+    border-width: 5px;
+    padding-bottom: 80px;
+    margin: 20px 0px 20px 0px
+}
+
+.info1-main {
+    position: relative;
+}
+
+.info1-main:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-image: url('../../assets/images/ClubLights2 2.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+  
+.info1-bg{
+    position: relative;
+    border-color: white !important;
+    border-width: 5px;
+    padding-bottom: 80px;
+    margin: 0px 0px 0px 20px
+}
+
+.faq-main {
+    position: relative;
+}
+
+.faq-main:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.25;
+    background-image: url('../../assets/images/NeonSign1.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+  
+.faq-bg{
+    position: relative;
+    border-color: white !important;
+    border-width: 5px;
+    padding-bottom: 80px;
+    margin: 20px 0px 0px 0px
+}
