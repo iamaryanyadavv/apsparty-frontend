@@ -1,9 +1,9 @@
 import React from "react";
-import { Grid, Text, Image, Col } from "@nextui-org/react";
+import { Grid, Text, Col } from "@nextui-org/react";
 import { IoIosPeople } from "react-icons/io";
-import { MdOutlineNoiseAware } from "react-icons/md";
 import { BsController } from "react-icons/bs";
 import { GiThreeFriends } from "react-icons/gi";
+import { FaYinYang } from "react-icons/fa";
 
 export default function Info(){
     return(
@@ -111,7 +111,7 @@ export default function Info(){
                                 textAlign: 'center',
                                 padding: '15px'
                             }}>
-                                <MdOutlineNoiseAware color="#F5A524" size={60} />
+                                <FaYinYang color="#F5A524" size={50} />
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',

@@ -39,7 +39,7 @@ export default function RegCards(){
                             textAlign: 'center',
                             '@xsMin':{
                                 fontSize: '$lg',
-                                padding: '0px 250px',
+                                padding: '0px 250px 40px 250px',
                             },
                             '@xsMax':{
                                 fontSize: '$sm',
@@ -47,14 +47,14 @@ export default function RegCards(){
                             },
                             color: '$gray900'
                         }}>
-                            Find list of all upcoming tournaments below. Click on the card of whichever event you wish to register for or wish to know more about.
+                            Find list of all upcoming tournaments below. Click on the card of whichever event you wish to register for or know more about.
                         </Text>
 
                         {/* FIFA */}
                         <Grid
                         css={{
                             '@xsMin':{
-                            padding: '60px 90px'  
+                            padding: '48px 90px'  
                             },
                             '@xsMax':{
                                 padding: '24px 12px'  
@@ -74,7 +74,7 @@ export default function RegCards(){
                                 <Card.Body css={{ p: 0 }}>
                                     <Card.Image 
                                     css={{
-                                        opacity: '0.5'
+                                        opacity: '0.75'
                                     }}
                                         src={FIFA}
                                         width="100%"
@@ -113,11 +113,11 @@ export default function RegCards(){
                                         </Text>
                                         <Text
                                         css={{
-                                            color: '$gray800',
+                                            color: '$gray900',
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
                                             '@xsMin':{
-                                                fontSize: '@xs'
+                                                fontSize: '0.75rem'
                                             },
                                             '@xsMax':{
                                                 fontSize: '0.70rem'
@@ -158,7 +158,7 @@ export default function RegCards(){
                         <Grid
                         css={{
                             '@xsMin':{
-                            padding: '60px 90px'  
+                            padding: '48px 90px'  
                             },
                             '@xsMax':{
                                 padding: '24px 12px'  
@@ -178,7 +178,7 @@ export default function RegCards(){
                                 <Card.Body css={{ p: 0 }}>
                                     <Card.Image 
                                     css={{
-                                        opacity: '0.5'
+                                        opacity: '0.75'
                                     }}
                                         src={COD}
                                         width="100%"
@@ -217,11 +217,11 @@ export default function RegCards(){
                                         </Text>
                                         <Text
                                         css={{
-                                            color: '$gray800',
+                                            color: '$gray900',
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
                                             '@xsMin':{
-                                                fontSize: '@xs'
+                                                fontSize: '0.75rem'
                                             },
                                             '@xsMax':{
                                                 fontSize: '0.70rem'
@@ -262,7 +262,7 @@ export default function RegCards(){
                         <Grid
                         css={{
                             '@xsMin':{
-                            padding: '60px 90px'  
+                            padding: '48px 90px'  
                             },
                             '@xsMax':{
                                 padding: '24px 12px'  
@@ -282,7 +282,7 @@ export default function RegCards(){
                                 <Card.Body css={{ p: 0 }}>
                                     <Card.Image 
                                     css={{
-                                        opacity: '0.5'
+                                        opacity: '0.75'
                                     }}
                                         src={NBA}
                                         width="100%"
@@ -321,17 +321,17 @@ export default function RegCards(){
                                         </Text>
                                         <Text
                                         css={{
-                                            color: '$gray800',
+                                            color: '$gray900',
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
                                             '@xsMin':{
-                                                fontSize: '@xs'
+                                                fontSize: '0.75rem'
                                             },
                                             '@xsMax':{
                                                 fontSize: '0.70rem'
                                             }
                                         }}>
-                                            Watch me break your ankles
+                                            Watch me break your ankles.
                                         </Text>
                                         <Grid.Container gap={1}
                                         css={{
@@ -366,7 +366,7 @@ export default function RegCards(){
                         <Grid
                         css={{
                             '@xsMin':{
-                            padding: '60px 90px'  
+                            padding: '48px 90px'  
                             },
                             '@xsMax':{
                                 padding: '24px 12px'  
@@ -386,7 +386,7 @@ export default function RegCards(){
                                 <Card.Body css={{ p: 0 }}>
                                     <Card.Image 
                                     css={{
-                                        opacity: '0.5'
+                                        opacity: '0.75'
                                     }}
                                         src={RL}
                                         width="100%"
@@ -425,11 +425,11 @@ export default function RegCards(){
                                         </Text>
                                         <Text
                                         css={{
-                                            color: '$gray800',
+                                            color: '$gray900',
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
                                             '@xsMin':{
-                                                fontSize: '@xs'
+                                                fontSize: '0.75rem'
                                             },
                                             '@xsMax':{
                                                 fontSize: '0.70rem'
@@ -464,6 +464,7 @@ export default function RegCards(){
                                     </Col>
                                 </Card.Footer>
                             </Card>
+                            
                         </Grid>
 
                     </Grid.Container>

@@ -11,18 +11,21 @@ function Footer(){
                 alignItems: 'center',
                 borderStyle: 'solid',
                 borderColor: '$gray600',
-                borderWidth: '1px 0px 0px 0px'
+                borderWidth: '1px 0px 0px 0px',
+                fontFamily:'bruce-forever'
             }}>
                 <Text hideIn={'xs'}
                 css={{
                     padding: '1% 0.35%',
-                    fontSize: '$normal'
+                    fontSize: '$normal',
+                    fontFamily:'bruce-forever'
                 }}>
                     Made with 🤍 by
                 </Text>
                 <Text showIn={'xs'}
                 css={{
                     padding: '1%',
+                    fontFamily:'bruce-forever'
                 }}>
                     By
                 </Text>

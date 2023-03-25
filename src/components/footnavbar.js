@@ -52,7 +52,7 @@ export default function FootNavbar () {
                         css={{
                             padding: '12px'
                         }}>
-                            <Link css={{color: 'White'}} href="/">
+                            <Link css={{color: 'White', fontFamily:'bruce-forever'}} href="/">
                                 Home 🏠
                             </Link>
                         </Grid>
@@ -60,7 +60,7 @@ export default function FootNavbar () {
                         css={{
                             padding: '12px'
                         }}>
-                            <Link css={{color: 'White'}} href="/fifa" >
+                            <Link css={{color: 'White',fontFamily:'bruce-forever'}} href="/fifa" >
                                 FIFA ⚽️
                             </Link>
                         </Grid>
@@ -68,7 +68,7 @@ export default function FootNavbar () {
                         css={{
                             padding: '12px'
                         }}>
-                            <Link css={{color: 'White'}} href="/cod" >
+                            <Link css={{color: 'White',fontFamily:'bruce-forever'}} href="/cod" >
                                 COD 🔪
                             </Link>
                         </Grid>
@@ -76,7 +76,7 @@ export default function FootNavbar () {
                         css={{
                             padding: '12px'
                         }}>
-                            <Link css={{color: 'White'}} href="/nba" >
+                            <Link css={{color: 'White',fontFamily:'bruce-forever'}} href="/nba" >
                                 NBA 🏀
                             </Link>
                         </Grid>
@@ -98,7 +98,7 @@ export default function FootNavbar () {
                         css={{
                             padding: '12px'
                         }}>
-                            <Link css={{color: 'White'}} href="/rocketleague">
+                            <Link css={{color: 'White',fontFamily:'bruce-forever'}} href="/rocketleague">
                                 Rocket League 🚀
                             </Link>
                         </Grid>
@@ -106,7 +106,7 @@ export default function FootNavbar () {
                         css={{
                             padding: '12px'
                         }}>
-                            <Link css={{color: 'White'}} href="/ps4rent">
+                            <Link css={{color: 'White',fontFamily:'bruce-forever'}} href="/ps4rent">
                                 Rent A PS4 🎮
                             </Link>
                         </Grid>
@@ -114,7 +114,7 @@ export default function FootNavbar () {
                         css={{
                             padding: '12px'
                         }}>
-                            <Link css={{color: 'White'}} href="/about" >
+                            <Link css={{color: 'White',fontFamily:'bruce-forever'}} href="/about" >
                                 About 🧩
                             </Link>
                         </Grid>

@@ -17,16 +17,16 @@ function Header() {
     var active = window.location.pathname
 
     return(
-      <Navbar className="navbar" variant="static">
+      <Navbar css={{width: '100%'}} className="navbar" variant="static">
         <Navbar.Toggle color="inherit" showIn="sm" />
         <Navbar.Brand hideIn="sm">
           <Text>
             APP
           </Text>
         </Navbar.Brand>
-        <Navbar.Content activeColor={'error'} hideIn="sm" variant="highlight-rounded">
+        <Navbar.Content activeColor={'error'} enableCursorHighlight hideIn="sm" variant="highlight-rounded">
         {items.map((item, index) => (
-            <Navbar.Link key={index} isActive={item.href===active.substring(0,item.href.length+1)} href={item.href}>
+            <Navbar.Link css={{fontFamily: 'bruce-forever'}} key={index} isActive={item.href===active.substring(0,item.href.length+1)} href={item.href}>
               {item.name}
             </Navbar.Link>
           ))}
@@ -50,6 +50,7 @@ function Header() {
             <Link href={item.href} color="inherit" 
               css={{
                 minWidth: "100%",
+                fontFamily: 'bruce-forever'
               }}
             >
               {item.name}
