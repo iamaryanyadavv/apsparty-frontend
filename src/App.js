@@ -37,16 +37,16 @@ function App() {
                 <Route exact path="/" element={<Home/>} />
 
                 <Route exact path="/fifa" element={<FIFAPage/>} />
-                <Route exact path="/fifa/otat" element={<FIFAOTATPage/>} />
+                {/* <Route exact path="/fifa/otat" element={<FIFAOTATPage/>} /> */}
 
                 <Route exact path="/cod" element={<CODPage/>} />
                 <Route exact path="/cod/otat" element={<CODOTATPage/>} />
 
                 <Route exact path="/rocketleague" element={<RLPage/>} />
-                <Route exact path="/rocketleague/otat" element={<RLOTATPage/>} />
+                {/* <Route exact path="/rocketleague/otat" element={<RLOTATPage/>} /> */}
 
                 <Route exact path="/nba" element={<NBAPage/>} />
-                <Route exact path="/nba/otat" element={<NBAOTATPage/>} />
+                {/* <Route exact path="/nba/otat" element={<NBAOTATPage/>} /> */}
 
                 <Route exact path="/about" element={<About/>} />
                 

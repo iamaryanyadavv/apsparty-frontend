@@ -44,34 +44,7 @@ export default function FAQs(){
                         }}>
                             Here you can find Frequently Asked Questions (FAQs). 
                             We hope these help you clarify some of the doubts, if any, in your mind. 
-                            If still doubtful please reach out to us at 
-                                <Text 
-                                css={{
-                                    fontFamily: 'bruce-forever', 
-                                    color: 'white',
-                                    '@xsMax':{
-                                        fontSize: '$xs'
-                                    },
-                                    '@xsMin':{
-                                        fontSize: '$md'
-                                    }
-                                }}> 
-                                    aryan.yadav_ug23@ashoka.edu.in  
-                                </Text> 
-                            or 
-                                <Text 
-                                css={{
-                                    fontFamily: 'bruce-forever', 
-                                    color: 'white',
-                                    '@xsMax':{
-                                        fontSize: '$xs'
-                                    },
-                                    '@xsMin':{
-                                        fontSize: '$md'
-                                    }
-                                }}> 
-                                    krishna.rengaraj_ug23@ashoka.edu.in  
-                                </Text>
+                            If still doubtful please reach out to us at ashokaplaystationparty@gmail.com
                         </Text>
 
                         {/* Left Side */}

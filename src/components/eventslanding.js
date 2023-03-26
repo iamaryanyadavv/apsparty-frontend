@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Text, Col, Card, Button, Popover } from "@nextui-org/react";
 
 export default function EventsLanding(props){
+
     return(
         <div>
             {/* Page Heading */}
@@ -151,6 +152,7 @@ export default function EventsLanding(props){
                                             css={{
                                                 paddingTop: '10px'
                                             }}>
+                                                {props.OTATpopover==='no' &&
                                                 <Button shadow rounded bordered auto color={'defualt'}
                                                 onPress={()=>{
                                                     window.location.pathname=props.OTAThref
@@ -164,6 +166,34 @@ export default function EventsLanding(props){
                                                         Register
                                                     </Text>
                                                 </Button>
+                                                }
+                                                {props.OTATpopover==='yes' &&
+                                                <Popover>
+                                                    <Popover.Trigger>
+                                                        <Button shadow rounded bordered auto color={'defualt'}>
+                                                            <Text
+                                                            css={{
+                                                                fontFamily: 'bruce-forever',
+                                                                color: 'White',
+                                                                fontSize: '$xs'
+                                                            }}>
+                                                                Register
+                                                            </Text>
+                                                        </Button>
+                                                    </Popover.Trigger>
+                                                    <Popover.Content>
+                                                        <Text
+                                                        css={{
+                                                            fontFamily: 'bruce-forever',
+                                                            color: 'White',
+                                                            fontSize: '$sm',
+                                                            padding: '12px'
+                                                        }}>
+                                                            Coming Soon!
+                                                        </Text>
+                                                    </Popover.Content>
+                                                </Popover>
+                                                }
                                             </Grid>
                                         </Grid.Container>
                                     </Col>
@@ -256,6 +286,22 @@ export default function EventsLanding(props){
                                             css={{
                                                 paddingTop: '10px'
                                             }}>
+                                                {props.OTATpopover==='no' &&
+                                                <Button shadow rounded bordered auto color={'defualt'}
+                                                onPress={()=>{
+                                                    window.location.pathname=props.OTALhref
+                                                }}>
+                                                    <Text
+                                                    css={{
+                                                        fontFamily: 'bruce-forever',
+                                                        color: 'White',
+                                                        fontSize: '$xs'
+                                                    }}>
+                                                        Register
+                                                    </Text>
+                                                </Button>
+                                                }
+                                                {props.OTATpopover==='yes' &&
                                                 <Popover>
                                                     <Popover.Trigger>
                                                         <Button shadow rounded bordered auto color={'defualt'}>
@@ -281,6 +327,7 @@ export default function EventsLanding(props){
                                                         </Text>
                                                     </Popover.Content>
                                                 </Popover>
+                                                }
                                             </Grid>
                                         </Grid.Container>
                                     </Col>
@@ -373,6 +420,22 @@ export default function EventsLanding(props){
                                             css={{
                                                 paddingTop: '10px'
                                             }}>
+                                                {props.OTATpopover==='no' &&
+                                                <Button shadow rounded bordered auto color={'defualt'}
+                                                onPress={()=>{
+                                                    window.location.pathname=props.EThref
+                                                }}>
+                                                    <Text
+                                                    css={{
+                                                        fontFamily: 'bruce-forever',
+                                                        color: 'White',
+                                                        fontSize: '$xs'
+                                                    }}>
+                                                        Register
+                                                    </Text>
+                                                </Button>
+                                                }
+                                                {props.OTATpopover==='yes' &&
                                                 <Popover>
                                                     <Popover.Trigger>
                                                         <Button shadow rounded bordered auto color={'defualt'}>
@@ -398,6 +461,7 @@ export default function EventsLanding(props){
                                                         </Text>
                                                     </Popover.Content>
                                                 </Popover>
+                                                }
                                             </Grid>
                                         </Grid.Container>
                                     </Col>

@@ -6,7 +6,7 @@ import RLET from '../assets/images/cardspictures/rl2.jpg'
 export default function RLPage(){
     return(
         <div>
-            <EventsLanding heading='Rocket League 🚀' OTAL='no' OTATimage={RLOTAT} OTAThref='/rocketleague/otat' ETimage={RLET} EThref='/rocketleague/et'/>
+            <EventsLanding OTATpopover='yes' ETpopover='yes' heading='Rocket League 🚀' OTAL='no' OTATimage={RLOTAT} OTAThref='/rocketleague/otat' ETimage={RLET} EThref='/rocketleague/et'/>
         </div>
     )
 }

@@ -1,0 +1,10 @@
+EventsLanding props = heading, OTAL ('yes' or 'no'), OTALimage, ETimage, OTALimage, OTAThref, EThref, OTALhref, OTATpopover, OTALpopover, ETpopver
+
+text gradients -
+
+"45deg, $green600 40%, $green800 100%" Green (Fifa)
+'45deg, #388EE9 20%, #09EBEE 100%' Blue (COD)
+"45deg, $yellow600 40%, $yellow800 100%" Yellow (NBA)
+"45deg, $purple600 -20%, $pink600 100%" Purple (RL)
+"45deg, $red600 50%, $red800 100%" Red
+

@@ -6,7 +6,7 @@ import CODET from '../assets/images/cardspictures/codbo31.jpg'
 export default function CODPage(){
     return(
         <div>
-            <EventsLanding heading='COD 🔪' OTAL='no' OTATimage={CODOTAT} OTAThref='/cod/otat' ETimage={CODET} EThref='/cod/et'/>
+            <EventsLanding OTATpopover='no' ETpopover='yes' heading='COD 🔪' OTAL='no' OTATimage={CODOTAT} OTAThref='/cod/otat' ETimage={CODET} EThref='/cod/et'/>
         </div>
     )
 }
