@@ -87,8 +87,10 @@ export default function CODTourneyPage(){
 
     const [RegisteredData, setRegisteredData] = useState()
 
+    //http://localhost:3001 https://appapi-eln1.onrender.com
+
     const getRegisteredData = async () => {
-        await fetch('http://localhost:3001/cod/otat')
+        await fetch('https://appapi-eln1.onrender.com/cod/otat')
         .then(response=>response.json())
         .then(data=>{
             if(data.values){
@@ -98,28 +100,29 @@ export default function CODTourneyPage(){
     }
 
     const getRegisteredPlayersEmail1Data= async (userObject) =>{
-        await fetch('http://localhost:3001/cod/otat/emails1')
+        await fetch('https://appapi-eln1.onrender.com/cod/otat/emails1') 
         .then(response=>response.json())
         .then((data)=>{
-            getRegisteredPlayersEmail2Data(userObject, data.values)
+            getRegisteredPlayersEmail2Data(userObject, data)
         })
     } 
 
-    const getRegisteredPlayersEmail2Data = async (userObject, emails1)=>{
-        await fetch('http://localhost:3001/cod/otat/emails2')
+    const getRegisteredPlayersEmail2Data = async (userObject, data1)=>{
+        await fetch('https://appapi-eln1.onrender.com/cod/otat/emails2')
         .then(response=>response.json())
-        .then((data)=>{
+        .then((data2)=>{
             var emails = []
-            emails = emails1.flat().concat(data.values.flat())
-
+            if(data1.values && data2.values){
+                emails = data1.values.flat().concat(data2.values.flat())
+            }
             var isSignedin = false
-            if(emails)
+            if(emails.length!==0)
             {
-                if(emails1.length>=64)
+                if(emails.length>=64)
                 {
                     setIsRegFull(true)
                 }
-                else if(emails1.length<=63)
+                else if(emails.length<=63)
                 {
                     for(var i = 0; i < emails.length; i++){
                         if(userObject.email!=emails[i]){
@@ -149,7 +152,7 @@ export default function CODTourneyPage(){
                     }   
                 }
             }
-            else if(!emails){
+            else if(emails.length===0){
                 setLoginLoader(false);
                 setSignedIn(true)
                 setUser(userObject);
@@ -248,7 +251,7 @@ export default function CODTourneyPage(){
         if(teamName && participantone && participanttwo && participanttwoemail && participantoneemail && participantonephone && participanttwophone && participantonebatch && participanttwobatch && paymentSC && proficiency)
         { 
             console.log('Sending')
-            const res = await fetch('http://localhost:3001/cod/otat',{
+            const res = await fetch('https://appapi-eln1.onrender.com/cod/otat',{
             method: 'POST',
             headers:{"Content-type":"application/json"},
             body: JSON.stringify({
@@ -282,7 +285,7 @@ export default function CODTourneyPage(){
         const PaymentData = new FormData();
         PaymentData.append('file', paymentdata, paymentName);
         if(PaymentData){
-            await fetch('http://localhost:3001/cod',{
+            await fetch('https://appapi-eln1.onrender.com/cod',{
                 method: 'POST',
                 headers:{Value: "multipart/form-data"},
                 body: PaymentData
@@ -1181,8 +1184,8 @@ export default function CODTourneyPage(){
                                         }
                                     }}
                                     
-                                    width="200px" animated={true}  type='text' bordered status={participantonephoneStatus} disabled={!signedin} animated={'true'} 
-                                    placeholder='Phone Number' type='text' clearable required  />
+                                    width="200px" animated={true}  type='text' bordered status={participantonephoneStatus} disabled={!signedin}
+                                    placeholder='Phone Number' clearable required  />
                                 </Grid>
                                 <Grid
                                 css={{
