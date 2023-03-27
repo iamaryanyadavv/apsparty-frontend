@@ -1,7 +1,8 @@
 import React from "react";
-import { Navbar, Link, Popover, Button} from "@nextui-org/react";
+import { Navbar, Link, Popover, Button, Image} from "@nextui-org/react";
 import { Text } from "@nextui-org/react";
 import { FaInstagram } from 'react-icons/fa';
+import Logo from '../assets/images/Logo.jpg'
 
 function Header() {
     const items = [
@@ -20,9 +21,10 @@ function Header() {
       <Navbar css={{width: '100%'}} className="navbar" variant="static">
         <Navbar.Toggle color="inherit" showIn="sm" />
         <Navbar.Brand hideIn="sm">
-          <Text>
-            APP
-          </Text>
+          <Image css={{
+            width: '40px',
+            height: '40px'
+          }} src={Logo} />
         </Navbar.Brand>
         <Navbar.Content activeColor={'error'} enableCursorHighlight hideIn="sm" variant="highlight-rounded">
         {items.map((item, index) => (
@@ -54,9 +56,10 @@ function Header() {
 
         </Navbar.Content>
         <Navbar.Content showIn={'sm'}>
-            <Text>
-            APP
-          </Text>
+          <Image css={{
+            width: '40px',
+            height: '40px'
+          }} src={Logo} />
         </Navbar.Content>
         <Navbar.Content>
           <Link target="_blank" href="https://www.instagram.com/ashokaplaystationparty/">
