@@ -14,7 +14,7 @@ import About from './pages/about';
 import FootNavbar from './components/footnavbar';
 import Footer from './components/footer';
 import Home from './pages/home';
-
+import ComingSoon from './components/comingsoon/comingsoon'
 function App() {
 
   const theme = createTheme({
@@ -47,6 +47,8 @@ function App() {
 
                 <Route exact path="/nba" element={<NBAPage/>} />
                 {/* <Route exact path="/nba/otat" element={<NBAOTATPage/>} /> */}
+
+                <Route exact path="/ps4rent" element={<ComingSoon/>} />
 
                 <Route exact path="/about" element={<About/>} />
                 

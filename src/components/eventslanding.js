@@ -286,7 +286,7 @@ export default function EventsLanding(props){
                                             css={{
                                                 paddingTop: '10px'
                                             }}>
-                                                {props.OTATpopover==='no' &&
+                                                {props.OTALpopover==='no' &&
                                                 <Button shadow rounded bordered auto color={'defualt'}
                                                 onPress={()=>{
                                                     window.location.pathname=props.OTALhref
@@ -301,7 +301,7 @@ export default function EventsLanding(props){
                                                     </Text>
                                                 </Button>
                                                 }
-                                                {props.OTATpopover==='yes' &&
+                                                {props.OTALpopover==='yes' &&
                                                 <Popover>
                                                     <Popover.Trigger>
                                                         <Button shadow rounded bordered auto color={'defualt'}>
@@ -420,7 +420,7 @@ export default function EventsLanding(props){
                                             css={{
                                                 paddingTop: '10px'
                                             }}>
-                                                {props.OTATpopover==='no' &&
+                                                {props.ETpopover==='no' &&
                                                 <Button shadow rounded bordered auto color={'defualt'}
                                                 onPress={()=>{
                                                     window.location.pathname=props.EThref
@@ -435,7 +435,7 @@ export default function EventsLanding(props){
                                                     </Text>
                                                 </Button>
                                                 }
-                                                {props.OTATpopover==='yes' &&
+                                                {props.ETpopover==='yes' &&
                                                 <Popover>
                                                     <Popover.Trigger>
                                                         <Button shadow rounded bordered auto color={'defualt'}>
