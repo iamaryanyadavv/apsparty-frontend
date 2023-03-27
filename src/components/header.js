@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Link} from "@nextui-org/react";
+import { Navbar, Link, Popover, Button} from "@nextui-org/react";
 import { Text } from "@nextui-org/react";
 import { FaInstagram } from 'react-icons/fa';
 
@@ -26,9 +26,30 @@ function Header() {
         </Navbar.Brand>
         <Navbar.Content activeColor={'error'} enableCursorHighlight hideIn="sm" variant="highlight-rounded">
         {items.map((item, index) => (
-            <Navbar.Link css={{fontFamily: 'bruce-forever'}} key={index} isActive={item.href===active.substring(0,item.href.length+1)} href={item.href}>
-              {item.name}
-            </Navbar.Link>
+          item.name!=='Rent A PS4 🎮' 
+          ? 
+          <Navbar.Link css={{fontFamily: 'bruce-forever'}} key={index} isActive={item.href===active.substring(0,item.href.length+1)} href={item.href}>
+            {item.name}
+          </Navbar.Link>
+          : 
+          <Popover>
+              <Popover.Trigger>
+                <Navbar.Link css={{fontFamily: 'bruce-forever'}} key={6} >
+                  {item.name}
+                </Navbar.Link>
+              </Popover.Trigger>
+              <Popover.Content>
+                  <Text
+                  css={{
+                      fontFamily: 'bruce-forever',
+                      color: 'White',
+                      fontSize: '$sm',
+                      padding: '12px'
+                  }}>
+                      Coming Soon!
+                  </Text>
+              </Popover.Content>
+          </Popover>
           ))}
 
         </Navbar.Content>
@@ -38,7 +59,7 @@ function Header() {
           </Text>
         </Navbar.Content>
         <Navbar.Content>
-          <Link target="_blank" href="https://www.instagram.com/apl.ashoka/">
+          <Link target="_blank" href="https://www.instagram.com/ashokaplaystationparty/">
             <FaInstagram color="#F31260" size={'25px'} />
           </Link>
         </Navbar.Content>
@@ -47,15 +68,18 @@ function Header() {
         <Navbar.Collapse showIn={"sm"}>
         {items.map((item, index) => (
           <Navbar.CollapseItem key={index} activeColor='error' isActive={item.href===active.substring(0,item.href.length+1)}>
-            <Link href={item.href} color="inherit" 
-              css={{
-                minWidth: "100%",
-                fontFamily: 'bruce-forever'
-              }}
-            >
-              {item.name}
-            </Link>
+            
+              <Link href={item.href} color="inherit" 
+                css={{
+                  minWidth: "100%",
+                  fontFamily: 'bruce-forever'
+                }}
+              >
+                {item.name}
+              </Link>
+            
           </Navbar.CollapseItem>
+          
         ))}
           
         </Navbar.Collapse>
