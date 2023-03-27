@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Grid, Text, Col, Card, Button, Popover } from "@nextui-org/react";
 
 export default function EventsLanding(props){
@@ -189,7 +189,7 @@ export default function EventsLanding(props){
                                                             fontSize: '$sm',
                                                             padding: '12px'
                                                         }}>
-                                                            Coming Soon!
+                                                            Stay tuned. Coming soon!
                                                         </Text>
                                                     </Popover.Content>
                                                 </Popover>
@@ -323,7 +323,7 @@ export default function EventsLanding(props){
                                                             fontSize: '$sm',
                                                             padding: '12px'
                                                         }}>
-                                                            Coming Soon!
+                                                            Stay tuned. Coming soon!
                                                         </Text>
                                                     </Popover.Content>
                                                 </Popover>
@@ -457,7 +457,7 @@ export default function EventsLanding(props){
                                                             fontSize: '$sm',
                                                             padding: '12px'
                                                         }}>
-                                                            Coming Soon!
+                                                            Stay tuned. Coming soon!
                                                         </Text>
                                                     </Popover.Content>
                                                 </Popover>

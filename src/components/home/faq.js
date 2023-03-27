@@ -32,11 +32,11 @@ export default function FAQs(){
                             fontFamily: 'bruce-forever',
                             width: '100%',
                             textAlign: 'center',
-                            '@xsMin':{
+                            '@smMin':{
                                 fontSize: '$lg',
                                 padding: '0px 250px 30px 250px',
                             },
-                            '@xsMax':{
+                            '@smMax':{
                                 fontSize: '$sm',
                                 padding: '10px 20px'
                             },
@@ -59,43 +59,77 @@ export default function FAQs(){
                         }}>
                             <Collapse.Group css={{fontFamily: 'bruce-forever'}} splitted accordion={false}>
                                 <Collapse  title="How do I register?" expanded>
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                    You can find the upcoming tournament details in our latest emails, instagram posts or website news bar. Based on that you can register for that tournament from that game's page (accessible via navbar)
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="Number of tournaments organised every month?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        Currently, we plan on hosting one open-to-all tournament every two weeks though this could be changed with higher demand - we could go up to one every week.
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="Are inter-batch teams allowed?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        Yes, inter-batch duos/teams are allowed. You can team up with a junior or senior as long as they are a part of the student body at Ashoka.
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="How and when can my team be disqualified?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        Using unfair means, cheating, coercion and/or bullying fellow teams could result in the team being disqualified. Also, if the team shows up for their fixture later than the given time, they will have forfeited the game.
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="How do I know if my team was successfully registered?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        You can know if you're team is successfully registered only after we have confirmed your payments after registrations close. Until then you can add your name by filling the registration form and uploading a payment screenshot.
                                     </Text>
                                 </Collapse>
                             </Collapse.Group>
@@ -113,59 +147,107 @@ export default function FAQs(){
                         }}>
                             <Collapse.Group css={{fontFamily: 'bruce-forever'}} splitted accordion={false}>
                                 <Collapse title="How are the fixtures decided?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        Fixtures are automated. So, once the slots are completely filled the website automaticlaly configures 64 teams into 32 batches of 2 teams each. Hence, giving us our fixtures. We are working on seeding and should implement that soon enough, stay tuned for that!
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="Will I get a refund if I happen to back out?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        Yes, you will get a refund if you back out 24 hours before the tournament start time. So, the first game of the tournament is at 9 PM, Monday, you will get a refund if you have backed out before 9 AM, Monday. In order to get a refund you need to write to ashokapsparty@gmail.com stating you wish to back out, including: team name, your name, your email ID.
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="Can I register without an Ashoka email ID?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        No, you cannot. We are open only to Ashoka's student body.
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="What guarantee do I have of the prize money?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        We hope to build a trustworthy brand, one which you can call reliable. The prize money will be sent you via upi payment the very second the tournament ends.
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="What games and why?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        Currently, we have FIFA23, COD: BO3, NBA2k23 and Rocket League. We chose these games because they're easy to play with/against others in not just a 1v1 but also 2v2 or 4v4 in some cases. We hope to add more games to the collection if demand arises.
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="Does only the winner get rewarded?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        Hell no! We would not want that. In our tournaments, top 4-8 teams get rewarded not just the winners. We want to make it not just fun but also rewarding for as many people as possible!
                                     </Text>
                                 </Collapse>
+
                                 <Collapse title="What is an Elite Tournament & how do I enter?">
-                                    <Text>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat.
+                                    <Text
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        '@smMin':{
+                                            fontSize: '$sm'
+                                        },
+                                        '@smMax':{
+                                            fontSize:'0.75rem'
+                                        }
+                                    }}>
+                                        Elite Tournaments are invite-only tournaments - teams that win the Open-To-All tournaments automatically become 'Elites' and earn the chance to take part in the Elite Tournament. Higher buy-in, higher skill, higher cash-out, but also lesser teams, lesser risk, hence, higher chances of earning cash.
                                     </Text>
                                 </Collapse>
                             </Collapse.Group>

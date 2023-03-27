@@ -1,13 +1,14 @@
 import React from "react";
 import './home.css'
-import LandingVideo from '../../assets/images/LandingVideo3.mp4'
+import LandingVideo from '../../assets/images/LandingVideo.mp4'
+import LandingPoster from '../../assets/images/LandingPoster.jpg'
 import { Col, Text } from "@nextui-org/react";
 
 export default function Landing(){
     return(
         <div className="landing-main">
             <div className="landing-overlay"></div>
-            <video src={LandingVideo} autoPlay loop muted />
+            <video src={LandingVideo} autoPlay loop muted poster={LandingPoster}/>
             <div className="text">
                 <Col>
                     <Text

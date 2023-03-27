@@ -7,6 +7,8 @@ import Format from '../assets/images/tournament.png'
 import Cash from '../assets/images/money.png'
 import GoldMedal from '../assets/images/gold-medal.png'
 import SilverMedal from '../assets/images/silver-medal.png'
+import BronzeMedal from '../assets/images/bronze-medal.png'
+import RestMedal from '../assets/images/podium.png'
 import Schedule from '../assets/images/schedule.png'
 import Time from '../assets/images/clock.png'
 import Location from '../assets/images/placeholder.png'
@@ -95,6 +97,8 @@ export default function CODTourneyPage(){
         .then(response=>response.json())
         .then(data=>{
             if(data.values){
+                console.log(data.values)
+                console.log(data.values.length)
                 setRegisteredData(data.values)
             }
         })
@@ -117,13 +121,17 @@ export default function CODTourneyPage(){
                 emails = data1.values.flat().concat(data2.values.flat())
             }
             var isSignedin = false
+            console.log(data1.values)
+            console.log(data2.values)
+            console.log(emails)
+            console.log(emails.length)
             if(emails.length!==0)
             {
-                if(emails.length>=64)
+                if(emails.length>=128)
                 {
                     setIsRegFull(true)
                 }
-                else if(emails.length<=63)
+                else if(emails.length<=127)
                 {
                     for(var i = 0; i < emails.length; i++){
                         if(userObject.email!=emails[i]){
@@ -249,9 +257,19 @@ export default function CODTourneyPage(){
 
     async function sendForm(e)
     {
-        if(teamName && participantone && participanttwo && participanttwoemail && participantoneemail && participantonephone && participanttwophone && participantonebatch && participanttwobatch && paymentSC && proficiency)
+        var registereddata = []
+        await fetch('https://appapi-eln1.onrender.com/cod/otat')
+        .then(response=>response.json())
+        .then(data=>{
+            if(data.values){
+                registereddata.push(data.values)
+            }
+        })
+        console.log(registereddata[0])
+        console.log(registereddata[0].length)
+        if( registereddata[0].length<64 && teamName && participantone && participanttwo && participanttwoemail && participantoneemail && participantonephone && participanttwophone && participantonebatch && participanttwobatch && paymentSC && proficiency)
         { 
-            console.log('Sending')
+            console.log('Sending your data, chill bro')
             const res = await fetch('https://appapi-eln1.onrender.com/cod/otat',{
             method: 'POST',
             headers:{"Content-type":"application/json"},
@@ -267,16 +285,20 @@ export default function CODTourneyPage(){
                 participanttwobatch: participanttwobatch,
                 proficiency: proficiency
             })
-        })
-        if (res.status===200){
-            setLoadingModal(false)
-            setRegSuccessStatus(true)
+            })
+            if (res.status===200){
+                setLoadingModal(false)
+                setRegSuccessStatus(true)
+            }
+            else{
+                setLoadingModal(false)
+                setRegErrorStatus(true)
+            }
         }
         else{
+            console.log('Sorry but resgitrations are complete. No. of teams: '+RegisteredData.length)
             setLoadingModal(false)
-            setRegErrorStatus(true)
-            
-        }
+            setIsRegFull(true)
         }
     }
 
@@ -717,7 +739,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Total prize pool - 8,000.
+                                            Total prize pool - 11k
                                         </Text>  
                                     </Row>
                                     <Row>
@@ -736,7 +758,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Winners - 5k
+                                            Winners - 4.5k
                                         </Text>
                                     </Row>
                                     <Row>
@@ -755,7 +777,45 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Runners Up - 3k
+                                            Runners Up - 2.5k
+                                        </Text>
+                                    </Row>
+                                    <Row>
+                                        <img src={BronzeMedal} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            3rd & 4th Place - 1k each
+                                        </Text>
+                                    </Row>
+                                    <Row>
+                                        <img src={RestMedal} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            5th, 6th, 7th & 8th Place - 500 each
                                         </Text>
                                     </Row>
                                 </Col>
