@@ -26,6 +26,7 @@ export default function Landing(){
                     }}>
                         Welcome To The Party
                     </Text>
+                    
                     <Text
                     css={{
                         fontFamily: 'bruce-forever',
