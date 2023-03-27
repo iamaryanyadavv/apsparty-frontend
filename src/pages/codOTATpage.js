@@ -309,7 +309,7 @@ export default function CODTourneyPage(){
         setLoginLoader(true)
         window.setTimeout(()=>{
             window.google.accounts.id.initialize({
-                client_id: "307601456989-3visvqebfkepaqi9b86e95pgn6bd8qfb.apps.googleusercontent.com",
+                client_id: "532591952056-4jank4bub98j6l59t470dsfoc71h1gdv.apps.googleusercontent.com",
                 callback: handleCallbackresponse
             });
             
