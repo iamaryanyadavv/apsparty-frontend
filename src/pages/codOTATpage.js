@@ -7,8 +7,13 @@ import Format from '../assets/images/tournament.png'
 import Cash from '../assets/images/money.png'
 import GoldMedal from '../assets/images/gold-medal.png'
 import SilverMedal from '../assets/images/silver-medal.png'
-import Rules from '../assets/images/regulation.png'
 import Schedule from '../assets/images/schedule.png'
+import Time from '../assets/images/clock.png'
+import Location from '../assets/images/placeholder.png'
+import One from '../assets/images/number-1.png'
+import Two from '../assets/images/number-2.png'
+import Three from '../assets/images/number-3.png'
+import Team from '../assets/images/team.png'
 
 export default function CODTourneyPage(){
     const [PrevTourney, setPrevTourney] = useState(false)
@@ -75,10 +80,6 @@ export default function CODTourneyPage(){
 
     const [paymentSC, setPaymentSC] = useState();
     const [paymentSCUploaded, setPaymentSCUploaded] = useState();
-
-    const [finalImage, setFinalImage] = useState();
-
-    const [RegStatusModal, setRegStatusModal] = useState(false);
 
     const [RegSuccessStatus, setRegSuccessStatus] = useState(false);
     const [RegErrorStatus, setRegErrorStatus] = useState(false);
@@ -417,6 +418,7 @@ export default function CODTourneyPage(){
 
         {UpcomingTourney && !PrevTourney && 
         <>
+            {/* Details */}
             <Grid.Container 
             css={{
                 jc: 'center',
@@ -517,7 +519,7 @@ export default function CODTourneyPage(){
                                     css={{
                                         fontFamily: 'bruce-forever',
                                         '@smMin':{
-                                            fontSize: '$lg',
+                                            fontSize: '$md',
                                             color: 'White',
                                             paddingTop: '10px'
                                         },
@@ -550,25 +552,68 @@ export default function CODTourneyPage(){
                                 }}>
                                     Time & Place
                                 </Text>
-                                <Row>
-                                    <img src={Schedule} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                    <Text 
-                                    css={{
-                                        fontFamily: 'bruce-forever',
-                                        '@smMin':{
-                                            fontSize: '$lg',
-                                            color: 'White',
-                                            paddingTop: '10px'
-                                        },
-                                        '@smMax':{
-                                            fontSize: '$xs',
-                                            paddingTop: '10px',
-                                            color: 'White',
-                                        },
-                                    }}>
-                                        9 PM - 12 AM. 3rd to 6th April, 2023. RH3 Common Room.
-                                    </Text>
-                                </Row>
+                                <Col
+                                css={{
+                                    marginBottom: '30px'
+                                }}>
+                                    <Row>
+                                        <img src={Time} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            9 PM to 12 AM
+                                        </Text>  
+                                    </Row>
+                                    <Row>
+                                        <img src={Schedule} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            3rd to 6th April, 2023
+                                        </Text>
+                                    </Row>
+                                    <Row>
+                                        <img src={Location} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            RH3 Common Room
+                                        </Text>
+                                    </Row>
+                                </Col>
                                 
                                 {/* Format */}
                                 <Text 
@@ -589,25 +634,49 @@ export default function CODTourneyPage(){
                                 }}>
                                     Format
                                 </Text>
-                                <Row>
-                                    <img src={Format} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                    <Text 
-                                    css={{
-                                        fontFamily: 'bruce-forever',
-                                        '@smMin':{
-                                            fontSize: '$lg',
-                                            color: 'White',
-                                            paddingTop: '10px'
-                                        },
-                                        '@smMax':{
-                                            fontSize: '$xs',
-                                            paddingTop: '10px',
-                                            color: 'White',
-                                        },
-                                    }}>
-                                        2v2. PS4. 64 team bracket. Straight knockouts. Let's go.
-                                    </Text>
-                                </Row>
+                                <Col
+                                css={{
+                                    marginBottom: '30px'
+                                }}>
+                                    <Row>
+                                        <img src={Team} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            Duos (2v2)
+                                        </Text>  
+                                    </Row>
+                                    <Row>
+                                        <img src={Format} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            64 team bracket. Straight knockouts.
+                                        </Text>
+                                    </Row>
+                                </Col>
 
                                 {/* Prizes */}
                                 <Text 
@@ -638,7 +707,7 @@ export default function CODTourneyPage(){
                                         css={{
                                             fontFamily: 'bruce-forever',
                                             '@smMin':{
-                                                fontSize: '$lg',
+                                                fontSize: '$md',
                                                 color: 'White',
                                                 paddingTop: '10px'
                                             },
@@ -648,7 +717,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Total prize pool - 10,000.
+                                            Total prize pool - 8,000.
                                         </Text>  
                                     </Row>
                                     <Row>
@@ -657,7 +726,7 @@ export default function CODTourneyPage(){
                                         css={{
                                             fontFamily: 'bruce-forever',
                                             '@smMin':{
-                                                fontSize: '$lg',
+                                                fontSize: '$md',
                                                 color: 'White',
                                                 paddingTop: '10px'
                                             },
@@ -676,7 +745,7 @@ export default function CODTourneyPage(){
                                         css={{
                                             fontFamily: 'bruce-forever',
                                             '@smMin':{
-                                                fontSize: '$lg',
+                                                fontSize: '$md',
                                                 color: 'White',
                                                 paddingTop: '10px'
                                             },
@@ -710,25 +779,69 @@ export default function CODTourneyPage(){
                                 }}>
                                     Rules
                                 </Text>
-                                <Row>
-                                    <img src={Rules} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                    <Text 
-                                    css={{
-                                        fontFamily: 'bruce-forever',
-                                        '@smMin':{
-                                            fontSize: '$lg',
-                                            color: 'White',
-                                            paddingTop: '10px'
-                                        },
-                                        '@smMax':{
-                                            fontSize: '$xs',
-                                            paddingTop: '10px',
-                                            color: 'White',
-                                        },
-                                    }}>
-                                        Routine TDM (Team Deathmatch), nothing fancy. Winner goes through to next knockout round. Any kind of cheating or usage of unfair means will have the duo banned from all APP Tournaments.
-                                    </Text>
-                                </Row>
+                                <Col
+                                css={{
+                                    marginBottom: '30px'
+                                }}>
+                                    <Row>
+                                        <img src={One} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            Routine TDM, nothing fancy. Winner goes through.
+                                        </Text>  
+                                    </Row>
+                                    <Row>
+                                        <img src={Two} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            Any kind or form of cheating will result in the team being banned from all APP tournaments.
+                                        </Text>
+                                    </Row>
+                                    <Row>
+                                        <img src={Three} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <Text 
+                                        css={{
+                                            fontFamily: 'bruce-forever',
+                                            '@smMin':{
+                                                fontSize: '$md',
+                                                color: 'White',
+                                                paddingTop: '10px'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$xs',
+                                                paddingTop: '10px',
+                                                color: 'White',
+                                            },
+                                        }}>
+                                            Showing up 2 minutes later than the fixture timing will result in a forfeit and the opposite team goes through. In case both teams are absent the team that shows up first goes through.
+                                        </Text>
+                                    </Row>
+                                </Col>
+
                             </Col>
                         </Grid>
 
@@ -739,6 +852,7 @@ export default function CODTourneyPage(){
                 </Grid>
             </Grid.Container>
 
+            {/* Registration Form */}
             <Grid.Container 
             css={{
                 jc: 'center',
@@ -2069,6 +2183,7 @@ export default function CODTourneyPage(){
                 </Grid>
             </Grid.Container>
     
+            {/* Registered Duos */}
             <Grid.Container 
             css={{
                 jc: 'center',
