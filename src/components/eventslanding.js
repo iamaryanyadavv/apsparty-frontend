@@ -158,8 +158,8 @@ export default function EventsLanding(props){
                                                 }}>
                                                     Open Tournament
                                                 </Text>
-                                                <Tooltip content={"These tournaments open-to-all, anyone can register! Pay the registration fee and boom, you're done! Huge prize pools for not just the winners but for top 8 teams!"}>
-                                                    <Image src={Question} width={20} height={20}/>
+                                                <Tooltip  content={"These tournaments open-to-all, anyone can register! Pay the registration fee and boom, you're done! Huge prize pools for not just the winners but for top 8 teams!"}>
+                                                    <Image css={{alignItems: 'center', marginTop: '0px'}} src={Question} width={15} height={15}/>
                                                 </Tooltip>
                                             </Row>
                                             <Text
@@ -330,7 +330,7 @@ export default function EventsLanding(props){
                                                     League
                                                 </Text>
                                                 <Tooltip content={"Tournaments too much for you? Don't worry, we got you! Month-long leagues where you can go easy and losing one game doesn't matter as much. @ fixtures every weekend, that's it! So easy!"}>
-                                                    <Image src={Question} width={20} height={20}/>
+                                                    <Image src={Question} width={15} height={15}/>
                                                 </Tooltip>
                                             </Row>
                                             <Text
@@ -501,7 +501,7 @@ export default function EventsLanding(props){
                                                     Elite Tournament
                                                 </Text>
                                                 <Tooltip content={"Tournaments for the sweats. Higher buy-in, higher rewards, lesser teams, lesser risk. If you win any Open-To-All tournament you will receive and invite for the elite tournament from us!"}>
-                                                    <Image src={Question} width={20} height={20}/>
+                                                    <Image src={Question} width={15} height={15}/>
                                                 </Tooltip>
                                             </Row>
                                             <Text
