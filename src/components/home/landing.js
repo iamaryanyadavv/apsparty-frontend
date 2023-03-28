@@ -8,7 +8,6 @@ import { Col, Text } from "@nextui-org/react";
 export default function Landing(){
     return(
         <div>
-            <NewsTicker/>
             <div className="landing-main">
                 <div className="landing-overlay"></div>
                 <video src={LandingVideo} autoPlay loop muted poster={LandingPoster}/>
