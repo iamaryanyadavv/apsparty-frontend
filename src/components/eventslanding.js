@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Text, Col, Card, Button, Popover } from "@nextui-org/react";
-
+import { Grid, Text, Col, Card, Button, Popover, Tooltip, Row, Image } from "@nextui-org/react";
+import Question from '../assets/images/question.png'
 export default function EventsLanding(props){
 
     return(
@@ -75,7 +75,7 @@ export default function EventsLanding(props){
                             '@xsMin':{
                             margin: '60px 36px',
                             width: "350px",
-                            height: "680px"
+                            height: "600px"
                             },
                             '@xsMax':{
                                 margin: '24px 12px',
@@ -96,11 +96,12 @@ export default function EventsLanding(props){
                                     '@xsMax':{
                                         fontSize: '$xs',
                                         paddingTop: '20px',
-                                        paddingBottom: '0px',
+                                        paddingBottom: '10px',
                                         color: '$gray900',
                                     }
                                 }}>
                                     Casual, fun, win money back in 3 wins? ↓
+                                    
                                 </Text>
                                 <Card 
                                 css={{ 
@@ -139,20 +140,28 @@ export default function EventsLanding(props){
                                             alignItems: 'center',
                                             jc: 'center'
                                         }}>
-                                            <Text 
-                                            css={{
-                                                textAlign: 'center',
-                                                '@xsMin':{
-                                                    fontSize: '$lg'
-                                                },
-                                                '@xsMax':{
-                                                    fontSize: '$md'
-                                                },
-                                                fontWeight: '$semibold',
-                                                fontFamily: 'bruce-forever'
-                                            }}>
-                                                Open Tournament
-                                            </Text>
+                                            <Row
+                                            css={{jc: 'center'}}>
+                                                <Text 
+                                                css={{
+                                                    textAlign: 'center',
+                                                    '@xsMin':{
+                                                        fontSize: '$lg',
+                                                        margin: '0px 5px 0px 0px'
+                                                    },
+                                                    '@xsMax':{
+                                                        fontSize: '$md'
+                                                    },
+                                                    fontWeight: '$semibold',
+                                                    fontFamily: 'bruce-forever',
+                                                    margin: '0px 2.5px 0px 0px'
+                                                }}>
+                                                    Open Tournament
+                                                </Text>
+                                                <Tooltip content={"These tournaments open-to-all, anyone can register! Pay the registration fee and boom, you're done! Huge prize pools for not just the winners but for top 8 teams!"}>
+                                                    <Image src={Question} width={20} height={20}/>
+                                                </Tooltip>
+                                            </Row>
                                             <Text
                                             css={{
                                                 color: '$gray900',
@@ -237,12 +246,12 @@ export default function EventsLanding(props){
                             '@xsMin':{
                             margin: '60px 36px',
                             width: "350px",
-                            height: "680px"
+                            height: "600px"
                             },
                             '@xsMax':{
                                 margin: '24px 12px',
-                                width: "350px",
-                                height: "616px"
+                                width: '300px',
+                                height: '616px'
                             },
                         }}>
                             <Col>
@@ -258,13 +267,13 @@ export default function EventsLanding(props){
                                     '@xsMax':{
                                         fontSize: '$xs',
                                         paddingTop: '20px',
-                                        paddingBottom: '0px',
+                                        paddingBottom: '10px',
                                         color: '$gray900',
                                     }
                                 }}>
-                                    Slow, chill, league, semester-long? ↓
+                                    Slow, chill, go-at-your-own-pace, month long leagues? ↓
+                                    
                                 </Text>
-
                                 <Card 
                                 css={{ 
                                     '@xsMin':{
@@ -302,26 +311,34 @@ export default function EventsLanding(props){
                                             alignItems: 'center',
                                             jc: 'center'
                                         }}>
-                                            <Text 
-                                            css={{
-                                                textAlign: 'center',
-                                                '@xsMin':{
-                                                    fontSize: '$lg'
-                                                },
-                                                '@xsMax':{
-                                                    fontSize: '$md'
-                                                },
-                                                fontWeight: '$semibold',
-                                                fontFamily: 'bruce-forever'
-                                            }}>
-                                                League
-                                            </Text>
+                                            <Row
+                                            css={{jc: 'center'}}>
+                                                <Text 
+                                                css={{
+                                                    textAlign: 'center',
+                                                    '@xsMin':{
+                                                        fontSize: '$lg',
+                                                        margin: '0px 5px 0px 0px'
+                                                    },
+                                                    '@xsMax':{
+                                                        fontSize: '$md'
+                                                    },
+                                                    fontWeight: '$semibold',
+                                                    fontFamily: 'bruce-forever',
+                                                    margin: '0px 2.5px 0px 0px'
+                                                }}>
+                                                    League
+                                                </Text>
+                                                <Tooltip content={"Tournaments too much for you? Don't worry, we got you! Month-long leagues where you can go easy and losing one game doesn't matter as much. @ fixtures every weekend, that's it! So easy!"}>
+                                                    <Image src={Question} width={20} height={20}/>
+                                                </Tooltip>
+                                            </Row>
                                             <Text
                                             css={{
                                                 color: '$gray900',
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
-                                lineHeight: '2',
+                                                lineHeight: '2',
                                                 '@xsMin':{
                                                     fontSize: '@xs'
                                                 },
@@ -343,12 +360,12 @@ export default function EventsLanding(props){
                                                     {props.OTALpopover==='no' &&
                                                     <Button shadow rounded bordered auto color={'defualt'}
                                                     onPress={()=>{
-                                                        window.location.pathname=props.OTALhref
+                                                        window.location.pathname=props.OTAThref
                                                     }}>
                                                         <Text
                                                         css={{
                                                             fontFamily: 'bruce-forever',
-                                lineHeight: '2',
+                                                            lineHeight: '2',
                                                             color: 'White',
                                                             fontSize: '$xs'
                                                         }}>
@@ -363,7 +380,7 @@ export default function EventsLanding(props){
                                                                 <Text
                                                                 css={{
                                                                     fontFamily: 'bruce-forever',
-                                lineHeight: '2',
+                                                                    lineHeight: '2',
                                                                     color: 'White',
                                                                     fontSize: '$xs'
                                                                 }}>
@@ -375,7 +392,7 @@ export default function EventsLanding(props){
                                                             <Text
                                                             css={{
                                                                 fontFamily: 'bruce-forever',
-                                lineHeight: '2',
+                                                                lineHeight: '2',
                                                                 color: 'White',
                                                                 fontSize: '$sm',
                                                                 padding: '12px'
@@ -400,7 +417,7 @@ export default function EventsLanding(props){
                             '@xsMin':{
                             margin: '60px 36px',
                             width: "350px",
-                            height: "680px"
+                            height: "600px"
                             },
                             '@xsMax':{
                                 margin: '24px 12px',
@@ -421,12 +438,13 @@ export default function EventsLanding(props){
                                     '@xsMax':{
                                         fontSize: '$xs',
                                         paddingTop: '20px',
-                                        paddingBottom: '0px',
+                                        paddingBottom: '10px',
                                         color: '$gray900',
                                     }
                                 }}>
                                     Higher stakes, higher rewards, sweats only? ↓
                                 </Text>
+                                
                                 <Card 
                                 css={{ 
                                     '@xsMin':{
@@ -464,20 +482,28 @@ export default function EventsLanding(props){
                                             alignItems: 'center',
                                             jc: 'center'
                                         }}>
-                                            <Text 
-                                            css={{
-                                                textAlign: 'center',
-                                                '@xsMin':{
-                                                    fontSize: '$lg'
-                                                },
-                                                '@xsMax':{
-                                                    fontSize: '$md'
-                                                },
-                                                fontWeight: '$semibold',
-                                                fontFamily: 'bruce-forever'
-                                            }}>
-                                                Elite Tournament
-                                            </Text>
+                                            <Row
+                                            css={{jc: 'center'}}>
+                                                <Text 
+                                                css={{
+                                                    textAlign: 'center',
+                                                    '@xsMin':{
+                                                        fontSize: '$lg',
+                                                        margin: '0px 5px 0px 0px'
+                                                    },
+                                                    '@xsMax':{
+                                                        fontSize: '$md'
+                                                    },
+                                                    fontWeight: '$semibold',
+                                                    fontFamily: 'bruce-forever',
+                                                    margin: '0px 2.5px 0px 0px'
+                                                }}>
+                                                    Elite Tournament
+                                                </Text>
+                                                <Tooltip content={"Tournaments for the sweats. Higher buy-in, higher rewards, lesser teams, lesser risk. If you win any Open-To-All tournament you will receive and invite for the elite tournament from us!"}>
+                                                    <Image src={Question} width={20} height={20}/>
+                                                </Tooltip>
+                                            </Row>
                                             <Text
                                             css={{
                                                 color: '$gray900',

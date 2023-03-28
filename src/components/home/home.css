@@ -11,7 +11,7 @@ video {
 
 .text{
     position: absolute;
-    top: 117.25px;
+    top: 112px;
     width: 100%;
     height: 90vh;
     display: flex;
@@ -23,7 +23,7 @@ video {
 
 .landing-overlay{
     position: absolute;
-    top: 118px;
+    top: 112px;
     left: 0;
     width: 100%;
     height: 90vh;

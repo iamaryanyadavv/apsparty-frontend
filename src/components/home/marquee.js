@@ -16,10 +16,11 @@ const NewsTicker = () => {
     >
       <p
         style={{
-          fontSize: '15px',
-          fontWeight: "500",
+          fontSize: '12px',
+          fontWeight: "100",
           paddingRight: '2px',
           paddingLeft: '2px',
+          fontFamily: 'bruce-forever'
         }}
       >
         WIN YOUR MONEY BACK IN 3 WINS! It's that easy. Upcoming Turnament: COD Open 1.0. Check out the COD page to register and hurry, only 64 spots!
