@@ -9,7 +9,6 @@ export default function Landing(){
     return(
         <div>
             <div className="landing-main">
-                <div className="landing-overlay"></div>
                 <video src={LandingVideo} autoPlay loop muted poster={LandingPoster}/>
                 <div className="text">
                     <Col>
