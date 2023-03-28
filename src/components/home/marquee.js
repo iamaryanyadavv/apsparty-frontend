@@ -1,3 +1,4 @@
+import { Text } from '@nextui-org/react';
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 const NewsTicker = () => {
@@ -14,7 +15,7 @@ const NewsTicker = () => {
       gradientColor={[255, 255, 255]}
       gradientWidth={'15%'}
     >
-      <p
+      {/* <p
         style={{
           fontSize: '15px',
           fontWeight: "600",
@@ -23,7 +24,19 @@ const NewsTicker = () => {
         }}
       >
         Upcoming Turnament: COD Open 1.0. Check out the COD page to register and hurry, only 64 spots! WIN YOUR MONEY BACK IN 3 WINS! It's that easy. 
-      </p>
+      </p> */}
+      <Text
+      css={{
+        fontSize: '15px',
+        paddingRight: '2px',
+        paddingLeft: '2px',
+        fontWeight: '600',
+        color: 'Black',
+      }}>
+        Upcoming Turnament: COD Open 1.0. 
+        Check out the COD page to register and hurry, only 64 spots! 
+        WIN YOUR MONEY BACK IN 3 WINS! It's that easy. 
+      </Text>
     </Marquee>
   );
 };
