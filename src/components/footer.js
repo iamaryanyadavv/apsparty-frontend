@@ -38,7 +38,13 @@ function Footer(){
                         Aryan Yadav
                     </Link>
                 </Row>
-                <Text>
+                <Text
+                css={{
+                    color: '$gray700',
+                    jc: 'center',
+                    textAlign: 'center',
+                    paddingBottom: '20px'
+                }}>
                     © 2023 Ashoka Playstation Party. All Rights Reserved.
                 </Text>
             </Col>
