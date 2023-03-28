@@ -30,7 +30,7 @@ const NewsTicker = () => {
         fontSize: '15px',
         paddingRight: '2px',
         paddingLeft: '2px',
-        fontWeight: '600',
+        fontWeight: '500',
         color: 'Black',
       }}>
         Upcoming Turnament: COD Open 1.0. 
