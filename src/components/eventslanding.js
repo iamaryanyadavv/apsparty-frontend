@@ -15,6 +15,7 @@ export default function EventsLanding(props){
                     <Text
                     css={{
                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                         '@xsMin':{
                             fontSize: '$5xl',
                             color: 'White',
@@ -44,7 +45,7 @@ export default function EventsLanding(props){
                             color: '$gray700',
                         }
                     }}>
-                        Pick your poison.
+                        Pick your poison 🧪
                     </Text>
                 </Col>
                 
@@ -72,133 +73,161 @@ export default function EventsLanding(props){
                         <Grid
                         css={{
                             '@xsMin':{
-                            padding: '60px 36px'  
+                            margin: '60px 36px',
+                            width: "350px",
+                            height: "680px"
                             },
                             '@xsMax':{
-                                padding: '24px 12px'  
+                                margin: '24px 12px',
+                                width: '300px',
+                                height: '616px'
                             },
                         }}>
-                            <Card 
-                            css={{ 
-                                '@xsMin':{
-                                    width: "350px",
-                                    height: "500px"
-                                },
-                                '@xsMax':{
-                                    width: '300px',
-                                    height: '500px'
-                                } 
-                                }}>
-                                <Card.Body css={{ p: 0 }}>
-                                    <Card.Image 
-                                    css={{
-                                        opacity: '0.75'
-                                    }}
-                                        src={props.OTATimage}
-                                        width="100%"
-                                        height="100%"
-                                        objectFit="cover"
-                                        alt="Card example background"
-                                    />
-                                </Card.Body>
-                                <Card.Footer isBlurred
+                            <Col>
+                                <Text
                                 css={{
-                                    position: "absolute",
-                                    bgBlur: "#ffffff05",
-                                    bottom: 0,
-                                    zIndex: 1,
-                                    jc: 'center',
-                                    alignItems: 'center'
-                                }}
-                                >
-                                    <Col css={{
-                                        alignItems: 'center',
-                                        jc: 'center'
+                                    fontFamily: 'bruce-forever',
+                                        lineHeight: '2',
+                                    '@xsMin':{
+                                        fontSize: '$md',
+                                        color: '$gray900',
+                                        paddingBottom: '20px'
+                                    },
+                                    '@xsMax':{
+                                        fontSize: '$xs',
+                                        paddingTop: '20px',
+                                        paddingBottom: '0px',
+                                        color: '$gray900',
+                                    }
+                                }}>
+                                    Casual, fun, chill, win money back in 3 wins? ↓
+                                </Text>
+                                <Card 
+                                css={{ 
+                                    '@xsMin':{
+                                        width: "350px",
+                                        height: "500px"
+                                    },
+                                    '@xsMax':{
+                                        width: '300px',
+                                        height: '500px'
+                                    } 
                                     }}>
-                                        <Text 
+                                    <Card.Body css={{ p: 0 }}>
+                                        <Card.Image 
                                         css={{
-                                            textAlign: 'center',
-                                            '@xsMin':{
-                                                fontSize: '$lg'
-                                            },
-                                            '@xsMax':{
-                                                fontSize: '$md'
-                                            },
-                                            fontWeight: '$semibold',
-                                            fontFamily: 'bruce-forever'
+                                            opacity: '0.75'
+                                        }}
+                                            src={props.OTATimage}
+                                            width="100%"
+                                            height="100%"
+                                            objectFit="cover"
+                                            alt="Card example background"
+                                        />
+                                    </Card.Body>
+                                    <Card.Footer isBlurred
+                                    css={{
+                                        position: "absolute",
+                                        bgBlur: "#ffffff05",
+                                        bottom: 0,
+                                        zIndex: 1,
+                                        jc: 'center',
+                                        alignItems: 'center'
+                                    }}
+                                    >
+                                        <Col css={{
+                                            alignItems: 'center',
+                                            jc: 'center'
                                         }}>
-                                            Tournament
-                                        </Text>
-                                        <Text
-                                        css={{
-                                            color: '$gray900',
-                                            textAlign: 'center',
-                                            fontFamily: 'bruce-forever',
-                                            '@xsMin':{
-                                                fontSize: '@xs'
-                                            },
-                                            '@xsMax':{
-                                                fontSize: '0.70rem'
-                                            }
-                                        }}>
-                                            Open-To-All!
-                                        </Text>
-                                        <Grid.Container gap={1}
-                                        css={{
-                                            jc: 'center',
-                                            paddingBottom: '1%'
-                                        }}>
-                                            <Grid
+                                            <Text 
                                             css={{
-                                                paddingTop: '10px'
+                                                textAlign: 'center',
+                                                '@xsMin':{
+                                                    fontSize: '$lg'
+                                                },
+                                                '@xsMax':{
+                                                    fontSize: '$md'
+                                                },
+                                                fontWeight: '$semibold',
+                                                fontFamily: 'bruce-forever'
                                             }}>
-                                                {props.OTATpopover==='no' &&
-                                                <Button shadow rounded bordered auto color={'defualt'}
-                                                onPress={()=>{
-                                                    window.location.pathname=props.OTAThref
-                                                }}>
-                                                    <Text
-                                                    css={{
-                                                        fontFamily: 'bruce-forever',
-                                                        color: 'White',
-                                                        fontSize: '$xs'
-                                                    }}>
-                                                        Register
-                                                    </Text>
-                                                </Button>
+                                                Open Tournament
+                                            </Text>
+                                            <Text
+                                            css={{
+                                                color: '$gray900',
+                                                textAlign: 'center',
+                                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                '@xsMin':{
+                                                    fontSize: '@xs'
+                                                },
+                                                '@xsMax':{
+                                                    fontSize: '0.70rem'
                                                 }
-                                                {props.OTATpopover==='yes' &&
-                                                <Popover>
-                                                    <Popover.Trigger>
-                                                        <Button shadow rounded bordered auto color={'defualt'}>
-                                                            <Text
-                                                            css={{
-                                                                fontFamily: 'bruce-forever',
-                                                                color: 'White',
-                                                                fontSize: '$xs'
-                                                            }}>
-                                                                Register
-                                                            </Text>
-                                                        </Button>
-                                                    </Popover.Trigger>
-                                                    <Popover.Content>
+                                            }}>
+                                                Open-To-All!
+                                            </Text>
+                                            <Grid.Container gap={1}
+                                            css={{
+                                                jc: 'center',
+                                                paddingBottom: '1%'
+                                            }}>
+                                                <Grid
+                                                css={{
+                                                    paddingTop: '10px'
+                                                }}>
+                                                    {props.OTATpopover==='no' &&
+                                                    <Button shadow rounded bordered auto color={'defualt'}
+                                                    onPress={()=>{
+                                                        window.location.pathname=props.OTAThref
+                                                    }}>
                                                         <Text
                                                         css={{
                                                             fontFamily: 'bruce-forever',
+                                lineHeight: '2',
                                                             color: 'White',
-                                                            fontSize: '$sm',
-                                                            padding: '12px'
+                                                            fontSize: '$xs'
                                                         }}>
-                                                            Stay tuned. Coming soon!
+                                                            Register
                                                         </Text>
-                                                    </Popover.Content>
-                                                </Popover>
-                                                }
-                                            </Grid>
-                                        </Grid.Container>
-                                    </Col>
-                                </Card.Footer>
-                            </Card>
+                                                    </Button>
+                                                    }
+                                                    {props.OTATpopover==='yes' &&
+                                                    <Popover>
+                                                        <Popover.Trigger>
+                                                            <Button shadow rounded bordered auto color={'defualt'}>
+                                                                <Text
+                                                                css={{
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    color: 'White',
+                                                                    fontSize: '$xs'
+                                                                }}>
+                                                                    Register
+                                                                </Text>
+                                                            </Button>
+                                                        </Popover.Trigger>
+                                                        <Popover.Content>
+                                                            <Text
+                                                            css={{
+                                                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                color: 'White',
+                                                                fontSize: '$sm',
+                                                                padding: '12px'
+                                                            }}>
+                                                                Stay tuned. Coming soon!
+                                                            </Text>
+                                                        </Popover.Content>
+                                                    </Popover>
+                                                    }
+                                                </Grid>
+                                            </Grid.Container>
+                                        </Col>
+                                    </Card.Footer>
+                                </Card>
+                            </Col>
                         </Grid>
 
                         {/* League */}
@@ -206,133 +235,162 @@ export default function EventsLanding(props){
                         <Grid
                         css={{
                             '@xsMin':{
-                            padding: '60px 36px'  
+                            margin: '60px 36px',
+                            width: "350px",
+                            height: "680px"
                             },
                             '@xsMax':{
-                                padding: '24px 12px'  
+                                margin: '24px 12px',
+                                width: "350px",
+                                height: "616px"
                             },
                         }}>
-                            <Card 
-                            css={{ 
-                                '@xsMin':{
-                                    width: "350px",
-                                    height: "500px"
-                                },
-                                '@xsMax':{
-                                    width: '300px',
-                                    height: '500px'
-                                } 
-                                }}>
-                                <Card.Body css={{ p: 0 }}>
-                                    <Card.Image 
-                                    css={{
-                                        opacity: '0.75'
-                                    }}
-                                        src={props.OTALimage}
-                                        width="100%"
-                                        height="100%"
-                                        objectFit="cover"
-                                        alt="Card example background"
-                                    />
-                                </Card.Body>
-                                <Card.Footer isBlurred
+                            <Col>
+                                <Text
                                 css={{
-                                    position: "absolute",
-                                    bgBlur: "#ffffff05",
-                                    bottom: 0,
-                                    zIndex: 1,
-                                    jc: 'center',
-                                    alignItems: 'center'
-                                }}
-                                >
-                                    <Col css={{
-                                        alignItems: 'center',
-                                        jc: 'center'
+                                    fontFamily: 'bruce-forever',
+                                        lineHeight: '2',
+                                    '@xsMin':{
+                                        fontSize: '$md',
+                                        color: '$gray900',
+                                        paddingBottom: '20px'
+                                    },
+                                    '@xsMax':{
+                                        fontSize: '$xs',
+                                        paddingTop: '20px',
+                                        paddingBottom: '0px',
+                                        color: '$gray900',
+                                    }
+                                }}>
+                                    Slow, chill, league, semester-long? ↓
+                                </Text>
+
+                                <Card 
+                                css={{ 
+                                    '@xsMin':{
+                                        width: "350px",
+                                        height: "500px"
+                                    },
+                                    '@xsMax':{
+                                        width: '300px',
+                                        height: '500px'
+                                    } 
                                     }}>
-                                        <Text 
+                                    <Card.Body css={{ p: 0 }}>
+                                        <Card.Image 
                                         css={{
-                                            textAlign: 'center',
-                                            '@xsMin':{
-                                                fontSize: '$lg'
-                                            },
-                                            '@xsMax':{
-                                                fontSize: '$md'
-                                            },
-                                            fontWeight: '$semibold',
-                                            fontFamily: 'bruce-forever'
+                                            opacity: '0.75'
+                                        }}
+                                            src={props.OTALimage}
+                                            width="100%"
+                                            height="100%"
+                                            objectFit="cover"
+                                            alt="Card example background"
+                                        />
+                                    </Card.Body>
+                                    <Card.Footer isBlurred
+                                    css={{
+                                        position: "absolute",
+                                        bgBlur: "#ffffff05",
+                                        bottom: 0,
+                                        zIndex: 1,
+                                        jc: 'center',
+                                        alignItems: 'center'
+                                    }}
+                                    >
+                                        <Col css={{
+                                            alignItems: 'center',
+                                            jc: 'center'
                                         }}>
-                                            League
-                                        </Text>
-                                        <Text
-                                        css={{
-                                            color: '$gray900',
-                                            textAlign: 'center',
-                                            fontFamily: 'bruce-forever',
-                                            '@xsMin':{
-                                                fontSize: '@xs'
-                                            },
-                                            '@xsMax':{
-                                                fontSize: '0.70rem'
-                                            }
-                                        }}>
-                                            Open-To-All!
-                                        </Text>
-                                        <Grid.Container gap={1}
-                                        css={{
-                                            jc: 'center',
-                                            paddingBottom: '1%'
-                                        }}>
-                                            <Grid
+                                            <Text 
                                             css={{
-                                                paddingTop: '10px'
+                                                textAlign: 'center',
+                                                '@xsMin':{
+                                                    fontSize: '$lg'
+                                                },
+                                                '@xsMax':{
+                                                    fontSize: '$md'
+                                                },
+                                                fontWeight: '$semibold',
+                                                fontFamily: 'bruce-forever'
                                             }}>
-                                                {props.OTALpopover==='no' &&
-                                                <Button shadow rounded bordered auto color={'defualt'}
-                                                onPress={()=>{
-                                                    window.location.pathname=props.OTALhref
-                                                }}>
-                                                    <Text
-                                                    css={{
-                                                        fontFamily: 'bruce-forever',
-                                                        color: 'White',
-                                                        fontSize: '$xs'
-                                                    }}>
-                                                        Register
-                                                    </Text>
-                                                </Button>
+                                                League
+                                            </Text>
+                                            <Text
+                                            css={{
+                                                color: '$gray900',
+                                                textAlign: 'center',
+                                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                '@xsMin':{
+                                                    fontSize: '@xs'
+                                                },
+                                                '@xsMax':{
+                                                    fontSize: '0.70rem'
                                                 }
-                                                {props.OTALpopover==='yes' &&
-                                                <Popover>
-                                                    <Popover.Trigger>
-                                                        <Button shadow rounded bordered auto color={'defualt'}>
-                                                            <Text
-                                                            css={{
-                                                                fontFamily: 'bruce-forever',
-                                                                color: 'White',
-                                                                fontSize: '$xs'
-                                                            }}>
-                                                                Register
-                                                            </Text>
-                                                        </Button>
-                                                    </Popover.Trigger>
-                                                    <Popover.Content>
+                                            }}>
+                                                Open-To-All!
+                                            </Text>
+                                            <Grid.Container gap={1}
+                                            css={{
+                                                jc: 'center',
+                                                paddingBottom: '1%'
+                                            }}>
+                                                <Grid
+                                                css={{
+                                                    paddingTop: '10px'
+                                                }}>
+                                                    {props.OTALpopover==='no' &&
+                                                    <Button shadow rounded bordered auto color={'defualt'}
+                                                    onPress={()=>{
+                                                        window.location.pathname=props.OTALhref
+                                                    }}>
                                                         <Text
                                                         css={{
                                                             fontFamily: 'bruce-forever',
+                                lineHeight: '2',
                                                             color: 'White',
-                                                            fontSize: '$sm',
-                                                            padding: '12px'
+                                                            fontSize: '$xs'
                                                         }}>
-                                                            Stay tuned. Coming soon!
+                                                            Register
                                                         </Text>
-                                                    </Popover.Content>
-                                                </Popover>
-                                                }
-                                            </Grid>
-                                        </Grid.Container>
-                                    </Col>
-                                </Card.Footer>
-                            </Card>
+                                                    </Button>
+                                                    }
+                                                    {props.OTALpopover==='yes' &&
+                                                    <Popover>
+                                                        <Popover.Trigger>
+                                                            <Button shadow rounded bordered auto color={'defualt'}>
+                                                                <Text
+                                                                css={{
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    color: 'White',
+                                                                    fontSize: '$xs'
+                                                                }}>
+                                                                    Register
+                                                                </Text>
+                                                            </Button>
+                                                        </Popover.Trigger>
+                                                        <Popover.Content>
+                                                            <Text
+                                                            css={{
+                                                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                color: 'White',
+                                                                fontSize: '$sm',
+                                                                padding: '12px'
+                                                            }}>
+                                                                Stay tuned. Coming soon!
+                                                            </Text>
+                                                        </Popover.Content>
+                                                    </Popover>
+                                                    }
+                                                </Grid>
+                                            </Grid.Container>
+                                        </Col>
+                                    </Card.Footer>
+                                </Card>
+                            </Col>
                         </Grid>
                         }
 
@@ -340,133 +398,161 @@ export default function EventsLanding(props){
                         <Grid
                         css={{
                             '@xsMin':{
-                            padding: '60px 36px'  
+                            margin: '60px 36px',
+                            width: "350px",
+                            height: "680px"
                             },
                             '@xsMax':{
-                                padding: '24px 12px'  
+                                margin: '24px 12px',
+                                width: '300px',
+                                height: '616px' 
                             },
                         }}>
-                            <Card 
-                            css={{ 
-                                '@xsMin':{
-                                    width: "350px",
-                                    height: "500px"
-                                },
-                                '@xsMax':{
-                                    width: '300px',
-                                    height: '500px'
-                                } 
-                                }}>
-                                <Card.Body css={{ p: 0 }}>
-                                    <Card.Image 
-                                    css={{
-                                        opacity: '0.75'
-                                    }}
-                                        src={props.ETimage}
-                                        width="100%"
-                                        height="100%"
-                                        objectFit="cover"
-                                        alt="Card example background"
-                                    />
-                                </Card.Body>
-                                <Card.Footer isBlurred
+                            <Col>
+                                <Text
                                 css={{
-                                    position: "absolute",
-                                    bgBlur: "#ffffff05",
-                                    bottom: 0,
-                                    zIndex: 1,
-                                    jc: 'center',
-                                    alignItems: 'center'
-                                }}
-                                >
-                                    <Col css={{
-                                        alignItems: 'center',
-                                        jc: 'center'
+                                    fontFamily: 'bruce-forever',
+                                        lineHeight: '2',
+                                    '@xsMin':{
+                                        fontSize: '$md',
+                                        color: '$gray900',
+                                        paddingBottom: '20px'
+                                    },
+                                    '@xsMax':{
+                                        fontSize: '$xs',
+                                        paddingTop: '20px',
+                                        paddingBottom: '0px',
+                                        color: '$gray900',
+                                    }
+                                }}>
+                                    Higher stakes, higher rewards, sweats only? ↓
+                                </Text>
+                                <Card 
+                                css={{ 
+                                    '@xsMin':{
+                                        width: "350px",
+                                        height: "500px"
+                                    },
+                                    '@xsMax':{
+                                        width: '300px',
+                                        height: '500px'
+                                    } 
                                     }}>
-                                        <Text 
+                                    <Card.Body css={{ p: 0 }}>
+                                        <Card.Image 
                                         css={{
-                                            textAlign: 'center',
-                                            '@xsMin':{
-                                                fontSize: '$lg'
-                                            },
-                                            '@xsMax':{
-                                                fontSize: '$md'
-                                            },
-                                            fontWeight: '$semibold',
-                                            fontFamily: 'bruce-forever'
+                                            opacity: '0.75'
+                                        }}
+                                            src={props.ETimage}
+                                            width="100%"
+                                            height="100%"
+                                            objectFit="cover"
+                                            alt="Card example background"
+                                        />
+                                    </Card.Body>
+                                    <Card.Footer isBlurred
+                                    css={{
+                                        position: "absolute",
+                                        bgBlur: "#ffffff05",
+                                        bottom: 0,
+                                        zIndex: 1,
+                                        jc: 'center',
+                                        alignItems: 'center'
+                                    }}
+                                    >
+                                        <Col css={{
+                                            alignItems: 'center',
+                                            jc: 'center'
                                         }}>
-                                            Elite Tournament
-                                        </Text>
-                                        <Text
-                                        css={{
-                                            color: '$gray900',
-                                            textAlign: 'center',
-                                            fontFamily: 'bruce-forever',
-                                            '@xsMin':{
-                                                fontSize: '@xs'
-                                            },
-                                            '@xsMax':{
-                                                fontSize: '0.70rem'
-                                            }
-                                        }}>
-                                            Invitation only!
-                                        </Text>
-                                        <Grid.Container gap={1}
-                                        css={{
-                                            jc: 'center',
-                                            paddingBottom: '1%'
-                                        }}>
-                                            <Grid
+                                            <Text 
                                             css={{
-                                                paddingTop: '10px'
+                                                textAlign: 'center',
+                                                '@xsMin':{
+                                                    fontSize: '$lg'
+                                                },
+                                                '@xsMax':{
+                                                    fontSize: '$md'
+                                                },
+                                                fontWeight: '$semibold',
+                                                fontFamily: 'bruce-forever'
                                             }}>
-                                                {props.ETpopover==='no' &&
-                                                <Button shadow rounded bordered auto color={'defualt'}
-                                                onPress={()=>{
-                                                    window.location.pathname=props.EThref
-                                                }}>
-                                                    <Text
-                                                    css={{
-                                                        fontFamily: 'bruce-forever',
-                                                        color: 'White',
-                                                        fontSize: '$xs'
-                                                    }}>
-                                                        Register
-                                                    </Text>
-                                                </Button>
+                                                Elite Tournament
+                                            </Text>
+                                            <Text
+                                            css={{
+                                                color: '$gray900',
+                                                textAlign: 'center',
+                                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                '@xsMin':{
+                                                    fontSize: '@xs'
+                                                },
+                                                '@xsMax':{
+                                                    fontSize: '0.70rem'
                                                 }
-                                                {props.ETpopover==='yes' &&
-                                                <Popover>
-                                                    <Popover.Trigger>
-                                                        <Button shadow rounded bordered auto color={'defualt'}>
-                                                            <Text
-                                                            css={{
-                                                                fontFamily: 'bruce-forever',
-                                                                color: 'White',
-                                                                fontSize: '$xs'
-                                                            }}>
-                                                                Register
-                                                            </Text>
-                                                        </Button>
-                                                    </Popover.Trigger>
-                                                    <Popover.Content>
+                                            }}>
+                                                Invitation only!
+                                            </Text>
+                                            <Grid.Container gap={1}
+                                            css={{
+                                                jc: 'center',
+                                                paddingBottom: '1%'
+                                            }}>
+                                                <Grid
+                                                css={{
+                                                    paddingTop: '10px'
+                                                }}>
+                                                    {props.ETpopover==='no' &&
+                                                    <Button shadow rounded bordered auto color={'defualt'}
+                                                    onPress={()=>{
+                                                        window.location.pathname=props.EThref
+                                                    }}>
                                                         <Text
                                                         css={{
                                                             fontFamily: 'bruce-forever',
+                                lineHeight: '2',
                                                             color: 'White',
-                                                            fontSize: '$sm',
-                                                            padding: '12px'
+                                                            fontSize: '$xs'
                                                         }}>
-                                                            Stay tuned. Coming soon!
+                                                            Register
                                                         </Text>
-                                                    </Popover.Content>
-                                                </Popover>
-                                                }
-                                            </Grid>
-                                        </Grid.Container>
-                                    </Col>
-                                </Card.Footer>
-                            </Card>
+                                                    </Button>
+                                                    }
+                                                    {props.ETpopover==='yes' &&
+                                                    <Popover>
+                                                        <Popover.Trigger>
+                                                            <Button shadow rounded bordered auto color={'defualt'}>
+                                                                <Text
+                                                                css={{
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    color: 'White',
+                                                                    fontSize: '$xs'
+                                                                }}>
+                                                                    Register
+                                                                </Text>
+                                                            </Button>
+                                                        </Popover.Trigger>
+                                                        <Popover.Content>
+                                                            <Text
+                                                            css={{
+                                                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                color: 'White',
+                                                                fontSize: '$sm',
+                                                                padding: '12px'
+                                                            }}>
+                                                                Stay tuned. Coming soon!
+                                                            </Text>
+                                                        </Popover.Content>
+                                                    </Popover>
+                                                    }
+                                                </Grid>
+                                            </Grid.Container>
+                                        </Col>
+                                    </Card.Footer>
+                                </Card>
+                            </Col>
                         </Grid>
 
 

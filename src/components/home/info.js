@@ -17,6 +17,7 @@ export default function Info(){
                         <Text
                         css={{
                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                             width: '100%',
                             textAlign: 'center',
                             '@xsMin':{
@@ -25,8 +26,9 @@ export default function Info(){
                             },
                             '@xsMax':{
                                 fontSize: '$3xl',
-                                padding: '80px 0px'
+                                padding: '80px 0px 40px 0px'
                             },
+                            filter: 'drop-shadow(0px 0px 12px rgb(255, 255, 255))'
                         }}>
                             What We Do
                         </Text>
@@ -44,8 +46,9 @@ export default function Info(){
                             borderStyle: 'solid',
                             borderWidth: '2px',
                             borderRadius: '20px',
-                            borderColor: '$gray800',
-                            margin: '10px'
+                            borderColor: 'rgb(0 255 110)',
+                            margin: '36px',
+                            boxShadow: '0px 0px 12px rgb(0 255 110)'
                         }}>
                             <Col
                             css={{
@@ -56,30 +59,33 @@ export default function Info(){
                                 textAlign: 'center',
                                 padding: '15px'
                             }}>
-                                <BsController color="#17C964" size={60} />
+                                <BsController className="svg-green" color="rgb(0 255 110)" size={60} />
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@xsMin':{
                                         fontSize: '$3xl'
                                     },
                                     '@xsMax':{
                                         fontSize: '$xl'
                                     },
-                                    padding: '20px 0px'
+                                    padding: '20px 0px',
+                                    filter: 'drop-shadow(0px 0px 12px rgb(255, 255, 255))'
                                 }}>
                                     Gaming
                                 </Text>
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@xsMin':{
                                         fontSize: '$lg'
                                     },
                                     '@xsMax':{
                                         fontSize: '$sm'
                                     },
-                                    color: '$gray900'
+                                    color: '$gray900',
                                 }}>
                                     A chance to showcase your gaming skills in not just one but multiple games across the board. Only the best of the best!
                                 </Text>
@@ -99,8 +105,9 @@ export default function Info(){
                             borderStyle: 'solid',
                             borderWidth: '2px',
                             borderRadius: '20px',
-                            borderColor: '$gray800',
-                            margin: '10px'
+                            borderColor: 'rgb(248, 251, 41)',
+                            margin: '36px',
+                            boxShadow: '0px 0px 12px rgb(248, 251, 41)'
                         }}>
                             <Col
                             css={{
@@ -111,23 +118,26 @@ export default function Info(){
                                 textAlign: 'center',
                                 padding: '15px'
                             }}>
-                                <FaYinYang color="#F5A524" size={50} />
+                                <FaYinYang className="svg-yellow" color="rgb(255 209 0)" size={50} />
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@xsMin':{
                                         fontSize: '$3xl'
                                     },
                                     '@xsMax':{
                                         fontSize: '$xl'
                                     },
-                                    padding: '20px 0px'
+                                    padding: '20px 0px',
+                                    filter: 'drop-shadow(0px 0px 12px rgb(255, 255, 255))'
                                 }}>
                                     Culture
                                 </Text>
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@xsMin':{
                                         fontSize: '$lg'
                                     },
@@ -154,8 +164,9 @@ export default function Info(){
                             borderStyle: 'solid',
                             borderWidth: '2px',
                             borderRadius: '20px',
-                            borderColor: '$gray800',
-                            margin: '10px'
+                            borderColor: 'rgb(1 147 255)',
+                            margin: '36px',
+                            boxShadow: '0px 0px 12px rgb(1 147 255)'
                         }}>
                             <Col
                             css={{
@@ -166,23 +177,26 @@ export default function Info(){
                                 textAlign: 'center',
                                 padding: '15px'
                             }}>
-                                <IoIosPeople color="#0072F5" size={60} />
+                                <IoIosPeople className="svg-blue" color="rgb(1 147 255)" size={60} />
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@xsMin':{
                                         fontSize: '$3xl'
                                     },
                                     '@xsMax':{
                                         fontSize: '$xl'
                                     },
-                                    padding: '20px 0px'
+                                    padding: '20px 0px',
+                                    filter: 'drop-shadow(0px 0px 12px rgb(255, 255, 255))'
                                 }}>
                                     Community
                                 </Text>
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@xsMin':{
                                         fontSize: '$lg'
                                     },
@@ -204,6 +218,7 @@ export default function Info(){
                         <Text
                         css={{
                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                             width: '100%',
                             textAlign: 'center',
                             '@xsMin':{
@@ -212,8 +227,9 @@ export default function Info(){
                             },
                             '@xsMax':{
                                 fontSize: '$3xl',
-                                padding: '80px 0px'
+                                padding: '80px 0px 40px 0px'
                             },
+                            filter: 'drop-shadow(0px 0px 16px rgba(255, 255, 255, 1))'
                         }}>
                             Who We Are
                         </Text>
@@ -231,8 +247,9 @@ export default function Info(){
                             borderStyle: 'solid',
                             borderWidth: '2px',
                             borderRadius: '20px',
-                            borderColor: '$gray800',
-                            margin: '10px'
+                            borderColor: '#F31260',
+                            margin: '36px',
+                            boxShadow: '0px 0px 12px #F31260'
                         }}>
                             <Col
                             css={{
@@ -243,23 +260,26 @@ export default function Info(){
                                 textAlign: 'center',
                                 padding: '15px'
                             }}>
-                                <GiThreeFriends color="#F31260" size={60} />
+                                <GiThreeFriends className="svg-red" color="#F31260" size={60} />
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@xsMin':{
                                         fontSize: '$3xl'
                                     },
                                     '@xsMax':{
                                         fontSize: '$xl'
                                     },
-                                    padding: '20px 0px'
+                                    padding: '20px 0px',
+                                    filter: 'drop-shadow(0px 0px 16px rgba(255, 255, 255, 1))'
                                 }}>
                                     Us
                                 </Text>
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@xsMin':{
                                         fontSize: '$lg'
                                     },

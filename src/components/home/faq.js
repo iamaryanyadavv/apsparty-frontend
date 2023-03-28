@@ -13,6 +13,7 @@ export default function FAQs(){
                         <Text
                         css={{
                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                             width: '100%',
                             textAlign: 'center',
                             '@xsMin':{
@@ -23,6 +24,7 @@ export default function FAQs(){
                                 fontSize: '$3xl',
                                 padding: '80px 0px 10px 0px'
                             },
+                            filter: 'drop-shadow(0px 0px 12px rgb(255, 255, 255))'
                         }}>
                             FAQs❓
                         </Text>
@@ -30,6 +32,8 @@ export default function FAQs(){
                         <Text
                         css={{
                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
+                            lineHeight: '2',
                             width: '100%',
                             textAlign: 'center',
                             '@smMin':{
@@ -37,8 +41,9 @@ export default function FAQs(){
                                 padding: '0px 250px 30px 250px',
                             },
                             '@smMax':{
-                                fontSize: '$sm',
-                                padding: '10px 20px'
+                                fontSize: '0.7rem',
+                                padding: '10px 20px',
+                                width: '95vw'
                             },
                             color: '$gray900'
                         }}>
@@ -62,6 +67,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -77,6 +83,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -92,6 +99,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -107,6 +115,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -122,6 +131,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -150,6 +160,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -165,6 +176,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -180,6 +192,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -195,6 +208,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -210,6 +224,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -225,6 +240,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },
@@ -240,6 +256,7 @@ export default function FAQs(){
                                     <Text
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$sm'
                                         },

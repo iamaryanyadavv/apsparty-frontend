@@ -15,6 +15,8 @@ import FootNavbar from './components/footnavbar';
 import Footer from './components/footer';
 import Home from './pages/home';
 import ComingSoon from './components/comingsoon/comingsoon'
+
+
 function App() {
 
   const theme = createTheme({

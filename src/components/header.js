@@ -44,6 +44,7 @@ function Header() {
                   <Text
                   css={{
                       fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                       color: 'White',
                       fontSize: '$sm',
                       padding: '12px'

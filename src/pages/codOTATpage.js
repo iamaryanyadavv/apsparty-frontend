@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTicker } from "../hooks/useTicker";
 import jwt_decode from "jwt-decode";
 import { Grid, Text, Col, Image, Row, Button, Spacer, Modal, Input, Loading, Dropdown, Table } from "@nextui-org/react";
 import Grey from '../assets/images/Grey.jpeg';
@@ -16,8 +17,15 @@ import One from '../assets/images/number-1.png'
 import Two from '../assets/images/number-2.png'
 import Three from '../assets/images/number-3.png'
 import Team from '../assets/images/team.png'
+import QR from '../assets/images/PaymentQRCode.jpeg'
 
 export default function CODTourneyPage(){
+
+    //10:30am on 20rd March, 2023 GMT or 4pm on 20rd March, 2023 IST
+    const endDate = "2023-03-20T04:30:00.000Z"; 
+
+    const { days, hours, minutes, seconds, isTimeUp } = useTicker(endDate);
+
     const [PrevTourney, setPrevTourney] = useState(false)
     const [UpcomingTourney, setUpcomingTourney] = useState(true)
 
@@ -357,6 +365,7 @@ export default function CODTourneyPage(){
                 <Text
                 css={{
                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                     '@smMin':{
                         fontSize: '$5xl',
                         color: 'White',
@@ -373,6 +382,7 @@ export default function CODTourneyPage(){
                 <Text
                 css={{
                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                     '@smMin':{
                         fontSize: '$4xl',
                         paddingTop: '0px'
@@ -388,6 +398,7 @@ export default function CODTourneyPage(){
                 <Text
                 css={{
                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                     '@smMin':{
                         fontSize: '$xl',
                         color: '$gray700',
@@ -460,6 +471,7 @@ export default function CODTourneyPage(){
                         <Text
                         css={{
                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                             '@smMin':{
                                 fontSize: '$3xl',
                                 color: 'White',
@@ -520,6 +532,7 @@ export default function CODTourneyPage(){
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$2xl',
                                         color: 'White',
@@ -540,6 +553,7 @@ export default function CODTourneyPage(){
                                     <Text 
                                     css={{
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$md',
                                             color: 'White',
@@ -559,6 +573,7 @@ export default function CODTourneyPage(){
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$2xl',
                                         color: 'White',
@@ -583,6 +598,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -602,6 +618,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -621,6 +638,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -641,6 +659,7 @@ export default function CODTourneyPage(){
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$2xl',
                                         color: 'White',
@@ -665,6 +684,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -684,6 +704,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -704,6 +725,7 @@ export default function CODTourneyPage(){
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$2xl',
                                         color: 'White',
@@ -728,6 +750,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -747,6 +770,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -766,6 +790,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -785,6 +810,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -804,6 +830,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -824,6 +851,7 @@ export default function CODTourneyPage(){
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$2xl',
                                         color: 'White',
@@ -848,6 +876,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -867,6 +896,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -886,6 +916,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -935,6 +966,7 @@ export default function CODTourneyPage(){
                             css={{
                                 textAlign: 'center',
                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                 '@smMin':{
                                     fontSize: '$3xl'
                                 },
@@ -950,6 +982,7 @@ export default function CODTourneyPage(){
                             css={{
                                 textAlign: 'center',
                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                 '@smMin':{
                                     fontSize: '$xl'
                                 },
@@ -986,6 +1019,7 @@ export default function CODTourneyPage(){
                                     alignItems: 'center',
                                     textAlign: 'center',
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$3xl'
                                     },
@@ -1010,6 +1044,7 @@ export default function CODTourneyPage(){
                                     alignItems: 'center',
                                     textAlign: 'center',
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$xl'
                                     },
@@ -1045,6 +1080,7 @@ export default function CODTourneyPage(){
                                             css={{
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                 '@smMin':{
                                                     fontSize: '$xl'
                                                 },
@@ -1069,6 +1105,7 @@ export default function CODTourneyPage(){
                                         css={{
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$lg'
                                             },
@@ -1105,6 +1142,7 @@ export default function CODTourneyPage(){
                                     css={{
                                         paddingTop: '5px',
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$md'
                                         },
@@ -1135,6 +1173,7 @@ export default function CODTourneyPage(){
                                     css={{
                                         paddingBottom: '15px',
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$md'
                                         },
@@ -1193,6 +1232,7 @@ export default function CODTourneyPage(){
                                                 css={{
                                                     textAlign: 'center',
                                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                     '@smMin':{
                                                         fontSize: '$xl'
                                                     },
@@ -1217,6 +1257,7 @@ export default function CODTourneyPage(){
                                             css={{
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                 '@smMin':{
                                                     fontSize: '$lg'
                                                 },
@@ -1251,6 +1292,7 @@ export default function CODTourneyPage(){
                                             jc:'center',
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$3xl'
                                             },
@@ -1295,6 +1337,7 @@ export default function CODTourneyPage(){
                                 jc:'center',
                                 textAlign: 'center',
                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                 '@smMin':{
                                     fontSize: '$3xl'
                                 },
@@ -1422,6 +1465,7 @@ export default function CODTourneyPage(){
                                 jc:'center',
                                 textAlign: 'center',
                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                 '@smMin':{
                                     fontSize: '$3xl'
                                 },
@@ -1531,6 +1575,7 @@ export default function CODTourneyPage(){
                                     jc:'center',
                                     textAlign: 'center',
                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$3xl'
                                     },
@@ -1593,6 +1638,7 @@ export default function CODTourneyPage(){
                                     textAlign: 'center',
                                     color: '$red600',
                                     fontFamily: 'bruce-forever',
+                                    lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$xl'
                                     },
@@ -1609,6 +1655,7 @@ export default function CODTourneyPage(){
                                     jc:'center',
                                     textAlign: 'center',
                                     fontFamily: 'bruce-forever',
+                                    lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$3xl'
                                     },
@@ -1623,6 +1670,7 @@ export default function CODTourneyPage(){
                                     jc:'center',
                                     textAlign: 'center',
                                     fontFamily: 'bruce-forever',
+                                    lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$md',
                                         padding: '0px 30%'
@@ -1633,13 +1681,14 @@ export default function CODTourneyPage(){
                                     },
                                     paddingTop: '10px'
                                 }}>
-                                    Please pay the amount (350) to Krishna Bala (APP Business Head), via PayTM or GPay.
+                                    Please pay the amount (₹350) to Aryan Yadav, via PayTM or GPay.
                                 </Text>
                                 <Text 
                                 css={{
                                     jc:'center',
                                     textAlign: 'center',
                                     fontFamily: 'bruce-forever',
+                                    lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$md'
                                     },
@@ -1647,16 +1696,31 @@ export default function CODTourneyPage(){
                                         fontSize: '$sm'
                                     },
                                 }}>
-                                    (+91 7338934003, UPI ID: krishnaspacebala@okicici)
+                                    (+91 8104213125, UPI ID: aryanyadav1601@oksbi)
                                 </Text>
                             </Col>
                             <Grid
                             css={{
                                 jc: 'center',
-                                width: 'max-content'
+                                width: '100vw',
+                                margin: '10px 0px'
                             }}>
-                                <input disabled={!signedin} onChange={(event)=>{setPaymentSC(event.target.files[0]); }} className="photobtn" animated={'true'} type='file' accept="image/*" required/>
+                                <input disabled={!signedin} onChange={(event)=>{setPaymentSC(event.target.files[0]); }} className="photobtn" animated={'true'} type='file' accept="image/*" required style={{width:'210px'}}/>
                             </Grid>
+                            <Image
+                                css={{
+                                    '@smMin':{
+                                        width: '250px',
+                                        height: '400px'
+                                    },
+                                    '@smMax':{
+                                        width: '100vw',
+                                    },
+                                    marginTop: '20px',
+                                    objectFit: 'cover',
+                                    justifyContent: 'center'
+                                }} src={QR} />
+                           
                             
                         </Grid.Container>
 
@@ -1689,6 +1753,7 @@ export default function CODTourneyPage(){
                                         color: 'Black',
                                         textAlign: 'center',
                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$xl'
                                         },
@@ -1728,6 +1793,7 @@ export default function CODTourneyPage(){
                                             css={{
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                 '@smMin':{
                                                     fontSize: '$xl'
                                                 },
@@ -1742,6 +1808,7 @@ export default function CODTourneyPage(){
                                             css={{
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                 '@smMin':{
                                                     fontSize: '$sm'
                                                 },
@@ -1786,6 +1853,7 @@ export default function CODTourneyPage(){
                                                             css={{
                                                                 textAlign: 'center',
                                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                 '@smMin':{
                                                                     fontSize: '$xl'
                                                                 },
@@ -1816,6 +1884,7 @@ export default function CODTourneyPage(){
                                                             css={{
                                                                 textAlign: 'center',
                                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                 '@smMin':{
                                                                     fontSize: '$lg'
                                                                 },
@@ -1837,6 +1906,7 @@ export default function CODTourneyPage(){
                                                                 css={{
                                                                     textAlign: 'center',
                                                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                     '@smMin':{
                                                                         fontSize: '$md'
                                                                     },
@@ -1861,6 +1931,7 @@ export default function CODTourneyPage(){
                                                             css={{
                                                                 textAlign: 'center',
                                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                 '@smMin':{
                                                                     fontSize: '$md'
                                                                 },
@@ -1882,6 +1953,7 @@ export default function CODTourneyPage(){
                                                             css={{
                                                                 textAlign: 'center',
                                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                 '@smMin':{
                                                                     fontSize: '$md'
                                                                 },
@@ -1923,6 +1995,7 @@ export default function CODTourneyPage(){
                                                             css={{
                                                                 textAlign: 'center',
                                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                 '@smMin':{
                                                                     fontSize: '$lg'
                                                                 },
@@ -1953,6 +2026,7 @@ export default function CODTourneyPage(){
                                                             css={{
                                                                 textAlign: 'center',
                                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                 '@smMin':{
                                                                     fontSize: '$md'
                                                                 },
@@ -1974,6 +2048,7 @@ export default function CODTourneyPage(){
                                                                 css={{
                                                                     textAlign: 'center',
                                                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                     '@smMin':{
                                                                         fontSize: '$md'
                                                                     },
@@ -1998,6 +2073,7 @@ export default function CODTourneyPage(){
                                                             css={{
                                                                 textAlign: 'center',
                                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                 '@smMin':{
                                                                     fontSize: '$md'
                                                                 },
@@ -2019,6 +2095,7 @@ export default function CODTourneyPage(){
                                                             css={{
                                                                 textAlign: 'center',
                                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                                 '@smMin':{
                                                                     fontSize: '$md'
                                                                 },
@@ -2055,6 +2132,7 @@ export default function CODTourneyPage(){
                                                 color: 'Black',
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                 '@smMin':{
                                                     fontSize: '$md'
                                                 },
@@ -2087,6 +2165,7 @@ export default function CODTourneyPage(){
                                                 css={{
                                                     textAlign: 'center',
                                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                     '@smMin':{
                                                         fontSize: '$xl'
                                                     },
@@ -2111,6 +2190,7 @@ export default function CODTourneyPage(){
                                             css={{
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                 '@smMin':{
                                                     fontSize: '$lg'
                                                 },
@@ -2144,6 +2224,7 @@ export default function CODTourneyPage(){
                                                 css={{
                                                     textAlign: 'center',
                                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                     '@smMin':{
                                                         fontSize: '$xl'
                                                     },
@@ -2168,6 +2249,7 @@ export default function CODTourneyPage(){
                                             css={{
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                 '@smMin':{
                                                     fontSize: '$lg'
                                                 },
@@ -2200,6 +2282,7 @@ export default function CODTourneyPage(){
                                                 css={{
                                                     textAlign: 'center',
                                                     fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                     '@smMin':{
                                                         fontSize: '$xl'
                                                     },
@@ -2224,6 +2307,7 @@ export default function CODTourneyPage(){
                                             css={{
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                 '@smMin':{
                                                     fontSize: '$lg'
                                                 },
@@ -2261,6 +2345,7 @@ export default function CODTourneyPage(){
                         <Text
                         css={{
                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                             '@smMin':{
                                 fontSize: '$3xl',
                                 color: 'White',
@@ -2339,6 +2424,7 @@ export default function CODTourneyPage(){
                         <Text
                         css={{
                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                             '@smMin':{
                                 fontSize: '$3xl',
                                 color: 'White',

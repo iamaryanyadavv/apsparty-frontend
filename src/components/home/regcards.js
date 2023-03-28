@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Text, Col, Card, Button } from "@nextui-org/react";
+import { Grid, Text, Col, Card, Button, Row } from "@nextui-org/react";
 import FIFA from '../../assets/images/cardspictures/FIFA23.jpg'
 import COD from '../../assets/images/cardspictures/CODBO3.png'
 import NBA from '../../assets/images/cardspictures/nba2k23.webp'
@@ -19,6 +19,7 @@ export default function RegCards(){
                         <Text
                         css={{
                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                             width: '100%',
                             textAlign: 'center',
                             '@xsMin':{
@@ -29,12 +30,14 @@ export default function RegCards(){
                                 fontSize: '$3xl',
                                 padding: '80px 0px 10px 0px'
                             },
+                            filter: 'drop-shadow(0px 0px 12px rgb(255, 255, 255))'
                         }}>
                             Events 🏆
                         </Text>
                         <Text
                         css={{
                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                             width: '100%',
                             textAlign: 'center',
                             '@xsMin':{
@@ -45,9 +48,10 @@ export default function RegCards(){
                                 fontSize: '$sm',
                                 padding: '10px 20px'
                             },
-                            color: '$gray900'
+                            color: '$gray900',
+                            fontSizeAdjust: '2'
                         }}>
-                            Find list of all upcoming tournaments below. Click on the card of whichever event you wish to register for or know more about.
+                            We for all of these games! Click on the card of whichever event you wish to register for or know more about. It's that easy!
                         </Text>
 
                         {/* FIFA */}
@@ -67,8 +71,8 @@ export default function RegCards(){
                                     height: "500px"
                                 },
                                 '@xsMax':{
-                                    width: '300px',
-                                    height: '500px'
+                                    width: '250px',
+                                    height: '400px'
                                 } 
                                 }}>
                                 <Card.Body css={{ p: 0 }}>
@@ -116,11 +120,12 @@ export default function RegCards(){
                                             color: '$gray900',
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@xsMin':{
                                                 fontSize: '0.75rem'
                                             },
                                             '@xsMax':{
-                                                fontSize: '0.70rem'
+                                                fontSize: '0.65rem'
                                             }
                                         }}>
                                             Kill them slowly with rabonas.
@@ -141,8 +146,14 @@ export default function RegCards(){
                                                     <Text
                                                     css={{
                                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                         color: 'White',
-                                                        fontSize: '$xs'
+                                                        '@xsMin':{
+                                                            fontSize: '$xs'
+                                                        },
+                                                        '@xsMax':{
+                                                            fontSize: '0.7rem'
+                                                        }
                                                     }}>
                                                         DETAILS
                                                     </Text>
@@ -171,8 +182,8 @@ export default function RegCards(){
                                     height: "500px"
                                 },
                                 '@xsMax':{
-                                    width: '300px',
-                                    height: '500px'
+                                    width: '250px',
+                                    height: '400px'
                                 } 
                                 }}>
                                 <Card.Body css={{ p: 0 }}>
@@ -220,11 +231,12 @@ export default function RegCards(){
                                             color: '$gray900',
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@xsMin':{
                                                 fontSize: '0.75rem'
                                             },
                                             '@xsMax':{
-                                                fontSize: '0.70rem'
+                                                fontSize: '0.65rem'
                                             }
                                         }}>
                                             Anytime. Anywhere. 
@@ -245,8 +257,14 @@ export default function RegCards(){
                                                     <Text
                                                     css={{
                                                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                                         color: 'White',
-                                                        fontSize: '$xs'
+                                                        '@xsMin':{
+                                                            fontSize: '$xs'
+                                                        },
+                                                        '@xsMax':{
+                                                            fontSize: '0.7rem'
+                                                        }
                                                     }}>
                                                         DETAILS
                                                     </Text>
@@ -275,8 +293,8 @@ export default function RegCards(){
                                     height: "500px"
                                 },
                                 '@xsMax':{
-                                    width: '300px',
-                                    height: '500px'
+                                    width: '250px',
+                                    height: '400px'
                                 } 
                                 }}>
                                 <Card.Body css={{ p: 0 }}>
@@ -324,11 +342,12 @@ export default function RegCards(){
                                             color: '$gray900',
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                                             '@xsMin':{
                                                 fontSize: '0.75rem'
                                             },
                                             '@xsMax':{
-                                                fontSize: '0.70rem'
+                                                fontSize: '0.65rem'
                                             }
                                         }}>
                                             Watch me break your ankles.
@@ -349,8 +368,14 @@ export default function RegCards(){
                                                     <Text
                                                     css={{
                                                         fontFamily: 'bruce-forever',
+                                                        lineHeight: '2',
                                                         color: 'White',
-                                                        fontSize: '$xs'
+                                                        '@xsMin':{
+                                                            fontSize: '$xs'
+                                                        },
+                                                        '@xsMax':{
+                                                            fontSize: '0.7rem'
+                                                        }
                                                     }}>
                                                         DETAILS
                                                     </Text>
@@ -379,8 +404,8 @@ export default function RegCards(){
                                     height: "500px"
                                 },
                                 '@xsMax':{
-                                    width: '300px',
-                                    height: '500px'
+                                    width: '250px',
+                                    height: '400px'
                                 } 
                                 }}>
                                 <Card.Body css={{ p: 0 }}>
@@ -428,11 +453,12 @@ export default function RegCards(){
                                             color: '$gray900',
                                             textAlign: 'center',
                                             fontFamily: 'bruce-forever',
+                                            lineHeight: '2',
                                             '@xsMin':{
                                                 fontSize: '0.75rem'
                                             },
                                             '@xsMax':{
-                                                fontSize: '0.70rem'
+                                                fontSize: '0.65rem'
                                             }
                                         }}>
                                             Can't catch this.
@@ -453,8 +479,14 @@ export default function RegCards(){
                                                     <Text
                                                     css={{
                                                         fontFamily: 'bruce-forever',
+                                                        lineHeight: '2',
                                                         color: 'White',
-                                                        fontSize: '$xs'
+                                                        '@xsMin':{
+                                                            fontSize: '$xs'
+                                                        },
+                                                        '@xsMax':{
+                                                            fontSize: '0.7rem'
+                                                        }
                                                     }}>
                                                         DETAILS
                                                     </Text>

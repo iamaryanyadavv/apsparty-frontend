@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Text, Col, Image } from "@nextui-org/react";
 import Grey from '../assets/images/Grey.jpeg'
 import AryanYadav from '../assets/images/aryanyadav.jpeg'
+import KrishnaBala from '../assets/images/krishnabala.jpg'
 
 export default function About(){
     return(
@@ -16,6 +17,7 @@ export default function About(){
                     <Text
                     css={{
                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                         '@smMin':{
                             fontSize: '$5xl',
                             color: 'White',
@@ -33,6 +35,7 @@ export default function About(){
                     <Text
                     css={{
                         fontFamily: 'bruce-forever',
+                            lineHeight: '2',
                         '@smMin':{
                             fontSize: '$xl',
                             color: '$gray700',
@@ -131,7 +134,7 @@ export default function About(){
                                 color: '$gray800',
                                 fontFamily: 'bruce-forever'
                             }}>
-                                Developer
+                                Developer/Gamer
                             </Text>
                             <Text showIn={'sm'}
                             css={{
@@ -141,7 +144,7 @@ export default function About(){
                                 color: '$gray800',
                                 fontFamily: 'bruce-forever'
                             }}>
-                                Developer
+                                Developer/Gamer
                             </Text>
                             <Text
                             css={{
@@ -178,7 +181,7 @@ export default function About(){
                                     borderRadius: '100px'
                                 },
                                 objectFit: 'cover'
-                            }}   src={Grey}/>
+                            }}   src={KrishnaBala}/>
                             <Text hideIn={'sm'}
                             css={{
                                 jc: 'center',
@@ -230,7 +233,7 @@ export default function About(){
                                 color: '$gray800',
                                 fontFamily: 'bruce-forever'
                             }}>
-                                Data Scientist
+                                Gamer
                             </Text>
                             <Text showIn={'sm'}
                             css={{
@@ -240,7 +243,7 @@ export default function About(){
                                 color: '$gray800',
                                 fontFamily: 'bruce-forever'
                             }}>
-                                Data Scientist
+                                Gamer
                             </Text>
                             <Text 
                             css={{
