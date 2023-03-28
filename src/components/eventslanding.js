@@ -100,7 +100,7 @@ export default function EventsLanding(props){
                                         color: '$gray900',
                                     }
                                 }}>
-                                    Casual, fun, chill, win money back in 3 wins? ↓
+                                    Casual, fun, win money back in 3 wins? ↓
                                 </Text>
                                 <Card 
                                 css={{ 
