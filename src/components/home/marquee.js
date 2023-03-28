@@ -27,11 +27,12 @@ const NewsTicker = () => {
       </p> */}
       <Text
       css={{
-        fontSize: '15px',
+        fontSize: '12px',
         paddingRight: '2px',
         paddingLeft: '2px',
         fontWeight: '500',
         color: 'Black',
+        fontFamily: 'bruce-forever'
       }}>
         Upcoming Turnament: COD Open 1.0. 
         Check out the COD page to register and hurry, only 64 spots! 

@@ -532,7 +532,7 @@ export default function CODTourneyPage(){
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                    lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$2xl',
                                         color: 'White',
@@ -553,7 +553,7 @@ export default function CODTourneyPage(){
                                     <Text 
                                     css={{
                                         fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                        lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$md',
                                             color: 'White',
@@ -573,7 +573,7 @@ export default function CODTourneyPage(){
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                    lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$2xl',
                                         color: 'White',
@@ -598,7 +598,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -618,7 +618,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -638,7 +638,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -659,7 +659,7 @@ export default function CODTourneyPage(){
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                    lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$2xl',
                                         color: 'White',
@@ -684,7 +684,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -704,7 +704,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -725,7 +725,7 @@ export default function CODTourneyPage(){
                                 <Text 
                                 css={{
                                     fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                    lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$2xl',
                                         color: 'White',
@@ -750,7 +750,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -762,7 +762,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Total prize pool - 11k
+                                            Total prize pool - 8k
                                         </Text>  
                                     </Row>
                                     <Row>
@@ -770,7 +770,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -782,7 +782,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Winners - 4.5k
+                                            Winners - 3k
                                         </Text>
                                     </Row>
                                     <Row>
@@ -790,7 +790,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -802,7 +802,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Runners Up - 2.5k
+                                            Runners Up - 1.5k
                                         </Text>
                                     </Row>
                                     <Row>
@@ -810,7 +810,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -822,7 +822,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            3rd & 4th Place - 1k each
+                                            3rd Place - 1k 
                                         </Text>
                                     </Row>
                                     <Row>
@@ -830,7 +830,7 @@ export default function CODTourneyPage(){
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                            lineHeight: '2',
                                             '@smMin':{
                                                 fontSize: '$md',
                                                 color: 'White',
@@ -842,7 +842,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            5th, 6th, 7th & 8th Place - 500 each
+                                            4th, 5th, 6th, 7th & 8th Place - 350
                                         </Text>
                                     </Row>
                                 </Col>
