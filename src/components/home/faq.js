@@ -49,7 +49,7 @@ export default function FAQs(){
                         }}>
                             Here you can find Frequently Asked Questions (FAQs). 
                             We hope these help you clarify some of the doubts, if any, in your mind. 
-                            If still doubtful please reach out to us at ashokaplaystationparty@gmail.com
+                            If still doubtful please reach out to us at ashokapsparty@gmail.com
                         </Text>
 
                         {/* Left Side */}
