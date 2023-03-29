@@ -18,6 +18,7 @@ import Two from '../assets/images/number-2.png'
 import Three from '../assets/images/number-3.png'
 import Team from '../assets/images/team.png'
 import QR from '../assets/images/PaymentQRCode.jpeg'
+import CODPoster from '..//assets/images/APPPoster.jpeg'
 
 export default function CODTourneyPage(){
 
@@ -510,9 +511,9 @@ export default function CODTourneyPage(){
                                     width:'200px',
                                     height: '300px',
                                 },
-                                borderRadius: '25% 10% / 05% 20%',
+                                borderRadius: '0px',
                                 objectFit: 'cover'
-                            }} src={Grey}  />
+                            }} src={CODPoster}  />
                         </Grid>
                         
                         {/* Details */}
@@ -610,7 +611,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            9 PM to 12 AM
+                                            7PM to 12AM
                                         </Text>  
                                     </Row>
                                     <Row>
@@ -630,7 +631,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            3rd to 6th April, 2023
+                                            1st and 2nd April, 2023
                                         </Text>
                                     </Row>
                                     <Row>
@@ -716,7 +717,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            64 team bracket. Straight knockouts.
+                                            Limited spots. Straight knockouts.
                                         </Text>
                                     </Row>
                                 </Col>
@@ -762,7 +763,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Total prize pool - 8k
+                                            Total prize pool - 6k
                                         </Text>  
                                     </Row>
                                     <Row>
@@ -822,27 +823,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            3rd Place - 1k 
-                                        </Text>
-                                    </Row>
-                                    <Row>
-                                        <img src={RestMedal} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            4th, 5th, 6th, 7th & 8th Place - 350
+                                            3rd & 4th Place - 750 each team
                                         </Text>
                                     </Row>
                                 </Col>
@@ -928,7 +909,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Showing up 2 minutes later than the fixture timing will result in a forfeit and the opposite team goes through. In case both teams are absent the team that shows up first goes through.
+                                            Showing up 10 minutes later than the fixture timing will result in a forfeit and the opposite team goes through. In case both teams are absent the team that shows up first goes through.
                                         </Text>
                                     </Row>
                                 </Col>
