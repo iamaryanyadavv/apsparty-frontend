@@ -1680,7 +1680,7 @@ export default function CODTourneyPage(){
                                         fontSize: '$sm'
                                     },
                                 }}>
-                                    (+91 8104213125, UPI ID: aryanyadav1601@oksbi)
+                                    (UPI ID: aryanyadav1601@oksbi)
                                 </Text>
                             </Col>
                             <Grid
