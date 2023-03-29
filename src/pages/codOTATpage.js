@@ -872,7 +872,7 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            Routine TDM, nothing fancy. Winner goes through.
+                                            Routine TDM in Black Ops 3, nothing fancy. Winner goes through.
                                         </Text>  
                                     </Row>
                                     <Row>
