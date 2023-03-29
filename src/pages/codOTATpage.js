@@ -23,7 +23,7 @@ import Poster from '..//assets/images/CODOpen1.jpeg'
 export default function CODTourneyPage(){
 
     //10:30am on 20rd March, 2023 GMT or 4pm on 20rd March, 2023 IST
-    const endDate = "2023-03-20T04:30:00.000Z"; 
+    const endDate = "2023-03-31T15:30:00.000Z"; 
 
     const { days, hours, minutes, seconds, isTimeUp } = useTicker(endDate);
 
@@ -354,251 +354,484 @@ export default function CODTourneyPage(){
             setLoginLoader(false)
         }, 2000)
         getRegisteredData();
-    }, [])
+    }, [isTimeUp])
 
-    return(
-    <div>
+    return( 
+        <div>
 
-        {/* Page Heading */}
-        <Grid.Container 
-        css={{
-            jc: 'center',
-            textAlign: 'center',
-        }}>
-            <Col>
-                <Text
-                css={{
-                    fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                    '@smMin':{
-                        fontSize: '$5xl',
-                        color: 'White',
-                        paddingTop: '60px'
-                    },
-                    '@smMax':{
-                        fontSize: '$2xl',
-                        paddingTop: '40px',
-                        color: 'White',
-                    },
-                }}>
-                    COD: BO3 🔪
-                </Text>
-                <Text
-                css={{
-                    fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                    '@smMin':{
-                        fontSize: '$4xl',
-                        paddingTop: '0px'
-                    },
-                    '@smMax':{
-                        fontSize: '$xl',
-                        padding: '10px 20px 0px 20px',
-                    },
-                    textGradient: '45deg, #388EE9 20%, #09EBEE 100%'
-                }}>
-                    Open-To-All Tournament
-                </Text>
-                <Text
-                css={{
-                    fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                    '@smMin':{
-                        fontSize: '$xl',
-                        color: '$gray700',
-                        padding: '10px 200px 40px 200px',
-                    },
-                    '@smMax':{
-                        fontSize: '$sm',
-                        padding: '20px 60px',
-                        color: '$gray700',
-                    }
-                }}>
-                    From features latest upcoming tournament to details of all previous tournaments, you can find all of it here. Participate and earn massive rewards!
-                </Text>
-            </Col>
-            
-        </Grid.Container>
-        
-        {/* Nav Buttons - Upcoming, Previous */}
-        <Grid.Container
-        css={{
-            jc: 'center',
-            alignItems: 'center',
-        }}>
-            <Grid 
-            css={{
-                padding: '10px'
-            }}>
-                <Button auto color="primary" rounded flat
-                onPress={()=>{
-                    setUpcomingTourney(false)
-                    setPrevTourney(true)
-                }}>
-                    Previous Editions
-                </Button>
-            </Grid>
-            <Grid 
-            css={{
-                padding: '10px'
-            }}>
-                <Button auto color="primary" rounded flat
-                onPress={()=>{
-                    setUpcomingTourney(true)
-                    setPrevTourney(false)
-                }}>
-                    Upcoming Tournament
-                </Button>
-            </Grid>
-            
-        </Grid.Container>
-
-        {UpcomingTourney && !PrevTourney && 
-        <>
-            {/* Details */}
+            {/* Page Heading */}
             <Grid.Container 
             css={{
                 jc: 'center',
                 textAlign: 'center',
-                margin: '30px 0px 30px 0px',
-                backgroundColor: 'rgb(20,20,20)',
-                borderRadius: '20px'
             }}>
-                <Grid>
-
-                    {/* Heading */}
-                    <Grid.Container
+                <Col>
+                    <Text
                     css={{
-                        jc: 'center',
-                        textAlign: 'center'
+                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                        '@smMin':{
+                            fontSize: '$5xl',
+                            color: 'White',
+                            paddingTop: '60px'
+                        },
+                        '@smMax':{
+                            fontSize: '$2xl',
+                            paddingTop: '40px',
+                            color: 'White',
+                        },
                     }}>
-                        <Text
-                        css={{
-                            fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                            '@smMin':{
-                                fontSize: '$3xl',
-                                color: 'White',
-                                paddingTop: '40px'
-                            },
-                            '@smMax':{
-                                fontSize: '$lg',
-                                paddingTop: '40px',
-                                color: 'White',
-                            },
-                            textGradient: '45deg, #388EE9 20%, #09EBEE 100%',
-                        }}>
-                            Upcoming Tournament
-                        </Text>
-                    </Grid.Container>
-
-                    {/* Content */}
-                    <Grid.Container
+                        COD: BO3 🔪
+                    </Text>
+                    <Text
                     css={{
-                        jc: 'center',
-                        alignItems: 'center',
+                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                        '@smMin':{
+                            fontSize: '$4xl',
+                            paddingTop: '0px'
+                        },
+                        '@smMax':{
+                            fontSize: '$xl',
+                            padding: '10px 20px 0px 20px',
+                        },
+                        textGradient: '45deg, #388EE9 20%, #09EBEE 100%'
                     }}>
-                        {/* Poster */}
-                        <Grid
+                        Open-To-All Tournament
+                    </Text>
+                    <Text
+                    css={{
+                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                        '@smMin':{
+                            fontSize: '$xl',
+                            color: '$gray700',
+                            padding: '10px 200px 40px 200px',
+                        },
+                        '@smMax':{
+                            fontSize: '$sm',
+                            padding: '20px 60px',
+                            color: '$gray700',
+                        }
+                    }}>
+                        From features latest upcoming tournament to details of all previous tournaments, you can find all of it here. Participate and earn massive rewards!
+                    </Text>
+                </Col>
+                
+            </Grid.Container>
+            
+            {/* Nav Buttons - Upcoming, Previous */}
+            <Grid.Container
+            css={{
+                jc: 'center',
+                alignItems: 'center',
+            }}>
+                <Grid 
+                css={{
+                    padding: '10px'
+                }}>
+                    <Button auto color="primary" rounded flat
+                    onPress={()=>{
+                        setUpcomingTourney(false)
+                        setPrevTourney(true)
+                    }}>
+                        Previous Editions
+                    </Button>
+                </Grid>
+                <Grid 
+                css={{
+                    padding: '10px'
+                }}>
+                    <Button auto color="primary" rounded flat
+                    onPress={()=>{
+                        setUpcomingTourney(true)
+                        setPrevTourney(false)
+                    }}>
+                        Upcoming Tournament
+                    </Button>
+                </Grid>
+                
+            </Grid.Container>
+
+            {UpcomingTourney && !PrevTourney && 
+            <>
+                {/* Details */}
+                <Grid.Container 
+                css={{
+                    jc: 'center',
+                    textAlign: 'center',
+                    margin: '30px 0px 30px 0px',
+                    backgroundColor: 'rgb(20,20,20)',
+                    borderRadius: '20px'
+                }}>
+                    <Grid>
+
+                        {/* Heading */}
+                        <Grid.Container
                         css={{
-                            margin: '40px 10px',
-                            jc: 'center'
+                            jc: 'center',
+                            textAlign: 'center'
                         }}>
-                            <Image
+                            <Text
                             css={{
+                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
                                 '@smMin':{
-                                    width:'600px',
-                                    height: '900px',
+                                    fontSize: '$3xl',
+                                    color: 'White',
+                                    paddingTop: '40px'
                                 },
                                 '@smMax':{
-                                    width:'300px',
-                                    height: '450px',
+                                    fontSize: '$lg',
+                                    paddingTop: '40px',
+                                    color: 'White',
                                 },
-                                borderRadius: '0px',
-                                objectFit: 'cover'
-                            }} src={Poster}  />
-                        </Grid>
-                        
-                        {/* Details */}
-                        <Grid 
-                        css={{
-                            margin: '40px 10px',
-                            jc: 'center',
-                            '@smMin':{
-                                width: '800px'
-                            },
-                        }}>
-                            <Col
-                            css={{
-                                textAlign: 'left'
+                                textGradient: '45deg, #388EE9 20%, #09EBEE 100%',
                             }}>
-                                {/* Name */}
-                                <Text 
+                                Upcoming Tournament
+                            </Text>
+                        </Grid.Container>
+
+                        {!isTimeUp &&
+                            <Grid.Container
+                            css={{
+                                jc: 'center',
+                                alignItems: 'center',
+                                '@xsMin':{
+                                    height: '40vh',
+                                    paddingTop: '40px'
+                                },
+                                '@xsMax':{
+                                    height: '25vh',
+                                    paddingTop: '20px'
+                                },
+                            }}>
+                                <Grid.Container 
                                 css={{
-                                    fontFamily: 'bruce-forever',
-                                    lineHeight: '2',
+                                    jc: 'center',
+                                    alignItems: 'center'
+                                }}>
+                                    <Grid.Container gap={0}
+                                    css={{
+                                        jc: 'center',
+                                        alignItems: 'center',
+                                    }}>
+                                        <Text hideIn={'xs'}
+                                        css={{
+                                            jc: 'center',
+                                            alignItems: 'center',
+                                            fontSize: '$3xl',
+                                            fontWeight: '$medium',
+                                            textAlign:'center',
+                                            fontFamily: 'bruce-forever',
+                                            padding:'0% 10% 0% 10%',
+                                            color: '$warning'
+                                        }}>
+                                            Registrations end at 9 PM on Friday, 31st March!
+                                        </Text>
+                                        <Text showIn={'xs'}
+                                        css={{
+                                            jc: 'center',
+                                            alignItems: 'center',
+                                            fontSize: '$sm',
+                                            fontWeight: '$medium',
+                                            textAlign:'center',
+                                            padding:'0% 10% 0% 10%',
+                                            fontFamily: 'bruce-forever',
+                                            color: '$warning'
+                                        }}>
+                                            Registrations end at 9 PM on Friday, 31st March!
+                                        </Text>
+                                    </Grid.Container>
+
+                                    <Row
+                                    css={{
+                                        jc: 'center',
+                                    }}>
+                                        
+
+                                        <Col
+                                        css={{
+                                            width: 'max-content'
+                                        }}>
+                                            <Grid.Container 
+                                            css={{
+                                                jc: 'center',
+                                            }}>
+                                                <Text hideIn={'xs'}
+                                                css={{
+                                                    fontSize: '$9xl'
+                                                }}>
+                                                    {days}
+                                                </Text>
+                                                <Text showIn={'xs'}
+                                                css={{
+                                                    fontSize: '$6xl'
+                                                }}>
+                                                    {days}
+                                                </Text>
+                                            </Grid.Container>
+                                            <Grid.Container 
+                                            css={{
+                                                jc: 'center',
+                                            }}>
+                                                <Text hideIn={'xs'}
+                                                css={{
+                                                    fontSize: '$2xl',
+                                                    fontFamily: 'bruce-forever'
+                                                }}>
+                                                    Days
+                                                </Text>
+                                                <Text showIn={'xs'}
+                                                css={{
+                                                    fontSize: '$sm',
+                                                    fontFamily: 'bruce-forever'
+                                                }}>
+                                                    Days
+                                                </Text>
+                                            </Grid.Container>
+                                        </Col>
+
+                                        <Text hideIn={'xs'}
+                                        css={{
+                                            fontSize: '$9xl',
+                                            padding: '0% 5%'
+                                        }}>
+                                            :
+                                        </Text>
+                                        <Text showIn={'xs'}
+                                        css={{
+                                            fontSize: '$6xl',
+                                            padding: '0% 2.5%'
+                                        }}>
+                                            :
+                                        </Text>
+
+                                        <Col
+                                        css={{
+                                            width: 'max-content'
+                                        }}>
+                                            <Grid.Container 
+                                            css={{
+                                                jc: 'center',
+                                            }}>
+                                                <Text hideIn={'xs'}
+                                                css={{
+                                                    fontSize: '$9xl'
+                                                }}>
+                                                    {hours}
+                                                </Text>
+                                                <Text showIn={'xs'}
+                                                css={{
+                                                    fontSize: '$6xl'
+                                                }}>
+                                                    {hours}
+                                                </Text>
+                                            </Grid.Container>
+                                            <Grid.Container 
+                                            css={{
+                                                jc: 'center',
+                                            }}>
+                                                <Text hideIn={'xs'}
+                                                css={{
+                                                    fontSize: '$2xl',
+                                                    fontFamily: 'bruce-forever'
+                                                }}>
+                                                    Hours
+                                                </Text>
+                                                <Text showIn={'xs'}
+                                                css={{
+                                                    fontSize: '$sm',
+                                                    fontFamily: 'bruce-forever'
+                                                }}>
+                                                    Hours
+                                                </Text>
+                                            </Grid.Container>
+                                        </Col>
+
+                                        <Text hideIn={'xs'}
+                                        css={{
+                                            fontSize: '$9xl',
+                                            padding: '0% 5%'
+                                        }}>
+                                            :
+                                        </Text>
+                                        <Text showIn={'xs'}
+                                        css={{
+                                            fontSize: '$6xl',
+                                            padding: '0% 2.5%'
+                                        }}>
+                                            :
+                                        </Text>
+
+                                        <Col
+                                        css={{
+                                            width: 'max-content'
+                                        }}>
+                                            <Grid.Container 
+                                            css={{
+                                                jc: 'center',
+                                            }}>
+                                                <Text hideIn={'xs'}
+                                                css={{
+                                                    fontSize: '$9xl'
+                                                }}>
+                                                    {minutes}
+                                                </Text>
+                                                <Text showIn={'xs'}
+                                                css={{
+                                                    fontSize: '$6xl'
+                                                }}>
+                                                    {minutes}
+                                                </Text>
+                                            </Grid.Container>
+                                            <Grid.Container 
+                                            css={{
+                                                jc: 'center',
+                                            }}>
+                                                <Text hideIn={'xs'}
+                                                css={{
+                                                    fontSize: '$2xl',
+                                                    fontFamily: 'bruce-forever'
+                                                }}>
+                                                    Minutes
+                                                </Text>
+                                                <Text showIn={'xs'}
+                                                css={{
+                                                    fontSize: '$sm',
+                                                    fontFamily: 'bruce-forever'
+                                                }}>
+                                                    Minutes
+                                                </Text>
+                                            </Grid.Container>
+                                        </Col>
+
+                                        <Text hideIn={'xs'}
+                                        css={{
+                                            fontSize: '$9xl',
+                                            padding: '0% 5%'
+                                        }}>
+                                            :
+                                        </Text>
+                                        <Text showIn={'xs'}
+                                        css={{
+                                            fontSize: '$6xl',
+                                            padding: '0% 2.5%'
+                                        }}>
+                                            :
+                                        </Text>
+
+                                        <Col
+                                        css={{
+                                            width: 'max-content'
+                                        }}>
+                                            <Grid.Container 
+                                            css={{
+                                                jc: 'center',
+                                            }}>
+                                                <Text hideIn={'xs'}
+                                                css={{
+                                                    fontSize: '$9xl'
+                                                }}>
+                                                    {seconds}
+                                                </Text>
+                                                <Text showIn={'xs'}
+                                                css={{
+                                                    fontSize: '$6xl'
+                                                }}>
+                                                    {seconds}
+                                                </Text>
+                                            </Grid.Container>
+                                            <Grid.Container 
+                                            css={{
+                                                jc: 'center',
+                                            }}>
+                                                <Text hideIn={'xs'}
+                                                css={{
+                                                    fontSize: '$2xl',
+                                                    fontFamily: 'bruce-forever'
+                                                }}>
+                                                    Seconds
+                                                </Text>
+                                                <Text showIn={'xs'}
+                                                css={{
+                                                    fontSize: '$sm',
+                                                    fontFamily: 'bruce-forever'
+                                                }}>
+                                                    Seconds
+                                                </Text>
+                                            </Grid.Container>
+                                        </Col>
+                                            
+                                        
+
+                                    </Row>
+                                </Grid.Container>
+                            </Grid.Container>
+                        }
+
+                        {/* Content */}
+                        <Grid.Container
+                        css={{
+                            jc: 'center',
+                            alignItems: 'center',
+                        }}>
+                            {/* Poster */}
+                            <Grid
+                            css={{
+                                margin: '40px 10px',
+                                jc: 'center'
+                            }}>
+                                <Image
+                                css={{
                                     '@smMin':{
-                                        fontSize: '$2xl',
-                                        color: 'White',
-                                        paddingTop: '40px'
+                                        width:'600px',
+                                        height: '900px',
                                     },
                                     '@smMax':{
-                                        fontSize: '$lg',
-                                        paddingTop: '40px',
-                                        color: 'White',
+                                        width:'300px',
+                                        height: '450px',
                                     },
-                                    textGradient: "45deg, $red600 50%, $red800 100%",
-                                    paddingLeft: '40px'
+                                    borderRadius: '0px',
+                                    objectFit: 'cover'
+                                }} src={Poster}  />
+                            </Grid>
+                            
+                            {/* Details */}
+                            <Grid 
+                            css={{
+                                margin: '40px 10px',
+                                jc: 'center',
+                                '@smMin':{
+                                    width: '800px'
+                                },
+                            }}>
+                                <Col
+                                css={{
+                                    textAlign: 'left'
                                 }}>
-                                    COD OPEN 1.0
-                                </Text>
-                                <Row>
-                                    <img src={Diamond} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                    {/* Name */}
                                     <Text 
                                     css={{
                                         fontFamily: 'bruce-forever',
                                         lineHeight: '2',
                                         '@smMin':{
-                                            fontSize: '$md',
+                                            fontSize: '$2xl',
                                             color: 'White',
-                                            paddingTop: '10px'
+                                            paddingTop: '40px'
                                         },
                                         '@smMax':{
-                                            fontSize: '$xs',
-                                            paddingTop: '10px',
+                                            fontSize: '$lg',
+                                            paddingTop: '40px',
                                             color: 'White',
                                         },
+                                        textGradient: "45deg, $red600 50%, $red800 100%",
+                                        paddingLeft: '40px'
                                     }}>
-                                        First edition of the COD Open-To-All Tournaments.
+                                        COD OPEN 1.0
                                     </Text>
-                                </Row>
-
-                                {/* Time and Loc */}
-                                <Text 
-                                css={{
-                                    fontFamily: 'bruce-forever',
-                                    lineHeight: '2',
-                                    '@smMin':{
-                                        fontSize: '$2xl',
-                                        color: 'White',
-                                        paddingTop: '40px'
-                                    },
-                                    '@smMax':{
-                                        fontSize: '$lg',
-                                        paddingTop: '40px',
-                                        color: 'White',
-                                    },
-                                    textGradient: "45deg, $yellow600 40%, $yellow800 100%" ,
-                                    paddingLeft: '40px'
-                                }}>
-                                    Time & Place
-                                </Text>
-                                <Col
-                                css={{
-                                    marginBottom: '30px'
-                                }}>
                                     <Row>
-                                        <img src={Time} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                        <img src={Diamond} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
                                         <Text 
                                         css={{
                                             fontFamily: 'bruce-forever',
@@ -614,1530 +847,490 @@ export default function CODTourneyPage(){
                                                 color: 'White',
                                             },
                                         }}>
-                                            7PM to 12AM
-                                        </Text>  
-                                    </Row>
-                                    <Row>
-                                        <img src={Schedule} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            1st and 2nd April, 2023
+                                            First edition of the COD Open-To-All Tournaments.
                                         </Text>
                                     </Row>
-                                    <Row>
-                                        <img src={Location} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            RH3 Common Room
-                                        </Text>
-                                    </Row>
-                                </Col>
-                                
-                                {/* Format */}
-                                <Text 
-                                css={{
-                                    fontFamily: 'bruce-forever',
-                                    lineHeight: '2',
-                                    '@smMin':{
-                                        fontSize: '$2xl',
-                                        color: 'White',
-                                        paddingTop: '40px'
-                                    },
-                                    '@smMax':{
-                                        fontSize: '$lg',
-                                        paddingTop: '40px',
-                                        color: 'White',
-                                    },
-                                    textGradient: "45deg, $green600 40%, $green800 100%",
-                                    paddingLeft: '40px'
-                                }}>
-                                    Format
-                                </Text>
-                                <Col
-                                css={{
-                                    marginBottom: '30px'
-                                }}>
-                                    <Row>
-                                        <img src={Team} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            Duos (2v2)
-                                        </Text>  
-                                    </Row>
-                                    <Row>
-                                        <img src={Format} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            Limited spots. Straight knockouts.
-                                        </Text>
-                                    </Row>
-                                </Col>
 
-                                {/* Prizes */}
-                                <Text 
-                                css={{
-                                    fontFamily: 'bruce-forever',
-                                    lineHeight: '2',
-                                    '@smMin':{
-                                        fontSize: '$2xl',
-                                        color: 'White',
-                                        paddingTop: '40px',
-                                    },
-                                    '@smMax':{
-                                        fontSize: '$lg',
-                                        paddingTop: '40px',
-                                        color: 'White',
-                                    },
-                                    textGradient: '45deg, #388EE9 20%, #09EBEE 100%',
-                                    paddingLeft: '40px'
-                                }}>
-                                    Prizes
-                                </Text>
-                                <Col
-                                css={{
-                                    marginBottom: '30px'
-                                }}>
-                                    <Row>
-                                        <img src={Cash} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            Total prize pool - 6k
-                                        </Text>  
-                                    </Row>
-                                    <Row>
-                                        <img src={GoldMedal} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            Winners - 3k
-                                        </Text>
-                                    </Row>
-                                    <Row>
-                                        <img src={SilverMedal} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            Runners Up - 1.5k
-                                        </Text>
-                                    </Row>
-                                    <Row>
-                                        <img src={BronzeMedal} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            3rd & 4th Place - 750 each team
-                                        </Text>
-                                    </Row>
-                                </Col>
-
-                                {/* Rules */}
-                                <Text 
-                                css={{
-                                    fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                    '@smMin':{
-                                        fontSize: '$2xl',
-                                        color: 'White',
-                                        paddingTop: '40px'
-                                    },
-                                    '@smMax':{
-                                        fontSize: '$lg',
-                                        paddingTop: '40px',
-                                        color: 'White',
-                                    },
-                                    textGradient: "45deg, $purple600 -20%, $pink600 100%",
-                                    paddingLeft: '40px'
-                                }}>
-                                    Rules
-                                </Text>
-                                <Col
-                                css={{
-                                    marginBottom: '30px'
-                                }}>
-                                    <Row>
-                                        <img src={One} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            Routine TDM in Black Ops 3, nothing fancy. Winner goes through.
-                                        </Text>  
-                                    </Row>
-                                    <Row>
-                                        <img src={Two} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            Any kind or form of cheating will result in the team being banned from all APP tournaments.
-                                        </Text>
-                                    </Row>
-                                    <Row>
-                                        <img src={Three} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
-                                        <Text 
-                                        css={{
-                                            fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$md',
-                                                color: 'White',
-                                                paddingTop: '10px'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$xs',
-                                                paddingTop: '10px',
-                                                color: 'White',
-                                            },
-                                        }}>
-                                            Showing up 10 minutes later than the fixture timing will result in a forfeit and the opposite team goes through. In case both teams are absent the team that shows up first goes through.
-                                        </Text>
-                                    </Row>
-                                </Col>
-
-                            </Col>
-                        </Grid>
-
-                    </Grid.Container>
-
-                    
-
-                </Grid>
-            </Grid.Container>
-
-            {/* Registration Form */}
-            <Grid.Container 
-            css={{
-                jc: 'center',
-                textAlign: 'center',
-                margin: '30px 0px 30px 0px',
-                backgroundColor: 'rgb(20,20,20)',
-                borderRadius: '20px'
-            }}>
-                <Grid>
-                    {/* Form */}
-                                    
-                        {/* Heading */}
-                        <Grid.Container
-                        css={{
-                            jc: 'center',
-                            alignItems: 'center',
-                            fontFamily: 'bruce-forever'
-                        }}>
-                            <Text 
-                            css={{
-                                textAlign: 'center',
-                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                '@smMin':{
-                                    fontSize: '$3xl'
-                                },
-                                '@smMax':{
-                                    fontSize: '$3xl'
-                                },
-                                textGradient: '45deg, #388EE9 20%, #09EBEE 100%',
-                                padding: '40px 0px 0px 0px'
-                            }}>
-                                Registration
-                            </Text>
-                            <Text
-                            css={{
-                                textAlign: 'center',
-                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                '@smMin':{
-                                    fontSize: '$xl'
-                                },
-                                '@smMax':{
-                                    fontSize: '$xs'
-                                },
-                                padding: '2.5% 20% 2% 20%'
-                            }}>
-                                Fill out the form* below and pay the required registration fee to complete your registration!
-                            </Text>
-
-                        </Grid.Container>
-                        
-                        {/* Input */}
-                        <Grid.Container
-                        css={{
-                            jc: 'center',
-                            marginTop: '20px'
-                        }}>
-                            
-                            <div className="GoogleButton" id='GoogleButton'></div>
-                        </Grid.Container>
-
-                        {Object.keys(User).length != 0 && //Display welcome message to user if User Object is not empty
-                        <div>
-                            <Grid.Container gap={0}
-                            css={{
-                                jc: 'center',
-                                alignItems: 'center'
-                            }}>
-                                <Text
-                                css={{
-                                    jc: 'center',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                    '@smMin':{
-                                        fontSize: '$3xl'
-                                    },
-                                    '@smMax':{
-                                        fontSize: '$xl'
-                                    },
-                                    color: '$green600'
-                                }}>
-                                    Welcome {User.name}!
-                                </Text>
-                            </Grid.Container>
-
-                            <Grid.Container
-                            css={{
-                                jc: 'center',
-                                alignItems: 'center'
-                            }}>
-                                
-                                <Text
-                                css={{
-                                    jc: 'center',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                    '@smMin':{
-                                        fontSize: '$xl'
-                                    },
-                                    '@smMax':{
-                                        fontSize: '$sm'
-                                    },
-                                    color: '$gray900'
-                                }}>
-                                    Signed in using: {User.email}
-                                </Text>
-                                
-                            </Grid.Container>
-
-                            <Modal
-                            open={signedin}
-                            closeButton
-                            css={{
-                                maxWidth: '100vw',
-                                '@smMin':{
-                                    maxWidth: '400px'
-                                },
-                                '@xsMax':{
-                                    maxWidth: '100vw'
-                                }
-                            }}
-                            >
-                                    <Modal.Header
+                                    {/* Time and Loc */}
+                                    <Text 
                                     css={{
-                                        paddingTop: '0px',
+                                        fontFamily: 'bruce-forever',
+                                        lineHeight: '2',
+                                        '@smMin':{
+                                            fontSize: '$2xl',
+                                            color: 'White',
+                                            paddingTop: '40px'
+                                        },
+                                        '@smMax':{
+                                            fontSize: '$lg',
+                                            paddingTop: '40px',
+                                            color: 'White',
+                                        },
+                                        textGradient: "45deg, $yellow600 40%, $yellow800 100%" ,
+                                        paddingLeft: '40px'
                                     }}>
-                                        <Col>
+                                        Time & Place
+                                    </Text>
+                                    <Col
+                                    css={{
+                                        marginBottom: '30px'
+                                    }}>
+                                        <Row>
+                                            <img src={Time} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
                                             <Text 
                                             css={{
-                                                textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                                lineHeight: '2',
                                                 '@smMin':{
-                                                    fontSize: '$xl'
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
                                                 },
                                                 '@smMax':{
-                                                    fontSize: '$sm'
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
                                                 },
-                                                color: '$green600',
-                                                borderStyle: 'solid',
-                                                borderWidth: '0px 0px 1px 0px',
-                                                borderColor: '$gray800'
                                             }}>
-                                                Success!
+                                                7PM to 12AM
+                                            </Text>  
+                                        </Row>
+                                        <Row>
+                                            <img src={Schedule} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                1st and 2nd April, 2023
                                             </Text>
-                                            
-                                        </Col>
-                                    </Modal.Header>
-                                    <Modal.Body
-                                    css={{
-                                        paddingTop: '0px'
-                                    }}>
-                                        <Text 
-                                        css={{
-                                            textAlign: 'center',
-                                            fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$lg'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$sm'
-                                            },
-                                            color: 'white',
-                                        }}>
-                                            You have been successfully logged in as {User.name}
-                                        </Text>
-                                    </Modal.Body>
+                                        </Row>
+                                        <Row>
+                                            <img src={Location} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                RH3 Common Room
+                                            </Text>
+                                        </Row>
+                                    </Col>
                                     
-                            </Modal>
-                        
-                        </div>
-                        }
-
-                        {!signedin && !LoginLoader && //Show login buttons when not signed in and LoginLoader===false
-                        <div>
-                            
-                            <Grid.Container gap={0}
-                            css={{
-                                jc: 'center',
-                                alignItems: 'center'
-                            }}>
-
-                                <Grid
-                                css={{
-                                    jc: 'center',
-                                    alignItems: 'center',
-                                    textAlign: 'center'
-                                }}>
-                                    <Text
+                                    {/* Format */}
+                                    <Text 
                                     css={{
-                                        paddingTop: '5px',
                                         fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                        lineHeight: '2',
                                         '@smMin':{
-                                            fontSize: '$md'
+                                            fontSize: '$2xl',
+                                            color: 'White',
+                                            paddingTop: '40px'
                                         },
-                                        '@xsMax':{
-                                            fontSize: '$xs',
-                                            margin: '0px 20px'
-                                        }
+                                        '@smMax':{
+                                            fontSize: '$lg',
+                                            paddingTop: '40px',
+                                            color: 'White',
+                                        },
+                                        textGradient: "45deg, $green600 40%, $green800 100%",
+                                        paddingLeft: '40px'
                                     }}>
-                                        *This form is open to only those affiliated with Ashoka University.
+                                        Format
                                     </Text>
-                                </Grid>
-                                
-                            </Grid.Container>
-
-                            <Grid.Container
-                            css={{
-                                jc: 'center',
-                                alignItems: 'center'
-                            }}>
-
-                                <Grid
-                                css={{
-                                    jc: 'center',
-                                    alignItems: 'center',
-                                    textAlign: 'center'
-                                }}>
-                                    <Text
+                                    <Col
                                     css={{
-                                        paddingBottom: '15px',
-                                        fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                        '@smMin':{
-                                            fontSize: '$md'
-                                        },
-                                        '@xsMax':{
-                                            fontSize: '$xs',
-                                            margin: '0px 20px'
-                                        }
+                                        marginBottom: '30px'
                                     }}>
-                                        Please login via your @ashoka.edu.in email ID for form access.
+                                        <Row>
+                                            <img src={Team} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                Duos (2v2)
+                                            </Text>  
+                                        </Row>
+                                        <Row>
+                                            <img src={Format} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                Limited spots. Straight knockouts.
+                                            </Text>
+                                        </Row>
+                                    </Col>
+
+                                    {/* Prizes */}
+                                    <Text 
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                        lineHeight: '2',
+                                        '@smMin':{
+                                            fontSize: '$2xl',
+                                            color: 'White',
+                                            paddingTop: '40px',
+                                        },
+                                        '@smMax':{
+                                            fontSize: '$lg',
+                                            paddingTop: '40px',
+                                            color: 'White',
+                                        },
+                                        textGradient: '45deg, #388EE9 20%, #09EBEE 100%',
+                                        paddingLeft: '40px'
+                                    }}>
+                                        Prizes
                                     </Text>
-                                </Grid>
-                                
-                            </Grid.Container> 
-                            
-                        </div>
-                        }
+                                    <Col
+                                    css={{
+                                        marginBottom: '30px'
+                                    }}>
+                                        <Row>
+                                            <img src={Cash} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                Total prize pool - 6k
+                                            </Text>  
+                                        </Row>
+                                        <Row>
+                                            <img src={GoldMedal} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                Winners - 3k
+                                            </Text>
+                                        </Row>
+                                        <Row>
+                                            <img src={SilverMedal} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                Runners Up - 1.5k
+                                            </Text>
+                                        </Row>
+                                        <Row>
+                                            <img src={BronzeMedal} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                3rd & 4th Place - 750 each team
+                                            </Text>
+                                        </Row>
+                                    </Col>
 
-                        {LoginLoader && //Show loader when LoginLoader===true - for the lag between loggin in and shoing welcome message
-                        <Grid.Container
-                        css={{
-                            jc: 'center',
-                            alignItems: 'center',
-                        }}>
-                            <Grid>
-                                <Loading
-                                size="xl"
-                                color='white'
+                                    {/* Rules */}
+                                    <Text 
+                                    css={{
+                                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                        '@smMin':{
+                                            fontSize: '$2xl',
+                                            color: 'White',
+                                            paddingTop: '40px'
+                                        },
+                                        '@smMax':{
+                                            fontSize: '$lg',
+                                            paddingTop: '40px',
+                                            color: 'White',
+                                        },
+                                        textGradient: "45deg, $purple600 -20%, $pink600 100%",
+                                        paddingLeft: '40px'
+                                    }}>
+                                        Rules
+                                    </Text>
+                                    <Col
+                                    css={{
+                                        marginBottom: '30px'
+                                    }}>
+                                        <Row>
+                                            <img src={One} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                Routine TDM in Black Ops 3, nothing fancy. Winner goes through.
+                                            </Text>  
+                                        </Row>
+                                        <Row>
+                                            <img src={Two} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                Any kind or form of cheating will result in the team being banned from all APP tournaments.
+                                            </Text>
+                                        </Row>
+                                        <Row>
+                                            <img src={Three} width={30} height={30} style={{alignItems: 'center', margin: '10px 10px 0px 0px'}}/>
+                                            <Text 
+                                            css={{
+                                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                '@smMin':{
+                                                    fontSize: '$md',
+                                                    color: 'White',
+                                                    paddingTop: '10px'
+                                                },
+                                                '@smMax':{
+                                                    fontSize: '$xs',
+                                                    paddingTop: '10px',
+                                                    color: 'White',
+                                                },
+                                            }}>
+                                                Showing up 10 minutes later than the fixture timing will result in a forfeit and the opposite team goes through. In case both teams are absent the team that shows up first goes through.
+                                            </Text>
+                                        </Row>
+                                    </Col>
 
-                                />
+                                </Col>
                             </Grid>
-                        </Grid.Container>
-                        }
 
-                        {AlreadyRegistered && //If user is already registered, show error message
-                        <div>
+                        </Grid.Container>
+
+                        
+
+                    </Grid>
+                </Grid.Container>
+
+                {/* Registration Form */}
+                <Grid.Container 
+                css={{
+                    jc: 'center',
+                    textAlign: 'center',
+                    margin: '30px 0px 30px 0px',
+                    backgroundColor: 'rgb(20,20,20)',
+                    borderRadius: '20px'
+                }}>
+                    <Grid>
+                        {/* Form */}
+                                        
+                            {/* Heading */}
                             <Grid.Container
                             css={{
                                 jc: 'center',
                                 alignItems: 'center',
-                                textAlign: 'center'
+                                fontFamily: 'bruce-forever'
                             }}>
-                                <Modal
-                                open={AlreadyRegistered}
-                                closeButton
+                                <Text 
                                 css={{
-                                    maxWidth: '100vw',
-                                }}
-                                onClose={()=>{setAlreadyRegistered(false); window.location.pathname='/cod/otat'; }}
-                                >
-                                        <Modal.Header
-                                        css={{
-                                            paddingTop: '0px',
-                                        }}>
-                                            <Col>
-                                                <Text 
-                                                css={{
-                                                    textAlign: 'center',
-                                                    fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                    '@smMin':{
-                                                        fontSize: '$xl'
-                                                    },
-                                                    '@smMax':{
-                                                        fontSize: '$sm'
-                                                    },
-                                                    color: '$red600',
-                                                    borderStyle: 'solid',
-                                                    borderWidth: '0px 0px 1px 0px',
-                                                    borderColor: '$gray800'
-                                                }}>
-                                                    Error!
-                                                </Text>
-                                                
-                                            </Col>
-                                        </Modal.Header>
-                                        <Modal.Body
-                                        css={{
-                                            paddingTop: '0px'
-                                        }}>
-                                            <Text 
-                                            css={{
-                                                textAlign: 'center',
-                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                '@smMin':{
-                                                    fontSize: '$lg'
-                                                },
-                                                '@smMax':{
-                                                    fontSize: '$sm'
-                                                },
-                                                color: 'white',
-                                            }}>
-                                                It seems that you have already registered with this email address.
-                                            </Text>
-                                        </Modal.Body>
-                                        
-                                </Modal>
-                            </Grid.Container>
-                        </div>
-                        }
-
-                        {/* Team Name */}
-                        <Grid.Container gap={0}
-                                css={{
-                                    jc: 'center',
-                                    alignItems: 'center'
-                                }}>
-                                    {/* Teamname */}
-                                    <Grid 
-                                    css={{
-                                        jc: 'center',
-                                        padding: '20px 0px 0px 0px'
-                                    }}>
-                                        <Text
-                                        css={{
-                                            jc:'center',
-                                            textAlign: 'center',
-                                            fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                            '@smMin':{
-                                                fontSize: '$3xl'
-                                            },
-                                            '@smMax':{
-                                                fontSize: '$2xl'
-                                            },
-                                        }}>Duo Name</Text>
-
-                                        <Grid.Container gap={0}
-                                        css={{
-                                            jc: 'center',
-                                        }}>
-                                            <Grid
-                                            css={{
-                                                padding: '20px'
-                                            }}>
-                                                <Input disabled={!signedin} status={teamNameStatus} onChange={(event)=>{
-                                                    setTeamName(event.target.value)
-                                                    if(event.target.value){
-                                                        setTeamNameStatus('success')
-                                                    }
-                                                    else if(!event.target.value){
-                                                        setTeamNameStatus('error')
-                                                    }
-                                                    }} animated={true} placeholder='Team Name' type='text' bordered  clearable required/>
-                                            </Grid>
-
-                                        </Grid.Container>
-                                    </Grid>
-
-                        </Grid.Container>     
-                    
-                        {/* Participant 1 */}
-                        <Grid.Container gap={0}
-                        css={{
-                            jc: 'center',
-                            alignItems: 'center',
-                            padding: '20px 0px 0px 0px'
-                        }}>
-                            <Text
-                            css={{
-                                jc:'center',
-                                textAlign: 'center',
-                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                '@smMin':{
-                                    fontSize: '$3xl'
-                                },
-                                '@smMax':{
-                                    fontSize: '$2xl'
-                                },
-                            }}>Participant 1</Text>
-
-                            <Grid.Container gap={0}
-                            css={{
-                                jc: 'center',
-                            }}>
-                                {/* Participant 1 */}
-                                {participantone &&
-                                <Grid
-                                css={{
-                                    padding: '20px'
-                                }}>
-                                    <Input onChange={(event)=>{
-                                        participantone(event.target.value);
-                                        if(event.target.value) {
-                                            setParticipantoneStatus('success')
-                                        }
-                                        else if(!event.target.value){
-                                            setParticipantoneStatus('error')
-                                        }
-                                    }} 
-                                    width="200px" animated={true}  type='text' bordered status={participantoneStatus} disabled={!signedin} value={participantone} />
-                                </Grid>
-                                }
-                                {!participantone && 
-                                <Grid 
-                                css={{
-                                    padding: '20px'
-                                }}>
-                                    <Input onChange={(event)=>{
-                                        setParticipantone(event.target.value)
-                                        if(event.target.value) {
-                                            setParticipantoneStatus('success')
-                                        }
-                                        else if(!event.target.value){
-                                            setParticipantoneStatus('error')
-                                        }
-                                        }} 
-                                        width="200px" animated={true}  type='text' bordered status={participantoneStatus} disabled={!signedin} placeholder='Name' />
-                                </Grid>
-                                }
-                                {/* Participant One Phone */}
-                                
-                                <Grid 
-                                css={{
-                                    padding: '20px'
-                                }}> 
-                                    <Input onChange={(event)=>{
-                                        setParticipantonephone(event.target.value)
-                                        if(event.target.value.length>10 || event.target.value.length<10){
-                                            setParticipantonephoneStatus('error')
-                                        }
-                                        else if(event.target.value.length===10){
-                                            setParticipantonephoneStatus('success')
-                                        }
-                                    }}
-                                    
-                                    width="200px" animated={true}  type='text' bordered status={participantonephoneStatus} disabled={!signedin}
-                                    placeholder='Phone Number' clearable required  />
-                                </Grid>
-                                <Grid
-                                css={{
-                                    textAlign: 'center',
-                                    padding: '20px'
-                                }}>
-                                    <Col>
-                                        <Input onChange={(event)=>{
-                                        participantoneemail(event.target.value);
-                                        if(event.target.value) {
-                                            setParticipantoneemailStatus('success')
-                                        }
-                                        else if(!event.target.value){
-                                            setParticipantoneemailStatus('error')
-                                        }
-                                    }}  width="300px" animated={true}  type='text' bordered status={participantoneemailStatus} readOnly disabled={!signedin} value={participantoneemail} placeholder='Email ID' />
-                                    </Col>
-                                </Grid>
-                        
-                            <Grid
-                            css={{
-                                jc:'center',
-                                padding: '20px'
-                            }}>
-                                <Dropdown isDisabled= {!signedin} >
-                                    {participantonebatch === '' 
-                                    ? <Dropdown.Button className="dp-btn" color={participantonebatchStatus} default light >Batch</Dropdown.Button>
-                                    : <Dropdown.Button className="dp-btn" color={participantonebatchStatus} default light >{participantonebatch}</Dropdown.Button>
-                                    }
-                                    <Dropdown.Menu 
-                                    onAction={(event)=>{
-                                        setParticipantonebatch(event);
-                                        if(event){
-                                            setParticipantonebatchStatus('success');
-                                        }
-                                    }} disallowEmptySelection selectionMode="single" selectedKeys={participantonebatch} aria-label="Dynamic Actions" items={batchItems}>
-                                        {(item) => (
-                                        <Dropdown.Item
-                                            key={item.key}
-                                            color={item.key === "delete" ? "error" : "default"}
-                                        >
-                                            {item.name}
-                                        </Dropdown.Item>
-                                        )}
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                            </Grid>
-
-                            </Grid.Container>
-                        </Grid.Container>
-
-                        {/* Participant Two */}
-                        <Grid.Container gap={0}
-                        css={{
-                            jc: 'center',
-                            alignItems: 'center'
-                        }}>
-                            <Text
-                            css={{
-                                jc:'center',
-                                textAlign: 'center',
-                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                '@smMin':{
-                                    fontSize: '$3xl'
-                                },
-                                '@smMax':{
-                                    fontSize: '$2xl'
-                                },
-                            }}>Participant 2</Text>
-
-                            <Grid.Container gap={0}
-                            css={{
-                                jc: 'center',
-                            }}>
-                                
-                                <Grid 
-                                css={{
-                                    padding: '20px'
-                                }}>
-                                    <Input onChange={(event)=>{
-                                        setParticipanttwo(event.target.value);
-                                        if(event.target.value) {
-                                            setParticipanttwoStatus('success')
-                                        }
-                                        else if(!event.target.value){
-                                            setParticipanttwoStatus('error')
-                                        }
-                                    }} 
-                                    width="200px" animated={true}  type='text' bordered  status={participanttwoStatus} disabled={!signedin} placeholder='Full Name' />
-                                </Grid>
-                                <Grid 
-                                css={{
-                                    padding: '20px'
-                                }}> 
-                                    <Input onChange={(event)=>{
-                                        setParticipanttwophone(event.target.value)
-                                        if(event.target.value.length===10){
-                                            setParticipanttwophoneStatus('success')
-                                        }
-                                        else{
-                                            setParticipanttwophoneStatus('error')
-                                        }
-                                        
-                                        }} 
-                                        width="200px" animated={true}  type='text' bordered status={participanttwophoneStatus} disabled={!signedin} placeholder='Phone Number' />
-                                </Grid>
-                                <Grid 
-                                css={{
-                                    padding: '20px'
-                                }}> 
-                                    <Input onChange={(event)=>{
-                                        setParticipanttwoemail(event.target.value)
-                                        if(event.target.value.includes('@ashoka.edu.in')){
-                                            setParticipanttwoemailStatus('success')
-                                        }
-                                        else{
-                                            setParticipanttwoemailStatus('error')
-                                        }
-                                        
-                                        }} 
-                                        width="300px" animated={true}  type='text' bordered status={participanttwoemailStatus} disabled={!signedin} placeholder='Email ID' />
-                                </Grid>
-                        
-                            <Grid
-                            css={{
-                                jc:'center',
-                                padding: '20px'
-                            }}>
-                                <Dropdown isDisabled= {!signedin}>
-                                    {participanttwobatch === '' 
-                                    ? <Dropdown.Button className="dp-btn" color={participanttwobatchStatus} default light>Batch</Dropdown.Button>
-                                    : <Dropdown.Button className="dp-btn" color={participanttwobatchStatus} default light>{participanttwobatch}</Dropdown.Button>
-                                    }
-                                    <Dropdown.Menu 
-                                    onAction={(event)=>{
-                                        setParticipanttwobatch(event);
-                                        if(event){
-                                            setParticipanttwobatchStatus('success');
-                                        }
-                                    }} disallowEmptySelection selectionMode="single" selectedKeys={participanttwobatch} aria-label="Dynamic Actions" items={batchItems}>
-                                        {(item) => (
-                                        <Dropdown.Item
-                                            key={item.key}
-                                            color={item.key === "delete" ? "error" : "default"}
-                                        >
-                                            {item.name}
-                                        </Dropdown.Item>
-                                        )}
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                            </Grid>
-
-                            </Grid.Container>                            
-                        </Grid.Container>
-
-                        {/* Proficiency */}
-                        <Grid.Container gap={0}
-                        css={{
-                            jc: 'center',
-                            alignItems: 'center'
-                        }}>
-                            <Grid 
-                            css={{
-                                jc: 'center',
-                                padding: '20px'
-                            }}>
-                                <Text
-                                css={{
-                                    jc:'center',
                                     textAlign: 'center',
                                     fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$3xl'
                                     },
                                     '@smMax':{
-                                        fontSize: '$2xl'
+                                        fontSize: '$3xl'
                                     },
+                                    textGradient: '45deg, #388EE9 20%, #09EBEE 100%',
+                                    padding: '40px 0px 0px 0px'
                                 }}>
-                                    Proficiency
+                                    Registration
                                 </Text>
-
-                                <Grid.Container gap={0}
-                                css={{
-                                    jc: 'center',
-                                }}>
-                                    <Grid 
-                                    css={{
-                                        padding: '20px'
-                                    }}>
-                                        <Dropdown isDisabled= {!signedin} >
-                                        {proficiency === '' 
-                                        ? <Dropdown.Button className="dp-btn" color={proficiencyStatus} default light >Proficiency</Dropdown.Button>
-                                        : <Dropdown.Button className="dp-btn" color={proficiencyStatus} default light >{proficiency}</Dropdown.Button>
-                                        }
-                                            <Dropdown.Menu 
-                                            onAction={(event)=>{
-                                                setProficiency(event);
-                                                if(event){
-                                                    setProficiencyStatus('success');
-                                                }
-                                            }} disallowEmptySelection selectionMode="single" selectedKeys={proficiency} aria-label="Dynamic Actions" items={proficiencyItems}>
-                                                {(item) => (
-                                                <Dropdown.Item
-                                                    key={item.key}
-                                                    color={item.key === "delete" ? "error" : "default"}
-                                                >
-                                                    {item.name}
-                                                </Dropdown.Item>
-                                                )}
-                                            </Dropdown.Menu>
-                                        </Dropdown>
-                                    </Grid>
-
-                                </Grid.Container>
-                            </Grid>
-
-                        </Grid.Container> 
-
-                        {/* payment details */}
-                        <Grid.Container gap={0}
-                        css={{
-                            jc: 'center',
-                            alignItems: 'center',
-                            paddingBottom:'20px'
-                        }}>
-                            <Col>
-                                {paymentSCUploaded==='error' && 
                                 <Text
                                 css={{
-                                    jc: 'center',
                                     textAlign: 'center',
-                                    color: '$red600',
                                     fontFamily: 'bruce-forever',
-                                    lineHeight: '2',
+                                lineHeight: '2',
                                     '@smMin':{
                                         fontSize: '$xl'
                                     },
                                     '@smMax':{
-                                        fontSize: '$lg'
+                                        fontSize: '$xs'
                                     },
+                                    padding: '2.5% 20% 2% 20%'
                                 }}>
-                                    Please upload payment screenshot from your UPI service app!
+                                    Fill out the form* below and pay the required registration fee to complete your registration!
                                 </Text>
-                                }
-                                
-                                <Text
-                                css={{
-                                    jc:'center',
-                                    textAlign: 'center',
-                                    fontFamily: 'bruce-forever',
-                                    lineHeight: '2',
-                                    '@smMin':{
-                                        fontSize: '$3xl'
-                                    },
-                                    '@smMax':{
-                                        fontSize: '$2xl'
-                                    },
-                                }}>
-                                    Payment
-                                </Text>
-                                <Text 
-                                css={{
-                                    jc:'center',
-                                    textAlign: 'center',
-                                    fontFamily: 'bruce-forever',
-                                    lineHeight: '2',
-                                    '@smMin':{
-                                        fontSize: '$md',
-                                        padding: '0px 30%'
-                                    },
-                                    '@smMax':{
-                                        fontSize: '$sm',
-                                        padding: '0px 20px'
-                                    },
-                                    paddingTop: '10px'
-                                }}>
-                                    Please pay the amount (₹350) to Aryan Yadav, via PayTM or GPay.
-                                </Text>
-                                <Text 
-                                css={{
-                                    jc:'center',
-                                    textAlign: 'center',
-                                    fontFamily: 'bruce-forever',
-                                    lineHeight: '2',
-                                    '@smMin':{
-                                        fontSize: '$md'
-                                    },
-                                    '@smMax':{
-                                        fontSize: '$sm'
-                                    },
-                                }}>
-                                    (UPI ID: aryanyadav1601@oksbi)
-                                </Text>
-                            </Col>
-                            <Grid
+
+                            </Grid.Container>
+                            
+                            {/* Input */}
+                            <Grid.Container
                             css={{
                                 jc: 'center',
-                                width: '100vw',
-                                margin: '10px 0px'
+                                marginTop: '20px'
                             }}>
-                                <input disabled={!signedin} onChange={(event)=>{setPaymentSC(event.target.files[0]); }} className="photobtn" animated={'true'} type='file' accept="image/*" required style={{width:'210px'}}/>
-                            </Grid>
-                            <Image
-                                css={{
-                                    '@smMin':{
-                                        width: '250px',
-                                        height: '400px'
-                                    },
-                                    '@smMax':{
-                                        width: '100vw',
-                                    },
-                                    marginTop: '20px',
-                                    objectFit: 'cover',
-                                    justifyContent: 'center'
-                                }} src={QR} />
-                           
-                            
-                        </Grid.Container>
+                                
+                                <div className="GoogleButton" id='GoogleButton'></div>
+                            </Grid.Container>
 
-                        {/* payment button */}
-                        <Grid.Container gap={0}
-                        css={{
-                            jc: 'center',
-                        }}>
-                            <Grid>
-                                <Button auto rounded disabled={!signedin || isRegFull}
+                            {Object.keys(User).length != 0 && //Display welcome message to user if User Object is not empty
+                            <div>
+                                <Grid.Container gap={0}
                                 css={{
-                                    background: '$gray900',
-                                    margin: '20px'
-                                }}
-                                onPress={()=>{
-                                    if(paymentSC){
-                                        setPaymentSCUploaded(true)
-                                        console.log('uploaded')
-                                    }
-                                    if(!paymentSC){
-                                        setPaymentSCUploaded(false)
-                                        console.log('not')
-                                        console.log(paymentSCUploaded)
-                                    }
-                                    setModalVisibility(CheckForm());
-                                    
+                                    jc: 'center',
+                                    alignItems: 'center'
                                 }}>
                                     <Text
                                     css={{
-                                        color: 'Black',
+                                        jc: 'center',
+                                        alignItems: 'center',
                                         textAlign: 'center',
                                         fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                lineHeight: '2',
+                                        '@smMin':{
+                                            fontSize: '$3xl'
+                                        },
+                                        '@smMax':{
+                                            fontSize: '$xl'
+                                        },
+                                        color: '$green600'
+                                    }}>
+                                        Welcome {User.name}!
+                                    </Text>
+                                </Grid.Container>
+
+                                <Grid.Container
+                                css={{
+                                    jc: 'center',
+                                    alignItems: 'center'
+                                }}>
+                                    
+                                    <Text
+                                    css={{
+                                        jc: 'center',
+                                        alignItems: 'center',
+                                        textAlign: 'center',
+                                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
                                         '@smMin':{
                                             fontSize: '$xl'
                                         },
                                         '@smMax':{
-                                            fontSize: '$md'
+                                            fontSize: '$sm'
                                         },
+                                        color: '$gray900'
                                     }}>
-                                        Register
+                                        Signed in using: {User.email}
                                     </Text>
-                                </Button>
+                                    
+                                </Grid.Container>
 
                                 <Modal
-                                open={LoadingModal}>
-                                    <Modal.Body>
-                                        <Loading color='white' size={"xl"} />
-                                    </Modal.Body>
-                                </Modal>
-
-                                <Modal
+                                open={signedin}
                                 closeButton
-                                open={ModalVisibility}
-                                onClose={()=>{
-                                    setModalVisibility(false)
-                                }}
-                                css={
-                                    {
-                                        display:'flex',
-                                        flexWrap:'nowrap',
+                                css={{
+                                    maxWidth: '100vw',
+                                    '@smMin':{
+                                        maxWidth: '400px'
+                                    },
+                                    '@xsMax':{
+                                        maxWidth: '100vw'
                                     }
-                                }
-                                
-                                >
-
-                                    <Modal.Header>
-                                        <Col>
-                                            <Text
-                                            css={{
-                                                textAlign: 'center',
-                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                '@smMin':{
-                                                    fontSize: '$xl'
-                                                },
-                                                '@xsMax':{
-                                                    fontSize: '$md'
-                                                },
-                                                color: '$yellow600'
-                                            }}>
-                                                Team Details
-                                            </Text>
-                                            <Text
-                                            css={{
-                                                textAlign: 'center',
-                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                '@smMin':{
-                                                    fontSize: '$sm'
-                                                },
-                                                '@xsMax':{
-                                                    fontSize: '$xs'
-                                                },
-                                                color: '$gray900'
-                                            }}>
-                                                Check your details one last time before registering!
-                                            </Text>
-                                        </Col>
-                                        
-                                    </Modal.Header>
-
-                                    <Modal.Body>
-
-
-                                        <Grid.Container
-                                        css={{
-                                            jc: 'center',
-                                            alignItems: 'center',
-                                            display:'flex',
-                                            flexDirection: 'column',
-                                            justifyContent:'center',
-                                            alignContent:'center',
-                                            flexWrap:'nowrap'
-                                        
-                                        }}>
-                                            <Grid> 
-                                            <Grid css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center',
-                                                            marginBottom: 0
-                                                        }}>
-                                                        <Row
-                                                        css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center',
-                                                            marginBottom: 0
-                                                        }}>
-                                                            <Text 
-                                                            css={{
-                                                                textAlign: 'center',
-                                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                '@smMin':{
-                                                                    fontSize: '$xl'
-                                                                },
-                                                                '@xsMax':{
-                                                                    fontSize: '$md'
-                                                                },
-                                                                color: '$yellow600'
-                                                            }}>
-                                                                Participant 1
-                                                            </Text>
-                                                        </Row>
-                                                    </Grid>
-                                                <Grid.Container gap={0.5}
-                                                css={{
-                                                    jc: 'center',
-                                                    alignItems: 'center',
-                                                    textAlign: 'center'
-                                                }}>
-                                                    </Grid.Container> 
-                                                    <Grid>
-                                                    <Grid>
-                                                        <Row
-                                                        css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center'
-                                                        }}>
-                                                            <Text
-                                                            css={{
-                                                                textAlign: 'center',
-                                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                '@smMin':{
-                                                                    fontSize: '$lg'
-                                                                },
-                                                                '@xsMax':{
-                                                                    fontSize: '$sm'
-                                                                },
-                                                            }}>
-                                                                {participantone}
-                                                            </Text>
-                                                        </Row>
-                                                    </Grid>
-                                                        {participantoneemail && 
-                                                            <Row
-                                                            css={{
-                                                                jc: 'center',
-                                                                textAlign: 'center'
-                                                            }}>
-                                                                <Text 
-                                                                css={{
-                                                                    textAlign: 'center',
-                                                                    fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                    '@smMin':{
-                                                                        fontSize: '$md'
-                                                                    },
-                                                                    '@xsMax':{
-                                                                        fontSize: '$xs'
-                                                                    },
-                                                                }}>
-                                                                    {participantoneemail}
-                                                                </Text>
-                                                            </Row>
-                                                        }
-                                                    </Grid>
-                                                    <Grid>
-                                                        <Row
-                                                        css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center',
-                                                            display: 'flex',
-                                                            flexDirection: 'row'
-                                                        }}>
-                                                            <Text
-                                                            css={{
-                                                                textAlign: 'center',
-                                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                '@smMin':{
-                                                                    fontSize: '$md'
-                                                                },
-                                                                '@xsMax':{
-                                                                    fontSize: '$xs'
-                                                                },
-                                                            }}>
-                                                                {participantonephone}
-                                                            </Text>
-                                                        </Row>
-                                                        <Grid/>
-                                                    <Grid>
-                                                        <Row
-                                                        css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center'
-                                                        }}>
-                                                            <Text
-                                                            css={{
-                                                                textAlign: 'center',
-                                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                '@smMin':{
-                                                                    fontSize: '$md'
-                                                                },
-                                                                '@xsMax':{
-                                                                    fontSize: '$xs'
-                                                                },
-                                                            }}>
-                                                                {participantonebatch}
-                                                            </Text>
-                                                        </Row>
-                                                        </Grid>
-                                                    </Grid> 
-                                            </Grid>
-                                        </Grid.Container>
-                                        <Grid.Container
-                                        css={{
-                                            jc: 'center',
-                                            alignItems: 'center',
-                                            display:'flex',
-                                            flexDirection: 'column',
-                                            justifyContent:'center',
-                                            alignContent:'center',
-                                            flexWrap:'nowrap',
-                                            marginTop:'6%'
-                                        }}>
-                                            <Grid> 
-                                            <Grid css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center',
-                                                            marginBottom: 0     
-                                                        }}>
-                                                        <Row
-                                                        css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center',
-                                                            marginBottom: 0
-                                                        }}>
-                                                            <Text 
-                                                            css={{
-                                                                textAlign: 'center',
-                                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                '@smMin':{
-                                                                    fontSize: '$lg'
-                                                                },
-                                                                '@xsMax':{
-                                                                    fontSize: '$sm'
-                                                                },
-                                                                color: '$yellow600'
-                                                            }}>
-                                                                Participant 2
-                                                            </Text>
-                                                        </Row>
-                                                    </Grid>
-                                                        <Grid.Container gap={0.5}
-                                                        css={{
-                                                            jc: 'center',
-                                                            alignItems: 'center',
-                                                            textAlign: 'center'
-                                                        }}>
-                                                    </Grid.Container> 
-                                                    <Grid>
-                                                    <Grid>
-                                                        <Row
-                                                        css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center'
-                                                        }}>
-                                                            <Text 
-                                                            css={{
-                                                                textAlign: 'center',
-                                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                '@smMin':{
-                                                                    fontSize: '$md'
-                                                                },
-                                                                '@xsMax':{
-                                                                    fontSize: '$xs'
-                                                                },
-                                                            }}>
-                                                                {participanttwo}
-                                                            </Text>
-                                                        </Row>
-                                                    </Grid>
-                                                        {participanttwoemail && 
-                                                            <Row
-                                                            css={{
-                                                                jc: 'center',
-                                                                textAlign: 'center'
-                                                            }}>
-                                                                <Text
-                                                                css={{
-                                                                    textAlign: 'center',
-                                                                    fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                    '@smMin':{
-                                                                        fontSize: '$md'
-                                                                    },
-                                                                    '@xsMax':{
-                                                                        fontSize: '$xs'
-                                                                    },
-                                                                }}>
-                                                                    {participanttwoemail}
-                                                                </Text>
-                                                            </Row>
-                                                        }
-                                                    </Grid>
-                                                    <Grid>
-                                                        <Row
-                                                        css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center',
-                                                            display: 'flex',
-                                                            flexDirection: 'row'
-                                                        }}>
-                                                            <Text 
-                                                            css={{
-                                                                textAlign: 'center',
-                                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                '@smMin':{
-                                                                    fontSize: '$md'
-                                                                },
-                                                                '@xsMax':{
-                                                                    fontSize: '$xs'
-                                                                },
-                                                            }}>
-                                                                {participanttwophone}
-                                                            </Text>
-                                                        </Row>
-                                                        <Grid/>
-                                                    <Grid>
-                                                        <Row
-                                                        css={{
-                                                            jc: 'center',
-                                                            textAlign: 'center'
-                                                        }}>
-                                                            <Text
-                                                            css={{
-                                                                textAlign: 'center',
-                                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                                '@smMin':{
-                                                                    fontSize: '$md'
-                                                                },
-                                                                '@xsMax':{
-                                                                    fontSize: '$xs'
-                                                                },
-                                                            }}>
-                                                                {participanttwobatch}
-                                                            </Text>
-                                                        </Row>
-                                                        </Grid>
-                                                    </Grid> 
-                                            </Grid>
-                                        </Grid.Container>
-                                    </Modal.Body>
-
-                                    <Modal.Footer
-                                    css={{
-                                        jc: 'center',
-                                        alignItems: 'center'
-                                    }}>
-                                        <Button auto rounded 
-                                        css={{
-                                            background: '$gray900'
-                                        }}
-                                        onPress={(e)=>{
-                                            sendForm(e);
-                                            sendPaymentImage(paymentSC)
-                                            setModalVisibility(false);
-                                            setLoadingModal(true)
-                                        }}>
-                                            <Text
-                                            css={{
-                                                color: 'Black',
-                                                textAlign: 'center',
-                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                '@smMin':{
-                                                    fontSize: '$md'
-                                                },
-                                                '@xsMax':{
-                                                    fontSize: '$xs'
-                                                },
-                                            }}>
-                                                Register
-                                            </Text>
-                                        </Button>
-                                    </Modal.Footer>
-
-                                </Modal>
-
-                                {RegSuccessStatus===true && 
-                                <Modal
-                                open={RegSuccessStatus}
-                                closeButton
-                                onClose={()=>{
-                                    setRegSuccessStatus(false)
-                                    window.location.pathname='./cod/otat'
                                 }}
                                 >
                                         <Modal.Header
@@ -2149,7 +1342,7 @@ export default function CODTourneyPage(){
                                                 css={{
                                                     textAlign: 'center',
                                                     fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                lineHeight: '2',
                                                     '@smMin':{
                                                         fontSize: '$xl'
                                                     },
@@ -2174,7 +1367,7 @@ export default function CODTourneyPage(){
                                             css={{
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                lineHeight: '2',
                                                 '@smMin':{
                                                     fontSize: '$lg'
                                                 },
@@ -2183,256 +1376,1341 @@ export default function CODTourneyPage(){
                                                 },
                                                 color: 'white',
                                             }}>
-                                                You have been successfully registered as {teamName}
+                                                You have been successfully logged in as {User.name}
                                             </Text>
                                         </Modal.Body>
                                         
                                 </Modal>
-                                }
+                            
+                            </div>
+                            }
 
-                                {RegErrorStatus===true && 
-                                <Modal
-                                open={RegErrorStatus}
-                                closeButton
-                                onClose={()=>{
-                                    setRegErrorStatus(false)
-                                    window.location.pathname='./cod/otat'
-                                }}
-                                >
-                                        <Modal.Header
+                            {!signedin && !LoginLoader && //Show login buttons when not signed in and LoginLoader===false
+                            <div>
+                                
+                                <Grid.Container gap={0}
+                                css={{
+                                    jc: 'center',
+                                    alignItems: 'center'
+                                }}>
+
+                                    <Grid
+                                    css={{
+                                        jc: 'center',
+                                        alignItems: 'center',
+                                        textAlign: 'center'
+                                    }}>
+                                        <Text
                                         css={{
-                                            paddingTop: '0px',
+                                            paddingTop: '5px',
+                                            fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                            '@smMin':{
+                                                fontSize: '$md'
+                                            },
+                                            '@xsMax':{
+                                                fontSize: '$xs',
+                                                margin: '0px 20px'
+                                            }
                                         }}>
-                                            <Col>
+                                            *This form is open to only those affiliated with Ashoka University.
+                                        </Text>
+                                    </Grid>
+                                    
+                                </Grid.Container>
+
+                                <Grid.Container
+                                css={{
+                                    jc: 'center',
+                                    alignItems: 'center'
+                                }}>
+
+                                    <Grid
+                                    css={{
+                                        jc: 'center',
+                                        alignItems: 'center',
+                                        textAlign: 'center'
+                                    }}>
+                                        <Text
+                                        css={{
+                                            paddingBottom: '15px',
+                                            fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                            '@smMin':{
+                                                fontSize: '$md'
+                                            },
+                                            '@xsMax':{
+                                                fontSize: '$xs',
+                                                margin: '0px 20px'
+                                            }
+                                        }}>
+                                            Please login via your @ashoka.edu.in email ID for form access.
+                                        </Text>
+                                    </Grid>
+                                    
+                                </Grid.Container> 
+                                
+                            </div>
+                            }
+
+                            {LoginLoader && //Show loader when LoginLoader===true - for the lag between loggin in and shoing welcome message
+                            <Grid.Container
+                            css={{
+                                jc: 'center',
+                                alignItems: 'center',
+                            }}>
+                                <Grid>
+                                    <Loading
+                                    size="xl"
+                                    color='white'
+
+                                    />
+                                </Grid>
+                            </Grid.Container>
+                            }
+
+                            {AlreadyRegistered && //If user is already registered, show error message
+                            <div>
+                                <Grid.Container
+                                css={{
+                                    jc: 'center',
+                                    alignItems: 'center',
+                                    textAlign: 'center'
+                                }}>
+                                    <Modal
+                                    open={AlreadyRegistered}
+                                    closeButton
+                                    css={{
+                                        maxWidth: '100vw',
+                                    }}
+                                    onClose={()=>{setAlreadyRegistered(false); window.location.pathname='/cod/otat'; }}
+                                    >
+                                            <Modal.Header
+                                            css={{
+                                                paddingTop: '0px',
+                                            }}>
+                                                <Col>
+                                                    <Text 
+                                                    css={{
+                                                        textAlign: 'center',
+                                                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                        '@smMin':{
+                                                            fontSize: '$xl'
+                                                        },
+                                                        '@smMax':{
+                                                            fontSize: '$sm'
+                                                        },
+                                                        color: '$red600',
+                                                        borderStyle: 'solid',
+                                                        borderWidth: '0px 0px 1px 0px',
+                                                        borderColor: '$gray800'
+                                                    }}>
+                                                        Error!
+                                                    </Text>
+                                                    
+                                                </Col>
+                                            </Modal.Header>
+                                            <Modal.Body
+                                            css={{
+                                                paddingTop: '0px'
+                                            }}>
                                                 <Text 
                                                 css={{
                                                     textAlign: 'center',
                                                     fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                lineHeight: '2',
                                                     '@smMin':{
-                                                        fontSize: '$xl'
+                                                        fontSize: '$lg'
                                                     },
                                                     '@smMax':{
                                                         fontSize: '$sm'
                                                     },
-                                                    color: '$red600',
-                                                    borderStyle: 'solid',
-                                                    borderWidth: '0px 0px 1px 0px',
-                                                    borderColor: '$gray800'
+                                                    color: 'white',
                                                 }}>
-                                                    Error!
+                                                    It seems that you have already registered with this email address.
                                                 </Text>
-                                                
-                                            </Col>
-                                        </Modal.Header>
-                                        <Modal.Body
+                                            </Modal.Body>
+                                            
+                                    </Modal>
+                                </Grid.Container>
+                            </div>
+                            }
+
+                            {/* Team Name */}
+                            <Grid.Container gap={0}
+                                    css={{
+                                        jc: 'center',
+                                        alignItems: 'center'
+                                    }}>
+                                        {/* Teamname */}
+                                        <Grid 
                                         css={{
-                                            paddingTop: '0px'
+                                            jc: 'center',
+                                            padding: '20px 0px 0px 0px'
                                         }}>
-                                            <Text 
+                                            <Text
                                             css={{
+                                                jc:'center',
                                                 textAlign: 'center',
                                                 fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                lineHeight: '2',
                                                 '@smMin':{
-                                                    fontSize: '$lg'
+                                                    fontSize: '$3xl'
                                                 },
                                                 '@smMax':{
-                                                    fontSize: '$sm'
+                                                    fontSize: '$2xl'
                                                 },
-                                                color: 'white',
-                                            }}>
-                                                You were not able to register as {teamName}. Please try again...
-                                            </Text>
-                                        </Modal.Body>
-                                        
-                                </Modal>
-                                }
+                                            }}>Duo Name</Text>
 
-                                {isRegFull===true && 
-                                <Modal
-                                open={isRegFull}
-                                closeButton
-                                onClose={()=>{
-                                    window.location.pathname='./cod/otat'
-                                }}
-                                >
-                                        <Modal.Header
+                                            <Grid.Container gap={0}
+                                            css={{
+                                                jc: 'center',
+                                            }}>
+                                                <Grid
+                                                css={{
+                                                    padding: '20px'
+                                                }}>
+                                                    <Input disabled={!signedin} status={teamNameStatus} onChange={(event)=>{
+                                                        setTeamName(event.target.value)
+                                                        if(event.target.value){
+                                                            setTeamNameStatus('success')
+                                                        }
+                                                        else if(!event.target.value){
+                                                            setTeamNameStatus('error')
+                                                        }
+                                                        }} animated={true} placeholder='Team Name' type='text' bordered  clearable required/>
+                                                </Grid>
+
+                                            </Grid.Container>
+                                        </Grid>
+
+                            </Grid.Container>     
+                        
+                            {/* Participant 1 */}
+                            <Grid.Container gap={0}
+                            css={{
+                                jc: 'center',
+                                alignItems: 'center',
+                                padding: '20px 0px 0px 0px'
+                            }}>
+                                <Text
+                                css={{
+                                    jc:'center',
+                                    textAlign: 'center',
+                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                    '@smMin':{
+                                        fontSize: '$3xl'
+                                    },
+                                    '@smMax':{
+                                        fontSize: '$2xl'
+                                    },
+                                }}>Participant 1</Text>
+
+                                <Grid.Container gap={0}
+                                css={{
+                                    jc: 'center',
+                                }}>
+                                    {/* Participant 1 */}
+                                    {participantone &&
+                                    <Grid
+                                    css={{
+                                        padding: '20px'
+                                    }}>
+                                        <Input onChange={(event)=>{
+                                            participantone(event.target.value);
+                                            if(event.target.value) {
+                                                setParticipantoneStatus('success')
+                                            }
+                                            else if(!event.target.value){
+                                                setParticipantoneStatus('error')
+                                            }
+                                        }} 
+                                        width="200px" animated={true}  type='text' bordered status={participantoneStatus} disabled={!signedin} value={participantone} />
+                                    </Grid>
+                                    }
+                                    {!participantone && 
+                                    <Grid 
+                                    css={{
+                                        padding: '20px'
+                                    }}>
+                                        <Input onChange={(event)=>{
+                                            setParticipantone(event.target.value)
+                                            if(event.target.value) {
+                                                setParticipantoneStatus('success')
+                                            }
+                                            else if(!event.target.value){
+                                                setParticipantoneStatus('error')
+                                            }
+                                            }} 
+                                            width="200px" animated={true}  type='text' bordered status={participantoneStatus} disabled={!signedin} placeholder='Name' />
+                                    </Grid>
+                                    }
+                                    {/* Participant One Phone */}
+                                    
+                                    <Grid 
+                                    css={{
+                                        padding: '20px'
+                                    }}> 
+                                        <Input onChange={(event)=>{
+                                            setParticipantonephone(event.target.value)
+                                            if(event.target.value.length>10 || event.target.value.length<10){
+                                                setParticipantonephoneStatus('error')
+                                            }
+                                            else if(event.target.value.length===10){
+                                                setParticipantonephoneStatus('success')
+                                            }
+                                        }}
+                                        
+                                        width="200px" animated={true}  type='text' bordered status={participantonephoneStatus} disabled={!signedin}
+                                        placeholder='Phone Number' clearable required  />
+                                    </Grid>
+                                    <Grid
+                                    css={{
+                                        textAlign: 'center',
+                                        padding: '20px'
+                                    }}>
+                                        <Col>
+                                            <Input onChange={(event)=>{
+                                            participantoneemail(event.target.value);
+                                            if(event.target.value) {
+                                                setParticipantoneemailStatus('success')
+                                            }
+                                            else if(!event.target.value){
+                                                setParticipantoneemailStatus('error')
+                                            }
+                                        }}  width="300px" animated={true}  type='text' bordered status={participantoneemailStatus} readOnly disabled={!signedin} value={participantoneemail} placeholder='Email ID' />
+                                        </Col>
+                                    </Grid>
+                            
+                                <Grid
+                                css={{
+                                    jc:'center',
+                                    padding: '20px'
+                                }}>
+                                    <Dropdown isDisabled= {!signedin} >
+                                        {participantonebatch === '' 
+                                        ? <Dropdown.Button className="dp-btn" color={participantonebatchStatus} default light >Batch</Dropdown.Button>
+                                        : <Dropdown.Button className="dp-btn" color={participantonebatchStatus} default light >{participantonebatch}</Dropdown.Button>
+                                        }
+                                        <Dropdown.Menu 
+                                        onAction={(event)=>{
+                                            setParticipantonebatch(event);
+                                            if(event){
+                                                setParticipantonebatchStatus('success');
+                                            }
+                                        }} disallowEmptySelection selectionMode="single" selectedKeys={participantonebatch} aria-label="Dynamic Actions" items={batchItems}>
+                                            {(item) => (
+                                            <Dropdown.Item
+                                                key={item.key}
+                                                color={item.key === "delete" ? "error" : "default"}
+                                            >
+                                                {item.name}
+                                            </Dropdown.Item>
+                                            )}
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                </Grid>
+
+                                </Grid.Container>
+                            </Grid.Container>
+
+                            {/* Participant Two */}
+                            <Grid.Container gap={0}
+                            css={{
+                                jc: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Text
+                                css={{
+                                    jc:'center',
+                                    textAlign: 'center',
+                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                    '@smMin':{
+                                        fontSize: '$3xl'
+                                    },
+                                    '@smMax':{
+                                        fontSize: '$2xl'
+                                    },
+                                }}>Participant 2</Text>
+
+                                <Grid.Container gap={0}
+                                css={{
+                                    jc: 'center',
+                                }}>
+                                    
+                                    <Grid 
+                                    css={{
+                                        padding: '20px'
+                                    }}>
+                                        <Input onChange={(event)=>{
+                                            setParticipanttwo(event.target.value);
+                                            if(event.target.value) {
+                                                setParticipanttwoStatus('success')
+                                            }
+                                            else if(!event.target.value){
+                                                setParticipanttwoStatus('error')
+                                            }
+                                        }} 
+                                        width="200px" animated={true}  type='text' bordered  status={participanttwoStatus} disabled={!signedin} placeholder='Full Name' />
+                                    </Grid>
+                                    <Grid 
+                                    css={{
+                                        padding: '20px'
+                                    }}> 
+                                        <Input onChange={(event)=>{
+                                            setParticipanttwophone(event.target.value)
+                                            if(event.target.value.length===10){
+                                                setParticipanttwophoneStatus('success')
+                                            }
+                                            else{
+                                                setParticipanttwophoneStatus('error')
+                                            }
+                                            
+                                            }} 
+                                            width="200px" animated={true}  type='text' bordered status={participanttwophoneStatus} disabled={!signedin} placeholder='Phone Number' />
+                                    </Grid>
+                                    <Grid 
+                                    css={{
+                                        padding: '20px'
+                                    }}> 
+                                        <Input onChange={(event)=>{
+                                            setParticipanttwoemail(event.target.value)
+                                            if(event.target.value.includes('@ashoka.edu.in')){
+                                                setParticipanttwoemailStatus('success')
+                                            }
+                                            else{
+                                                setParticipanttwoemailStatus('error')
+                                            }
+                                            
+                                            }} 
+                                            width="300px" animated={true}  type='text' bordered status={participanttwoemailStatus} disabled={!signedin} placeholder='Email ID' />
+                                    </Grid>
+                            
+                                <Grid
+                                css={{
+                                    jc:'center',
+                                    padding: '20px'
+                                }}>
+                                    <Dropdown isDisabled= {!signedin}>
+                                        {participanttwobatch === '' 
+                                        ? <Dropdown.Button className="dp-btn" color={participanttwobatchStatus} default light>Batch</Dropdown.Button>
+                                        : <Dropdown.Button className="dp-btn" color={participanttwobatchStatus} default light>{participanttwobatch}</Dropdown.Button>
+                                        }
+                                        <Dropdown.Menu 
+                                        onAction={(event)=>{
+                                            setParticipanttwobatch(event);
+                                            if(event){
+                                                setParticipanttwobatchStatus('success');
+                                            }
+                                        }} disallowEmptySelection selectionMode="single" selectedKeys={participanttwobatch} aria-label="Dynamic Actions" items={batchItems}>
+                                            {(item) => (
+                                            <Dropdown.Item
+                                                key={item.key}
+                                                color={item.key === "delete" ? "error" : "default"}
+                                            >
+                                                {item.name}
+                                            </Dropdown.Item>
+                                            )}
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                </Grid>
+
+                                </Grid.Container>                            
+                            </Grid.Container>
+
+                            {/* Proficiency */}
+                            <Grid.Container gap={0}
+                            css={{
+                                jc: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Grid 
+                                css={{
+                                    jc: 'center',
+                                    padding: '20px'
+                                }}>
+                                    <Text
+                                    css={{
+                                        jc:'center',
+                                        textAlign: 'center',
+                                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                        '@smMin':{
+                                            fontSize: '$3xl'
+                                        },
+                                        '@smMax':{
+                                            fontSize: '$2xl'
+                                        },
+                                    }}>
+                                        Proficiency
+                                    </Text>
+
+                                    <Grid.Container gap={0}
+                                    css={{
+                                        jc: 'center',
+                                    }}>
+                                        <Grid 
                                         css={{
-                                            paddingTop: '0px',
+                                            padding: '20px'
                                         }}>
+                                            <Dropdown isDisabled= {!signedin} >
+                                            {proficiency === '' 
+                                            ? <Dropdown.Button className="dp-btn" color={proficiencyStatus} default light >Proficiency</Dropdown.Button>
+                                            : <Dropdown.Button className="dp-btn" color={proficiencyStatus} default light >{proficiency}</Dropdown.Button>
+                                            }
+                                                <Dropdown.Menu 
+                                                onAction={(event)=>{
+                                                    setProficiency(event);
+                                                    if(event){
+                                                        setProficiencyStatus('success');
+                                                    }
+                                                }} disallowEmptySelection selectionMode="single" selectedKeys={proficiency} aria-label="Dynamic Actions" items={proficiencyItems}>
+                                                    {(item) => (
+                                                    <Dropdown.Item
+                                                        key={item.key}
+                                                        color={item.key === "delete" ? "error" : "default"}
+                                                    >
+                                                        {item.name}
+                                                    </Dropdown.Item>
+                                                    )}
+                                                </Dropdown.Menu>
+                                            </Dropdown>
+                                        </Grid>
+
+                                    </Grid.Container>
+                                </Grid>
+
+                            </Grid.Container> 
+
+                            {/* payment details */}
+                            <Grid.Container gap={0}
+                            css={{
+                                jc: 'center',
+                                alignItems: 'center',
+                                paddingBottom:'20px'
+                            }}>
+                                <Col>
+                                    {paymentSCUploaded==='error' && 
+                                    <Text
+                                    css={{
+                                        jc: 'center',
+                                        textAlign: 'center',
+                                        color: '$red600',
+                                        fontFamily: 'bruce-forever',
+                                        lineHeight: '2',
+                                        '@smMin':{
+                                            fontSize: '$xl'
+                                        },
+                                        '@smMax':{
+                                            fontSize: '$lg'
+                                        },
+                                    }}>
+                                        Please upload payment screenshot from your UPI service app!
+                                    </Text>
+                                    }
+                                    
+                                    <Text
+                                    css={{
+                                        jc:'center',
+                                        textAlign: 'center',
+                                        fontFamily: 'bruce-forever',
+                                        lineHeight: '2',
+                                        '@smMin':{
+                                            fontSize: '$3xl'
+                                        },
+                                        '@smMax':{
+                                            fontSize: '$2xl'
+                                        },
+                                    }}>
+                                        Payment
+                                    </Text>
+                                    <Text 
+                                    css={{
+                                        jc:'center',
+                                        textAlign: 'center',
+                                        fontFamily: 'bruce-forever',
+                                        lineHeight: '2',
+                                        '@smMin':{
+                                            fontSize: '$md',
+                                            padding: '0px 30%'
+                                        },
+                                        '@smMax':{
+                                            fontSize: '$sm',
+                                            padding: '0px 20px'
+                                        },
+                                        paddingTop: '10px'
+                                    }}>
+                                        Please pay the amount (₹350) to Aryan Yadav, via PayTM or GPay.
+                                    </Text>
+                                    <Text 
+                                    css={{
+                                        jc:'center',
+                                        textAlign: 'center',
+                                        fontFamily: 'bruce-forever',
+                                        lineHeight: '2',
+                                        '@smMin':{
+                                            fontSize: '$md'
+                                        },
+                                        '@smMax':{
+                                            fontSize: '$sm'
+                                        },
+                                    }}>
+                                        (UPI ID: aryanyadav1601@oksbi)
+                                    </Text>
+                                </Col>
+                                <Grid
+                                css={{
+                                    jc: 'center',
+                                    width: '100vw',
+                                    margin: '10px 0px'
+                                }}>
+                                    <input disabled={!signedin} onChange={(event)=>{setPaymentSC(event.target.files[0]); }} className="photobtn" animated={'true'} type='file' accept="image/*" required style={{width:'210px'}}/>
+                                </Grid>
+                                <Image
+                                    css={{
+                                        '@smMin':{
+                                            width: '250px',
+                                            height: '400px'
+                                        },
+                                        '@smMax':{
+                                            width: '100vw',
+                                        },
+                                        marginTop: '20px',
+                                        objectFit: 'cover',
+                                        justifyContent: 'center'
+                                    }} src={QR} />
+                            
+                                
+                            </Grid.Container>
+
+                            {/* payment button */}
+                            <Grid.Container gap={0}
+                            css={{
+                                jc: 'center',
+                            }}>
+                                <Grid>
+                                    <Button auto rounded disabled={!signedin || isRegFull}
+                                    css={{
+                                        background: '$gray900',
+                                        margin: '20px'
+                                    }}
+                                    onPress={()=>{
+                                        if(paymentSC){
+                                            setPaymentSCUploaded(true)
+                                            console.log('uploaded')
+                                        }
+                                        if(!paymentSC){
+                                            setPaymentSCUploaded(false)
+                                            console.log('not')
+                                            console.log(paymentSCUploaded)
+                                        }
+                                        setModalVisibility(CheckForm());
+                                        
+                                    }}>
+                                        <Text
+                                        css={{
+                                            color: 'Black',
+                                            textAlign: 'center',
+                                            fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                            '@smMin':{
+                                                fontSize: '$xl'
+                                            },
+                                            '@smMax':{
+                                                fontSize: '$md'
+                                            },
+                                        }}>
+                                            Register
+                                        </Text>
+                                    </Button>
+
+                                    <Modal
+                                    open={LoadingModal}>
+                                        <Modal.Body>
+                                            <Loading color='white' size={"xl"} />
+                                        </Modal.Body>
+                                    </Modal>
+
+                                    <Modal
+                                    closeButton
+                                    open={ModalVisibility}
+                                    onClose={()=>{
+                                        setModalVisibility(false)
+                                    }}
+                                    css={
+                                        {
+                                            display:'flex',
+                                            flexWrap:'nowrap',
+                                        }
+                                    }
+                                    
+                                    >
+
+                                        <Modal.Header>
                                             <Col>
+                                                <Text
+                                                css={{
+                                                    textAlign: 'center',
+                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                    '@smMin':{
+                                                        fontSize: '$xl'
+                                                    },
+                                                    '@xsMax':{
+                                                        fontSize: '$md'
+                                                    },
+                                                    color: '$yellow600'
+                                                }}>
+                                                    Team Details
+                                                </Text>
+                                                <Text
+                                                css={{
+                                                    textAlign: 'center',
+                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                    '@smMin':{
+                                                        fontSize: '$sm'
+                                                    },
+                                                    '@xsMax':{
+                                                        fontSize: '$xs'
+                                                    },
+                                                    color: '$gray900'
+                                                }}>
+                                                    Check your details one last time before registering!
+                                                </Text>
+                                            </Col>
+                                            
+                                        </Modal.Header>
+
+                                        <Modal.Body>
+
+
+                                            <Grid.Container
+                                            css={{
+                                                jc: 'center',
+                                                alignItems: 'center',
+                                                display:'flex',
+                                                flexDirection: 'column',
+                                                justifyContent:'center',
+                                                alignContent:'center',
+                                                flexWrap:'nowrap'
+                                            
+                                            }}>
+                                                <Grid> 
+                                                <Grid css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center',
+                                                                marginBottom: 0
+                                                            }}>
+                                                            <Row
+                                                            css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center',
+                                                                marginBottom: 0
+                                                            }}>
+                                                                <Text 
+                                                                css={{
+                                                                    textAlign: 'center',
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    '@smMin':{
+                                                                        fontSize: '$xl'
+                                                                    },
+                                                                    '@xsMax':{
+                                                                        fontSize: '$md'
+                                                                    },
+                                                                    color: '$yellow600'
+                                                                }}>
+                                                                    Participant 1
+                                                                </Text>
+                                                            </Row>
+                                                        </Grid>
+                                                    <Grid.Container gap={0.5}
+                                                    css={{
+                                                        jc: 'center',
+                                                        alignItems: 'center',
+                                                        textAlign: 'center'
+                                                    }}>
+                                                        </Grid.Container> 
+                                                        <Grid>
+                                                        <Grid>
+                                                            <Row
+                                                            css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center'
+                                                            }}>
+                                                                <Text
+                                                                css={{
+                                                                    textAlign: 'center',
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    '@smMin':{
+                                                                        fontSize: '$lg'
+                                                                    },
+                                                                    '@xsMax':{
+                                                                        fontSize: '$sm'
+                                                                    },
+                                                                }}>
+                                                                    {participantone}
+                                                                </Text>
+                                                            </Row>
+                                                        </Grid>
+                                                            {participantoneemail && 
+                                                                <Row
+                                                                css={{
+                                                                    jc: 'center',
+                                                                    textAlign: 'center'
+                                                                }}>
+                                                                    <Text 
+                                                                    css={{
+                                                                        textAlign: 'center',
+                                                                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                        '@smMin':{
+                                                                            fontSize: '$md'
+                                                                        },
+                                                                        '@xsMax':{
+                                                                            fontSize: '$xs'
+                                                                        },
+                                                                    }}>
+                                                                        {participantoneemail}
+                                                                    </Text>
+                                                                </Row>
+                                                            }
+                                                        </Grid>
+                                                        <Grid>
+                                                            <Row
+                                                            css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center',
+                                                                display: 'flex',
+                                                                flexDirection: 'row'
+                                                            }}>
+                                                                <Text
+                                                                css={{
+                                                                    textAlign: 'center',
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    '@smMin':{
+                                                                        fontSize: '$md'
+                                                                    },
+                                                                    '@xsMax':{
+                                                                        fontSize: '$xs'
+                                                                    },
+                                                                }}>
+                                                                    {participantonephone}
+                                                                </Text>
+                                                            </Row>
+                                                            <Grid/>
+                                                        <Grid>
+                                                            <Row
+                                                            css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center'
+                                                            }}>
+                                                                <Text
+                                                                css={{
+                                                                    textAlign: 'center',
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    '@smMin':{
+                                                                        fontSize: '$md'
+                                                                    },
+                                                                    '@xsMax':{
+                                                                        fontSize: '$xs'
+                                                                    },
+                                                                }}>
+                                                                    {participantonebatch}
+                                                                </Text>
+                                                            </Row>
+                                                            </Grid>
+                                                        </Grid> 
+                                                </Grid>
+                                            </Grid.Container>
+                                            <Grid.Container
+                                            css={{
+                                                jc: 'center',
+                                                alignItems: 'center',
+                                                display:'flex',
+                                                flexDirection: 'column',
+                                                justifyContent:'center',
+                                                alignContent:'center',
+                                                flexWrap:'nowrap',
+                                                marginTop:'6%'
+                                            }}>
+                                                <Grid> 
+                                                <Grid css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center',
+                                                                marginBottom: 0     
+                                                            }}>
+                                                            <Row
+                                                            css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center',
+                                                                marginBottom: 0
+                                                            }}>
+                                                                <Text 
+                                                                css={{
+                                                                    textAlign: 'center',
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    '@smMin':{
+                                                                        fontSize: '$lg'
+                                                                    },
+                                                                    '@xsMax':{
+                                                                        fontSize: '$sm'
+                                                                    },
+                                                                    color: '$yellow600'
+                                                                }}>
+                                                                    Participant 2
+                                                                </Text>
+                                                            </Row>
+                                                        </Grid>
+                                                            <Grid.Container gap={0.5}
+                                                            css={{
+                                                                jc: 'center',
+                                                                alignItems: 'center',
+                                                                textAlign: 'center'
+                                                            }}>
+                                                        </Grid.Container> 
+                                                        <Grid>
+                                                        <Grid>
+                                                            <Row
+                                                            css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center'
+                                                            }}>
+                                                                <Text 
+                                                                css={{
+                                                                    textAlign: 'center',
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    '@smMin':{
+                                                                        fontSize: '$md'
+                                                                    },
+                                                                    '@xsMax':{
+                                                                        fontSize: '$xs'
+                                                                    },
+                                                                }}>
+                                                                    {participanttwo}
+                                                                </Text>
+                                                            </Row>
+                                                        </Grid>
+                                                            {participanttwoemail && 
+                                                                <Row
+                                                                css={{
+                                                                    jc: 'center',
+                                                                    textAlign: 'center'
+                                                                }}>
+                                                                    <Text
+                                                                    css={{
+                                                                        textAlign: 'center',
+                                                                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                        '@smMin':{
+                                                                            fontSize: '$md'
+                                                                        },
+                                                                        '@xsMax':{
+                                                                            fontSize: '$xs'
+                                                                        },
+                                                                    }}>
+                                                                        {participanttwoemail}
+                                                                    </Text>
+                                                                </Row>
+                                                            }
+                                                        </Grid>
+                                                        <Grid>
+                                                            <Row
+                                                            css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center',
+                                                                display: 'flex',
+                                                                flexDirection: 'row'
+                                                            }}>
+                                                                <Text 
+                                                                css={{
+                                                                    textAlign: 'center',
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    '@smMin':{
+                                                                        fontSize: '$md'
+                                                                    },
+                                                                    '@xsMax':{
+                                                                        fontSize: '$xs'
+                                                                    },
+                                                                }}>
+                                                                    {participanttwophone}
+                                                                </Text>
+                                                            </Row>
+                                                            <Grid/>
+                                                        <Grid>
+                                                            <Row
+                                                            css={{
+                                                                jc: 'center',
+                                                                textAlign: 'center'
+                                                            }}>
+                                                                <Text
+                                                                css={{
+                                                                    textAlign: 'center',
+                                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                                    '@smMin':{
+                                                                        fontSize: '$md'
+                                                                    },
+                                                                    '@xsMax':{
+                                                                        fontSize: '$xs'
+                                                                    },
+                                                                }}>
+                                                                    {participanttwobatch}
+                                                                </Text>
+                                                            </Row>
+                                                            </Grid>
+                                                        </Grid> 
+                                                </Grid>
+                                            </Grid.Container>
+                                        </Modal.Body>
+
+                                        <Modal.Footer
+                                        css={{
+                                            jc: 'center',
+                                            alignItems: 'center'
+                                        }}>
+                                            <Button auto rounded 
+                                            css={{
+                                                background: '$gray900'
+                                            }}
+                                            onPress={(e)=>{
+                                                sendForm(e);
+                                                sendPaymentImage(paymentSC)
+                                                setModalVisibility(false);
+                                                setLoadingModal(true)
+                                            }}>
+                                                <Text
+                                                css={{
+                                                    color: 'Black',
+                                                    textAlign: 'center',
+                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                    '@smMin':{
+                                                        fontSize: '$md'
+                                                    },
+                                                    '@xsMax':{
+                                                        fontSize: '$xs'
+                                                    },
+                                                }}>
+                                                    Register
+                                                </Text>
+                                            </Button>
+                                        </Modal.Footer>
+
+                                    </Modal>
+
+                                    {RegSuccessStatus===true && 
+                                    <Modal
+                                    open={RegSuccessStatus}
+                                    closeButton
+                                    onClose={()=>{
+                                        setRegSuccessStatus(false)
+                                        window.location.pathname='./cod/otat'
+                                    }}
+                                    >
+                                            <Modal.Header
+                                            css={{
+                                                paddingTop: '0px',
+                                            }}>
+                                                <Col>
+                                                    <Text 
+                                                    css={{
+                                                        textAlign: 'center',
+                                                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                        '@smMin':{
+                                                            fontSize: '$xl'
+                                                        },
+                                                        '@smMax':{
+                                                            fontSize: '$sm'
+                                                        },
+                                                        color: '$green600',
+                                                        borderStyle: 'solid',
+                                                        borderWidth: '0px 0px 1px 0px',
+                                                        borderColor: '$gray800'
+                                                    }}>
+                                                        Success!
+                                                    </Text>
+                                                    
+                                                </Col>
+                                            </Modal.Header>
+                                            <Modal.Body
+                                            css={{
+                                                paddingTop: '0px'
+                                            }}>
                                                 <Text 
                                                 css={{
                                                     textAlign: 'center',
                                                     fontFamily: 'bruce-forever',
-                            lineHeight: '2',
+                                lineHeight: '2',
                                                     '@smMin':{
-                                                        fontSize: '$xl'
+                                                        fontSize: '$lg'
                                                     },
                                                     '@smMax':{
                                                         fontSize: '$sm'
                                                     },
-                                                    color: '$red600',
-                                                    borderStyle: 'solid',
-                                                    borderWidth: '0px 0px 1px 0px',
-                                                    borderColor: '$gray800'
+                                                    color: 'white',
                                                 }}>
-                                                    Stay Tuned!
+                                                    You have been successfully registered as {teamName}
                                                 </Text>
-                                                
-                                            </Col>
-                                        </Modal.Header>
-                                        <Modal.Body
-                                        css={{
-                                            paddingTop: '0px'
-                                        }}>
-                                            <Text 
+                                            </Modal.Body>
+                                            
+                                    </Modal>
+                                    }
+
+                                    {RegErrorStatus===true && 
+                                    <Modal
+                                    open={RegErrorStatus}
+                                    closeButton
+                                    onClose={()=>{
+                                        setRegErrorStatus(false)
+                                        window.location.pathname='./cod/otat'
+                                    }}
+                                    >
+                                            <Modal.Header
                                             css={{
-                                                textAlign: 'center',
-                                                fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                                                '@smMin':{
-                                                    fontSize: '$lg'
-                                                },
-                                                '@smMax':{
-                                                    fontSize: '$sm'
-                                                },
-                                                color: 'white',
+                                                paddingTop: '0px',
                                             }}>
-                                                There are no more slots left for this tournament but stay tuned, we have plenty more fun tournaments coming your way!
-                                            </Text>
-                                        </Modal.Body>
-                                        
-                                </Modal>
-                                }
-                            </Grid>
-                        </Grid.Container>
-                </Grid>
-            </Grid.Container>
-    
-            {/* Registered Duos */}
-            <Grid.Container 
-            css={{
-                jc: 'center',
-                margin: '30px 0px 30px 0px',
-                backgroundColor: 'rgb(20,20,20)',
-                borderRadius: '20px',
-                width: '100vw'
-            }}>
-                    {/* Heading */}
-                    <Grid.Container
-                    css={{
-                        jc: 'center',
-                        textAlign: 'center'
-                    }}>
-                        <Text
+                                                <Col>
+                                                    <Text 
+                                                    css={{
+                                                        textAlign: 'center',
+                                                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                        '@smMin':{
+                                                            fontSize: '$xl'
+                                                        },
+                                                        '@smMax':{
+                                                            fontSize: '$sm'
+                                                        },
+                                                        color: '$red600',
+                                                        borderStyle: 'solid',
+                                                        borderWidth: '0px 0px 1px 0px',
+                                                        borderColor: '$gray800'
+                                                    }}>
+                                                        Error!
+                                                    </Text>
+                                                    
+                                                </Col>
+                                            </Modal.Header>
+                                            <Modal.Body
+                                            css={{
+                                                paddingTop: '0px'
+                                            }}>
+                                                <Text 
+                                                css={{
+                                                    textAlign: 'center',
+                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                    '@smMin':{
+                                                        fontSize: '$lg'
+                                                    },
+                                                    '@smMax':{
+                                                        fontSize: '$sm'
+                                                    },
+                                                    color: 'white',
+                                                }}>
+                                                    You were not able to register as {teamName}. Please try again...
+                                                </Text>
+                                            </Modal.Body>
+                                            
+                                    </Modal>
+                                    }
+
+                                    {isRegFull===true && 
+                                    <Modal
+                                    open={isRegFull}
+                                    closeButton
+                                    onClose={()=>{
+                                        window.location.pathname='./cod/otat'
+                                    }}
+                                    >
+                                            <Modal.Header
+                                            css={{
+                                                paddingTop: '0px',
+                                            }}>
+                                                <Col>
+                                                    <Text 
+                                                    css={{
+                                                        textAlign: 'center',
+                                                        fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                        '@smMin':{
+                                                            fontSize: '$xl'
+                                                        },
+                                                        '@smMax':{
+                                                            fontSize: '$sm'
+                                                        },
+                                                        color: '$red600',
+                                                        borderStyle: 'solid',
+                                                        borderWidth: '0px 0px 1px 0px',
+                                                        borderColor: '$gray800'
+                                                    }}>
+                                                        Stay Tuned!
+                                                    </Text>
+                                                    
+                                                </Col>
+                                            </Modal.Header>
+                                            <Modal.Body
+                                            css={{
+                                                paddingTop: '0px'
+                                            }}>
+                                                <Text 
+                                                css={{
+                                                    textAlign: 'center',
+                                                    fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                                    '@smMin':{
+                                                        fontSize: '$lg'
+                                                    },
+                                                    '@smMax':{
+                                                        fontSize: '$sm'
+                                                    },
+                                                    color: 'white',
+                                                }}>
+                                                    There are no more slots left for this tournament but stay tuned, we have plenty more fun tournaments coming your way!
+                                                </Text>
+                                            </Modal.Body>
+                                            
+                                    </Modal>
+                                    }
+                                </Grid>
+                            </Grid.Container>
+                    </Grid>
+                </Grid.Container>
+        
+                {/* Registered Duos */}
+                <Grid.Container 
+                css={{
+                    jc: 'center',
+                    margin: '30px 0px 30px 0px',
+                    backgroundColor: 'rgb(20,20,20)',
+                    borderRadius: '20px',
+                    width: '100vw'
+                }}>
+                        {/* Heading */}
+                        <Grid.Container
                         css={{
-                            fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                            '@smMin':{
-                                fontSize: '$3xl',
-                                color: 'White',
-                                padding: '40px'
-                            },
-                            '@smMax':{
-                                fontSize: '$lg',
-                                padding: '40px',
-                                color: 'White',
-                            },
-                            textGradient: '45deg, #388EE9 20%, #09EBEE 100%',
+                            jc: 'center',
+                            textAlign: 'center'
                         }}>
-                            Registered Duos
-                        </Text>
-                    </Grid.Container>
+                            <Text
+                            css={{
+                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                '@smMin':{
+                                    fontSize: '$3xl',
+                                    color: 'White',
+                                    padding: '40px'
+                                },
+                                '@smMax':{
+                                    fontSize: '$lg',
+                                    padding: '40px',
+                                    color: 'White',
+                                },
+                                textGradient: '45deg, #388EE9 20%, #09EBEE 100%',
+                            }}>
+                                Registered Duos
+                            </Text>
+                        </Grid.Container>
 
-                    {RegisteredData &&
-                    <Grid
-                    css={{
-                        width: '90vw',
-                        marginBottom: '20px'
-                    }}>
-                        <Table bordered
-                        aria-label="Example table with dynamic content"
+                        {RegisteredData &&
+                        <Grid
                         css={{
-                            height: "auto",
-                            minWidth: "100%",
-                        }}
-                        >
-                            <Table.Header>
-                                <Table.Column css={{paddingLeft: '15px'}}>Duo</Table.Column>
-                                <Table.Column css={{paddingLeft: '15px'}}>Player 1</Table.Column>
-                                <Table.Column css={{paddingLeft: '15px'}}>Batch</Table.Column>
-                                <Table.Column css={{paddingLeft: '15px'}}>Player 2</Table.Column>
-                                <Table.Column css={{paddingLeft: '15px'}}>Batch</Table.Column>
-                            </Table.Header>
-                            <Table.Body items={RegisteredData}>
-                                {(item,index)=>(
-                                    <Table.Row key={item[3]}>
-                                        <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[0]}</Table.Cell>
-                                        <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[1]}</Table.Cell>
-                                        <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[4]}</Table.Cell>
-                                        <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[5]}</Table.Cell>
-                                        <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[8]}</Table.Cell>
-                                    </Table.Row>
-                                )}
-                            </Table.Body>
-                        </Table>
+                            width: '90vw',
+                            marginBottom: '20px'
+                        }}>
+                            <Table bordered
+                            aria-label="Example table with dynamic content"
+                            css={{
+                                height: "auto",
+                                minWidth: "100%",
+                            }}
+                            >
+                                <Table.Header>
+                                    <Table.Column css={{paddingLeft: '15px'}}>Duo</Table.Column>
+                                    <Table.Column css={{paddingLeft: '15px'}}>Player 1</Table.Column>
+                                    <Table.Column css={{paddingLeft: '15px'}}>Batch</Table.Column>
+                                    <Table.Column css={{paddingLeft: '15px'}}>Player 2</Table.Column>
+                                    <Table.Column css={{paddingLeft: '15px'}}>Batch</Table.Column>
+                                </Table.Header>
+                                <Table.Body items={RegisteredData}>
+                                    {(item,index)=>(
+                                        <Table.Row key={item[3]}>
+                                            <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[0]}</Table.Cell>
+                                            <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[1]}</Table.Cell>
+                                            <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[4]}</Table.Cell>
+                                            <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[5]}</Table.Cell>
+                                            <Table.Cell css={{paddingLeft: '15px'}} key={index}>{item[8]}</Table.Cell>
+                                        </Table.Row>
+                                    )}
+                                </Table.Body>
+                            </Table>
+
+                        </Grid>
+
+                        }
+                </Grid.Container>
+
+
+            </>
+            }
+
+            {!UpcomingTourney && PrevTourney &&
+            <>
+                <Grid.Container 
+                css={{
+                    jc: 'center',
+                    textAlign: 'center',
+                    margin: '30px 0px 30px 0px',
+                    backgroundColor: 'rgb(20,20,20)',
+                    borderRadius: '20px'
+                }}>
+                    <Grid>
+                        {/* Heading */}
+                        <Grid.Container
+                        css={{
+                            jc: 'center',
+                            textAlign: 'center'
+                        }}>
+                            <Text
+                            css={{
+                                fontFamily: 'bruce-forever',
+                                lineHeight: '2',
+                                '@smMin':{
+                                    fontSize: '$3xl',
+                                    color: 'White',
+                                    paddingTop: '40px'
+                                },
+                                '@smMax':{
+                                    fontSize: '$lg',
+                                    paddingTop: '40px',
+                                    color: 'White',
+                                }
+                            }}>
+                                Tournament Editions
+                            </Text>
+                        </Grid.Container>
+
+                        {/* Content */}
+                        <Spacer y={25} />
 
                     </Grid>
-
-                    }
-            </Grid.Container>
-
-
-        </>
-        }
-
-        {!UpcomingTourney && PrevTourney &&
-        <>
-            <Grid.Container 
-            css={{
-                jc: 'center',
-                textAlign: 'center',
-                margin: '30px 0px 30px 0px',
-                backgroundColor: 'rgb(20,20,20)',
-                borderRadius: '20px'
-            }}>
-                <Grid>
-                    {/* Heading */}
-                    <Grid.Container
-                    css={{
-                        jc: 'center',
-                        textAlign: 'center'
-                    }}>
-                        <Text
-                        css={{
-                            fontFamily: 'bruce-forever',
-                            lineHeight: '2',
-                            '@smMin':{
-                                fontSize: '$3xl',
-                                color: 'White',
-                                paddingTop: '40px'
-                            },
-                            '@smMax':{
-                                fontSize: '$lg',
-                                paddingTop: '40px',
-                                color: 'White',
-                            }
-                        }}>
-                            Tournament Editions
-                        </Text>
-                    </Grid.Container>
-
-                    {/* Content */}
-                    <Spacer y={25} />
-
-                </Grid>
-            </Grid.Container>
-        </>
-        }
+                </Grid.Container>
+            </>
+            }
 
 
-    </div>
+        </div>
     )
 }
