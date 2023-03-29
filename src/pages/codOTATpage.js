@@ -273,6 +273,9 @@ export default function CODTourneyPage(){
             if(data.values){
                 registereddata.push(data.values)
             }
+            else{
+                registereddata.push([0])
+            }
         })
         console.log(registereddata[0])
         console.log(registereddata[0].length)
@@ -305,7 +308,7 @@ export default function CODTourneyPage(){
             }
         }
         else{
-            console.log('Sorry but resgitrations are complete. No. of teams: '+RegisteredData.length)
+            console.log('Sorry but resgitrations are complete. No. of teams: '+ registereddata[0].length)
             setLoadingModal(false)
             setIsRegFull(true)
         }
