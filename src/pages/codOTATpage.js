@@ -507,12 +507,12 @@ export default function CODTourneyPage(){
                             <Image
                             css={{
                                 '@smMin':{
-                                    width:'500px',
-                                    height: '750px',
+                                    width:'600px',
+                                    height: '900px',
                                 },
                                 '@smMax':{
-                                    width:'200px',
-                                    height: '300px',
+                                    width:'300px',
+                                    height: '450px',
                                 },
                                 borderRadius: '0px',
                                 objectFit: 'cover'
