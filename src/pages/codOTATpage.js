@@ -136,11 +136,11 @@ export default function CODTourneyPage(){
             console.log(emails.length)
             if(emails.length!==0)
             {
-                if(emails.length>=128)
+                if(emails.length>=130)
                 {
                     setIsRegFull(true)
                 }
-                else if(emails.length<=127)
+                else if(emails.length<=128)
                 {
                     for(var i = 0; i < emails.length; i++){
                         if(userObject.email!=emails[i]){
