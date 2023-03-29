@@ -18,7 +18,7 @@ import Two from '../assets/images/number-2.png'
 import Three from '../assets/images/number-3.png'
 import Team from '../assets/images/team.png'
 import QR from '../assets/images/PaymentQRCode.jpeg'
-import CODPoster from '..//assets/images/APPPoster.jpeg'
+import Poster from '..//assets/images/CODOpen1.jpeg'
 
 export default function CODTourneyPage(){
 
@@ -516,7 +516,7 @@ export default function CODTourneyPage(){
                                 },
                                 borderRadius: '0px',
                                 objectFit: 'cover'
-                            }} src={CODPoster}  />
+                            }} src={Poster}  />
                         </Grid>
                         
                         {/* Details */}
